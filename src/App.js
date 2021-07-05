@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 
 const App = () => {
@@ -10,6 +9,3 @@ const App = () => {
 };
 
 export default App;
-=======
-
->>>>>>> refs/remotes/origin/master
