@@ -19,10 +19,42 @@ const sidemenu = () => {
       </div>
       {/* いまどうしてる？ */}
       <div>
-        <article>{/* ニュース */}</article>
-        <article>{/* 広告  */}</article>
-        <article>{/* トレンド */}</article>
+        <ul>
+          <li>
+            <p>いまどうしてる？</p>
+          </li>
+          <li>{/* ニュース */}</li>
+          <li>{/* 広告 */}</li>
+          <li>{/* トレンド*/}</li>
+          <li>
+            <a href=""> さらに表示</a>
+          </li>
+        </ul>
       </div>
+      {/* おすすめユーザー */}
+      <ul>
+        <li>
+          <p>おすすめユーザー</p>
+        </li>
+        <li>
+          {/* ユーザーアイコン */}
+          <a href="">
+            <img src="" alt="" />
+          </a>
+          <div>
+            <div>
+              <div>{/* アカウント名 */}</div>
+              <div>{/* アカウントId */}</div>
+            </div>
+            <div>
+              <a href="">フォローする</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href=""> さらに表示</a>
+        </li>
+      </ul>
     </section>
   );
 };
