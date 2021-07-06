@@ -16,6 +16,49 @@ const main = () => {
           </g>
         </svg>
       </div>
+      {/* 自分でツイートするところ */}
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+        <div>
+                  <div>
+                      {(() => {
+const tweet=()=>
+
+                          
+                          
+                      })()}
+            <div>{/* ツイート書くところ */}</div>
+            <button>
+              <img src="" alt="" />
+              <p>全員が返信できます</p>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <img src="" alt="" />
+              </li>
+              <li>
+                <img src="" alt="" />
+              </li>
+              <li>
+                <img src="" alt="" />
+              </li>
+              <li>
+                <img src="" alt="" />
+              </li>
+              <li>
+                <img src="" alt="" />
+              </li>
+            </ul>
+            <div>
+              <a>ツイートする</a>
+            </div>
+          </div>
+        </div>
+      </div>
       {/*  */}
       {/* 投稿されたツイート */}
       <div>

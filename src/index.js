@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
+import header from "header";
+import main from "main";
+import sidemenu from "./sidemenu";
+import footer from "./footer";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -10,6 +15,10 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+ReactDOM.render(footer, document.getElementById);
+ReactDOM.render(sidemenu, document.getElementById);
+ReactDOM.render(main, document.getElementById);
+ReactDOM.render(header, document.getElementById);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
