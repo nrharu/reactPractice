@@ -4,6 +4,7 @@ import ReacrDOM from "react-dom";
 const sidemenu = () => {
   return (
     <section>
+      {/*  */}
       {/* 検索欄 */}
       <div>
         <svg
@@ -17,6 +18,7 @@ const sidemenu = () => {
         </svg>
         <input type="search" placeholder="キーワード検索"></input>
       </div>
+      {/*  */}
       {/* いまどうしてる？ */}
       <div>
         <ul>
@@ -31,6 +33,7 @@ const sidemenu = () => {
           </li>
         </ul>
       </div>
+      {/*  */}
       {/* おすすめユーザー */}
       <ul>
         <li>
@@ -56,6 +59,8 @@ const sidemenu = () => {
           <a href=""> さらに表示</a>
         </li>
       </ul>
+      {/*  */}
+      {/* おすすめのトピック */}
       <ul>
         <li>
           <p>おすすめトピック</p>
@@ -77,6 +82,24 @@ const sidemenu = () => {
           <a href=""> さらに表示</a>
         </li>
       </ul>
+      {/*  */}
+      {/* ダイレクトメッセージ */}
+      <div>
+        <ul>
+          <li>
+            <p>メッセージ</p>
+            <a>
+              <img src="" alt="" />
+            </a>
+            <a>
+              <img src="" alt="" />
+            </a>
+          </li>
+          <li>
+            <div></div>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };

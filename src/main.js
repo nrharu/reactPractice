@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 const main = () => {
   return (
     <main>
+      {/*  */}
       {/* 固定ヘッダー */}
       <div>
         <p>ホーム</p>
@@ -15,6 +16,7 @@ const main = () => {
           </g>
         </svg>
       </div>
+      {/*  */}
       {/* 投稿されたツイート */}
       <div>
         <div>{/* いいねされたときのスペース */}</div>
