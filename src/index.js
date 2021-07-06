@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
-import header from "header";
-import main from "main";
-import sidemenu from "./sidemenu";
-import footer from "./footer";
-
+import header from "component/header";
+import main from "component/main.js";
+import sidemenu from "component/sidemenu.js";
+import footer from "component/footer.js";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
