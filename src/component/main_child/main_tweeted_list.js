@@ -3,39 +3,12 @@ import React from "react";
 import main from "./main.js";
 
 const main_tweeted_list = () => {
-  // 何かのイベント時に動かす
-  const tweet_time = () => {
-    const startTime = Date.now();
-    let nowtime = 0;
-    let unitTime = "秒";
-    nowtime = (Date.now() - startTime) / 1000;
-    if (nowtime > 60) {
-      nowtime = (Date.now() - startTime) / 60000;
-      unitTime = "分";
-    }
-    if ((unitTime = "分" && nowtime > 60)) {
-      nowtime = (Date.now() - startTime) / 3600000;
-      unitTime = "時間";
-    }
-    const nowtime_trncate = Mathfloor(nowtime);
-    console.log(nowtime_trncate + unitTime);
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    if ((unitTime = "時間" && nowtime > 24)) {
-      month + "月" + day + "日";
-    }
-  };
-
   return (
     <div>
       <article>
         <div>{/* アカウントのアイコン */}</div>
         <div>
-          <div>
-            <div>{/*アカウント名*/}</div>
-            <div>{/* アカウントID 投稿時間 */}</div>
-            <button>{/* 詳細ボタン */}</button>
-          </div>
+          <main_tweetTime />
           <div>{/* ツイート内容ツイートしたところから内容を取得　表示*/}</div>
         </div>
       </article>

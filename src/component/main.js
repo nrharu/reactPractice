@@ -36,9 +36,7 @@ const main = () => {
       {/*  */}
       {/*  */}
       {/* 投稿されたツイート */}
-      <div>
-        <main_tweeted_list />
-      </div>
+      <main_tweeted_list />
     </main>
   );
 };
