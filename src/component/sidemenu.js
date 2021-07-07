@@ -127,4 +127,3 @@ const sidemenu = () => {
 };
 
 export default sidemenu;
-ReactDOM.render(sidemenu, document.getElemntById("root"));
