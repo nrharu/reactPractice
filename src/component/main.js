@@ -1,6 +1,6 @@
 import React from "react";
-import main_tweeted_list from "./main_tweeted_list.";
-import main_tweet from "./main_tweet";
+import main_tweeted_list from "./main_child/main_tweeted_list.js";
+import main_tweet from "./main_child/main_tweet.js";
 
 const main = () => {
   return (
@@ -27,7 +27,7 @@ const main = () => {
         <div>
           <img src="" alt="" />
         </div>
-        <main_tweet.js />
+        <main_tweet />
       </div>
       {/*  */}
       {/*  */}

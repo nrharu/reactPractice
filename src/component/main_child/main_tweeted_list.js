@@ -1,6 +1,5 @@
-import { now } from "lodash";
 import React from "react";
-import main from "./main.js";
+import main from "../main.js";
 
 const main_tweeted_list = () => {
   return (
@@ -26,3 +25,4 @@ const main_tweeted_list = () => {
     </div>
   );
 };
+export default main_tweeted_list;

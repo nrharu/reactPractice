@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import header from "../component/header.js";
-import main from "./main.js";
-import sidemenu from "./sidemenu.js";
-import footer from "./footer.js";
+import header from "./component/header.js";
+import main from "./component/main.js";
+import sidemenu from "./component/sidemenu.js";
+import footer from "./component/footer.js";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
