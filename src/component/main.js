@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import main_tweeted_list from "./main_tweeted_list.";
 import main_tweet from "./main_tweet";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import ReacrDOM from "react-dom";
 
 const sidemenu = () => {
   return (
