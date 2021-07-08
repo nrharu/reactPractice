@@ -17,7 +17,6 @@ const header = () => {
       {/*  */}
       {/*  */}
       {/*  */}
-      {/*  */}
       {/* ナビゲーションリスト */}
       <ul>
         <header_navigatioon_list />
