@@ -4,15 +4,15 @@ const footer = () => {
   return (
     <div>
       <div>
-        <a>利用規約</a>
-        <a>プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">プライバシーポリシー</a>
       </div>
       <div>
-        <a>Cookieのポリシー</a>
-        <a>広告情報</a>
+        <a href="#">Cookieのポリシー</a>
+        <a href="#">広告情報</a>
       </div>
       <div>
-        <a>もっと見る</a>
+        <a href="#"> もっと見る</a>
         <p> @2021 twitter,inc.</p>
       </div>
     </div>
