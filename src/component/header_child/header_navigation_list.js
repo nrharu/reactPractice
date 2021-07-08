@@ -1,5 +1,4 @@
 import React from "react";
-import header from "../header.js";
 
 const header_navigation_list = () => {
   // const header_list_names = [

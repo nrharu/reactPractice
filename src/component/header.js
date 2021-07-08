@@ -18,11 +18,9 @@ const header = () => {
       {/*  */}
       {/*  */}
       {/*  */}
-      {/*  */}
-      {/*  */}
       {/* ナビゲーションリスト */}
       <ul>
-        <header_navigation_list />
+        <header_navigatioon_list />
       </ul>
       {/*  */}
       {/*  */}
@@ -35,7 +33,7 @@ const header = () => {
       {/* 自分のアカウント */}
       <a href="#top">
         {/* 自分のアカウントアイコン */}
-        <img src=""></img>
+        <img src="" alt=""></img>
         <div>
           <p>{/* 自分のアカウント名 */}</p>
           <p>{/* 自分のアカウントID  */}</p>

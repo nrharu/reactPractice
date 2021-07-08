@@ -6,18 +6,11 @@ import main from "./component/main.js";
 import sidemenu from "./component/sidemenu.js";
 import footer from "./component/footer.js";
 import reportWebVitals from "./reportWebVitals";
-import App from "./App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
 ReactDOM.render(footer, document.getElementById("root"));
-ReactDOM.render(sidemenu, document.getElementById("root"));
-ReactDOM.render(main, document.getElementById("root"));
-ReactDOM.render(header, document.getElementById("root"));
+// ReactDOM.render(sidemenu, document.getElementById("root"));
+// ReactDOM.render(main, document.getElementById("root"));
+// ReactDOM.render(header, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

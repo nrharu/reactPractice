@@ -33,7 +33,7 @@ const sidemenu = () => {
           <li>{/* 広告 */}</li>
           <li>{/* トレンド*/}</li>
           <li>
-            <a href=""> さらに表示</a>
+            <a href="#top"> さらに表示</a>
           </li>
         </ul>
       </div>
@@ -51,7 +51,7 @@ const sidemenu = () => {
         </li>
         <li>
           {/* ユーザーアイコン */}
-          <a href="">
+          <a href="#top">
             <img src="" alt="" />
           </a>
           <div>
@@ -60,13 +60,13 @@ const sidemenu = () => {
               <div>{/* アカウントId */}</div>
             </div>
             <div>
-              <a href="">フォローする</a>
+              <a href="#top">フォローする</a>
             </div>
           </div>
         </li>
         {/* 同じものの繰り返し */}
         <li>
-          <a href=""> さらに表示</a>
+          <a href="#top"> さらに表示</a>
         </li>
       </ul>
       {/*  */}
@@ -95,7 +95,7 @@ const sidemenu = () => {
         </li>
         {/* 同じものの繰り返し */}
         <li>
-          <a href=""> さらに表示</a>
+          <a href="#top"> さらに表示</a>
         </li>
       </ul>
       {/*  */}

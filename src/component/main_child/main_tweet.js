@@ -1,5 +1,4 @@
 import React from "react";
-import main from "../main.js";
 
 const main_tweet = () => {
   return (

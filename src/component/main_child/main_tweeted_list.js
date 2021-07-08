@@ -1,5 +1,5 @@
 import React from "react";
-import main from "../main.js";
+import main_tweetTime from "./main_grandChild/main_tweetTime.js";
 
 const main_tweeted_list = () => {
   return (
