@@ -88,8 +88,8 @@ const sidemenu = () => {
               <div>{/* トピックのジャンル */}</div>
             </div>
             <div>
-              <a href="#">フォローする</a>
-              <a href="#">{/* クローズアイコン */}</a>
+              <a href="#top">フォローする</a>
+              <a href="#top">{/* クローズアイコン */}</a>
             </div>
           </div>
         </li>
@@ -109,10 +109,10 @@ const sidemenu = () => {
         <ul>
           <li>
             <p>メッセージ</p>
-            <a href="#">
+            <a href="#top">
               <img src="" alt="" />
             </a>
-            <a href="#">
+            <a href="#top">
               <img src="" alt="" />
             </a>
           </li>

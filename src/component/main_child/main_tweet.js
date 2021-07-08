@@ -31,7 +31,7 @@ const main_tweet = () => {
           </li>
         </ul>
         <div>
-          <a href="#">ツイートする</a>
+          <a href="#top">ツイートする</a>
         </div>
       </div>
     </div>

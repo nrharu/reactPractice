@@ -33,7 +33,7 @@ const header = () => {
         <p>ツイートする</p>
       </div>
       {/* 自分のアカウント */}
-      <a href="#">
+      <a href="#top">
         {/* 自分のアカウントアイコン */}
         <img src=""></img>
         <div>
