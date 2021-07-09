@@ -6,11 +6,11 @@ const loginfform = () => {
       <ul>
         <li>
           <p>アカウント名</p>
-          <input type="text" />
+          <input type="text" id="account_name" />
         </li>
         <li>
           <p>アカウントID</p>
-          <input type="text" />
+          <input type="text" id="account_id" />
         </li>
         <li>
           <p>アカウントアイコン</p>
