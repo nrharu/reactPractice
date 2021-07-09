@@ -1,9 +1,9 @@
 import React from "react";
-import header_navigatioon_list from "./header_child/header_navigation_list.js";
+import Header_navigatioon_list from "./header_child/header_navigation_list.js";
 
-const Header = () => {
+const Sidemenu_left = () => {
   return (
-    <header>
+    <div>
       {/* <!--ヘッダーアイコン--> */}
       <div>
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -19,7 +19,7 @@ const Header = () => {
       {/*  */}
       {/* ナビゲーションリスト */}
       <ul>
-        <header_navigatioon_list />
+        <Header_navigatioon_list />
       </ul>
       {/*  */}
       {/*  */}
@@ -42,7 +42,7 @@ const Header = () => {
           <img src="" alt="" />
         </div>
       </a>
-    </header>
+    </div>
   );
 };
-export default Header;
+export default Sidemenu_left;

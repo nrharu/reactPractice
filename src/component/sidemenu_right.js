@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sidemenu = () => {
+const Sidemenu_right = () => {
   return (
     <section>
       {/*  */}
@@ -125,4 +125,4 @@ const Sidemenu = () => {
   );
 };
 
-export default Sidemenu;
+export default Sidemenu_right;

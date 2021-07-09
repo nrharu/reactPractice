@@ -1,6 +1,6 @@
 import React from "react";
 
-const main_tweetTime = () => {
+const Main_tweetTime = () => {
   // const tweet_time = () => {
   //   const startTime = Date.now();
   //   let nowtime = 0;
@@ -32,4 +32,4 @@ const main_tweetTime = () => {
   );
 };
 
-export default main_tweetTime;
+export default Main_tweetTime;
