@@ -1,7 +1,7 @@
 import React from "react";
-import Header_navigatioon_list from "./header_child/header_navigation_list.js";
+import HeaderNavigationList from "./header_child/header_navigation_list.js";
 
-const Sidemenu_left = () => {
+const SidemenuLeft = () => {
   return (
     <div>
       {/* <!--ヘッダーアイコン--> */}
@@ -19,7 +19,7 @@ const Sidemenu_left = () => {
       {/*  */}
       {/* ナビゲーションリスト */}
       <ul>
-        <Header_navigatioon_list />
+        <HeaderNavigationList />
       </ul>
       {/*  */}
       {/*  */}
@@ -45,4 +45,4 @@ const Sidemenu_left = () => {
     </div>
   );
 };
-export default Sidemenu_left;
+export default SidemenuLeft;

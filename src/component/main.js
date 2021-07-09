@@ -1,6 +1,6 @@
 import React from "react";
-import Main_tweeted_list from "./main_child/main_tweeted_list.js";
-import Main_tweet from "./main_child/main_tweet.js";
+import MainTweetedList from "./main_child/main_tweeted_list.js";
+import MainTweet from "./main_child/main_tweet.js";
 
 const Main = () => {
   return (
@@ -27,7 +27,7 @@ const Main = () => {
           <div>
             <img src="" alt="my_icon" />
           </div>
-          <Main_tweet />
+          <MainTweet />
         </div>
         {/*  */}
         {/* 固定ヘッダー */}
@@ -35,7 +35,7 @@ const Main = () => {
           <p>ホーム</p>
         </div>
         {/* 投稿されたツイート */}
-        <Main_tweeted_list />
+        <MainTweetedList />
       </main>
     </div>
   );

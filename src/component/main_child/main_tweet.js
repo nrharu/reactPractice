@@ -1,6 +1,6 @@
 import React from "react";
 
-const Main_tweet = () => {
+const MainTweet = () => {
   // フォームの作成途中
   // const [message, setMessage] = React.upState("")
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,4 +52,4 @@ const Main_tweet = () => {
     </div>
   );
 };
-export default Main_tweet;
+export default MainTweet;

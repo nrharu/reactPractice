@@ -1,6 +1,7 @@
 import React from "react";
 
-const Main_tweetTime = () => {
+const MainTweetTime = () => {
+  const usagi = "rabbit";
   // const tweet_time = () => {
   //   const startTime = Date.now();
   //   let nowtime = 0;
@@ -25,11 +26,11 @@ const Main_tweetTime = () => {
   // };
   return (
     <div>
-      <div>{/*アカウント名*/}</div>
+      <div>アカウント名</div>
       {/* <p>@id名・{tweet_time}</p> */}
-      <button>{/* 詳細ボタン */}</button>
+      <button>詳細ボタン</button>
     </div>
   );
 };
 
-export default Main_tweetTime;
+export default MainTweetTime;

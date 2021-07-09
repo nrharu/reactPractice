@@ -1,0 +1,1 @@
+const usagi = "rabbit";

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header_navigation_list = () => {
+const HeaderNavigationList = () => {
   // const header_list_names = [
   //   "ホーム",
   //   "話題を検索",
@@ -30,4 +30,4 @@ const Header_navigation_list = () => {
   );
 };
 
-export default Header_navigation_list;
+export default HeaderNavigationList;

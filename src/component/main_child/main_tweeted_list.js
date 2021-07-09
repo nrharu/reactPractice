@@ -1,7 +1,7 @@
 import React from "react";
-import Main_tweetTime from "./main_grandChild/main_tweetTime.js";
+import MainTweetTime from "./main_grandChild/main_tweetTime.js";
 
-const Main_tweeted_list = () => {
+const MainTweetedList = () => {
   return (
     <div>
       <h1>テスト</h1>
@@ -10,7 +10,7 @@ const Main_tweeted_list = () => {
           <img src="" alt="my_icon" />
         </div>
         <div>
-          <Main_tweetTime />
+          <MainTweetTime />
           <div>{/* ツイート内容ツイートしたところから内容を取得　表示*/}</div>
         </div>
       </article>
@@ -28,4 +28,4 @@ const Main_tweeted_list = () => {
     </div>
   );
 };
-export default Main_tweeted_list;
+export default MainTweetedList;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const loginfform = () => {
+const Loginform = () => {
   return (
     <dev>
       <ul>
