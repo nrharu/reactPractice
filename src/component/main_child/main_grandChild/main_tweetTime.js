@@ -1,4 +1,3 @@
-import { O_NOFOLLOW } from "constants";
 import React from "react";
 
 const MainTweetTime = () => {
@@ -6,7 +5,7 @@ const MainTweetTime = () => {
   // console.log(tweet_time);
 
   const tweet_time = () => {
-    let now = 0;
+    // let now = 0;
     let startTime = new Date();
     let nowtime = 0;
     let unitTime = "秒";
@@ -30,7 +29,7 @@ const MainTweetTime = () => {
   return (
     <div>
       <div>アカウント名</div>
-      <p>@id名・{tweet_time}</p>
+      <p>@id名・{tweet_time()}</p>
       <button>詳細ボタン</button>
     </div>
   );
