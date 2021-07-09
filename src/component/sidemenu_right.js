@@ -1,4 +1,6 @@
 import React from "react";
+import SidemenuUser from "./sidemenu_child/sidemenu_user.js";
+import SidemenuTopic from "./sidemenu_child/sidemenu_topic.js";
 
 const SidemenuRight = () => {
   return (
@@ -33,67 +35,24 @@ const SidemenuRight = () => {
           </li>
         </ul>
       </div>
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-
-      {/* おすすめユーザー */}
-      <ul>
-        <li>
-          <p>おすすめユーザー</p>
-        </li>
-        <li>
-          {/* ユーザーアイコン */}
-          <a href="#top">
-            <img src="" alt="" />
-          </a>
-          <div>
-            <div>
-              <div>{/* アカウント名 */}</div>
-              <div>{/* アカウントId */}</div>
-            </div>
-            <div>
-              <a href="#top">フォローする</a>
-            </div>
-          </div>
-        </li>
-        {/* 同じものの繰り返し */}
-        <li>
-          <a href="#top"> さらに表示</a>
-        </li>
-      </ul>
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-
+      <div>
+        <p>おすすめユーザー</p>
+      </div>
+      <SidemenuUser />
+      <SidemenuUser />
+      <SidemenuUser />
+      <div>
+        <a href="#top"> さらに表示</a>
+      </div>
       {/* おすすめのトピック */}
-      <ul>
-        <li>
-          <p>おすすめトピック</p>
-        </li>
-        <li>
-          <div>
-            <div>
-              <div>{/* トピック名 */}</div>
-              <div>{/* トピックのジャンル */}</div>
-            </div>
-            <div>
-              <a href="#top">フォローする</a>
-              <a href="#top">{/* クローズアイコン */}</a>
-            </div>
-          </div>
-        </li>
-        {/* 同じものの繰り返し */}
-        <li>
-          <a href="#top"> さらに表示</a>
-        </li>
-      </ul>
+      <div>
+        <p>おすすめトピック</p>
+      </div>
+
+      {/* 同じものの繰り返し */}
+      <div>
+        <a href="#top"> さらに表示</a>
+      </div>
       {/*  */}
       {/*  */}
       {/*  */}
