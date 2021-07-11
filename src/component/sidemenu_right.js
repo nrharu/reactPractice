@@ -48,7 +48,9 @@ const SidemenuRight = () => {
       <div>
         <p>おすすめトピック</p>
       </div>
-
+      <SidemenuTopic />
+      <SidemenuTopic />
+      <SidemenuTopic />
       {/* 同じものの繰り返し */}
       <div>
         <a href="#top"> さらに表示</a>
