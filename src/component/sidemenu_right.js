@@ -1,10 +1,11 @@
 import React from "react";
 import SidemenuUser from "./sidemenu_right_child/sidemenu_user.js";
 import SidemenuTopic from "./sidemenu_right_child/sidemenu_topic.js";
+import Footer from "./footer.js";
 
 const SidemenuRight = () => {
   return (
-    <section>
+    <section className="sidemenu_right">
       {/*  */}
       {/* 検索欄 */}
       <div>
@@ -78,6 +79,7 @@ const SidemenuRight = () => {
           </li>
         </ul>
       </div>
+      <Footer />
     </section>
   );
 };

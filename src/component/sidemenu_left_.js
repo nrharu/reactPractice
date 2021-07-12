@@ -3,7 +3,7 @@ import SidemenuLeftNavigationList from "./sidemenu_left_child/sidemenu_left_navi
 
 const SidemenuLeft = () => {
   return (
-    <div>
+    <section className="sidemenu_left">
       {/* <!--ヘッダーアイコン--> */}
       <div>
         <svg
@@ -46,7 +46,7 @@ const SidemenuLeft = () => {
           <img src="" alt="" />
         </div>
       </a>
-    </div>
+    </section>
   );
 };
 export default SidemenuLeft;
