@@ -14,12 +14,18 @@ $breakpoint-up: (
   list-style-type: none;
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+}
 .content {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
+  margin: 0 auto;
+  // width: 1191px;
+  // position: relative;
 }
 .body {
-  margin: auto;
+  margin: 0;
 }
 .loginform {
   display: none;
@@ -27,7 +33,7 @@ $breakpoint-up: (
 .tweet_wrapper {
   width: 100%;
   max-width: 598px;
-  // margin: 0 auto;
+  margin: 0 auto;
 }
 .header {
   position: fixed;
@@ -51,7 +57,9 @@ $breakpoint-up: (
 }
 
 main {
+  position: relative;
   margin-top: 53px;
+  width: 598px;
 }
 .sidemenu_left_twitter_icon {
   height: 20px;
@@ -69,24 +77,32 @@ main {
   height: 20px;
   width: 20px;
 }
-.sidemenu_left {
-  // position: fixed;
-  // left: 0;
+.sidemenu_left_wrap {
+  position: fixed;
   top: 0;
-  background-color: rgb(210, 210, 250);
-  display: none;
-  @include mq-up(sm) {
-    display: block;
+  transform: translateX(-251px);
+  .sidemenu_left {
+    background-color: rgb(210, 210, 250);
+    display: none;
+    width: 251px;
+    @include mq-up(sm) {
+      display: block;
+    }
   }
 }
-.sidemenu_right {
-  overflow: scroll;
-  // position: fixed;
-  // right: 0;
+.sidemenu_right_wrap {
+  position: fixed;
+  width: 598px;
   top: 0;
-  background-color: rgb(210, 210, 250);
-  display: none;
-  @include mq-up(md) {
-    display: block;
+  transform: translateX(350px);
+  .sidemenu_right {
+    width: 350px;
+    overflow: scroll;
+    background-color: rgb(210, 210, 250);
+    display: none;
+    float: right;
+    @include mq-up(md) {
+      display: block;
+    }
   }
 }
