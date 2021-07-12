@@ -34,8 +34,12 @@ body {
   width: 100%;
   max-width: 598px;
   margin: 0 auto;
+  position: relative;
+  margin-top: 53px;
+  width: 598px;
 }
 .header {
+  z-index: 1;
   position: fixed;
   top: 0;
   display: flex;
@@ -45,6 +49,9 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(210, 210, 250);
+  @include mq-up(md) {
+    transform: translateX(-50px);
+  }
   .header_title {
     font-size: 20px;
     display: flex;
@@ -55,12 +62,15 @@ body {
     width: 20px;
   }
 }
-
-main {
-  position: relative;
-  margin-top: 53px;
-  width: 598px;
+.main {
+  z-index: -1;
 }
+.main_translate {
+  @include mq-up(md) {
+    transform: translateX(-50px);
+  }
+}
+
 .sidemenu_left_twitter_icon {
   height: 20px;
   width: 20px;
@@ -80,6 +90,9 @@ main {
 .sidemenu_left_wrap {
   position: fixed;
   top: 0;
+  @include mq-up(md) {
+    transform: translateX(-301px);
+  }
   transform: translateX(-251px);
   .sidemenu_left {
     background-color: rgb(210, 210, 250);
@@ -94,8 +107,10 @@ main {
   position: fixed;
   width: 598px;
   top: 0;
-  transform: translateX(350px);
+  height: 100vh;
+  transform: translateX(297px);
   .sidemenu_right {
+    height: 100vh;
     width: 350px;
     overflow: scroll;
     background-color: rgb(210, 210, 250);
