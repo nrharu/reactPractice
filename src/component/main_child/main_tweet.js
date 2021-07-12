@@ -1,5 +1,4 @@
 import React from "react";
-import "../../style/style.scss";
 
 const MainTweet = () => {
   // フォームの作成途中

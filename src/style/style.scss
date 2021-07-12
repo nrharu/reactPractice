@@ -1,7 +1,53 @@
 * {
   list-style-type: none;
 }
+.body {
+  margin: auto;
+}
+.loginform {
+  display: none;
+}
+.tweet_wrapper {
+  width: 100%;
+  max-width: 598px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  height: 53px;
+  width: 100%;
+  max-width: 598px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(210, 210, 250);
+  .header_title {
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .header_button {
+    height: 20px;
+    width: 20px;
+  }
+}
 
-// .test {
-//   list-style-type: none;
-// }
+main {
+  margin-top: 53px;
+}
+.sidemenu_left_twitter_icon {
+  height: 20px;
+  width: 20px;
+}
+.searchbox_icon {
+  height: 20px;
+  width: 20px;
+}
+.navigation_list_icon {
+  height: 20px;
+  width: 20px;
+}
+.tweeted_list_icon_coment {
+  height: 20px;
+  width: 20px;
+}
