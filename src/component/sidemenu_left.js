@@ -6,6 +6,7 @@ const SidemenuLeft = () => {
     <section className="sidemenu_left">
       {/* <!--ヘッダーアイコン--> */}
       <div>
+        {/* ツイッターのアイコン */}
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
