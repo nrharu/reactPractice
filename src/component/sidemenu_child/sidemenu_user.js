@@ -1,6 +1,6 @@
 import React from "react";
 
-SidemenuUser = () => {
+const SidemenuUser = () => {
   const user_name_list = [
     "rabbit",
     "lapin",
@@ -13,9 +13,13 @@ SidemenuUser = () => {
     "f",
     "g",
   ];
+  console.log(user_name_list);
   const user_icon_list = ["", "", "", "", "", "", "", "", "", ""];
+  // console.log(user_icon_list);
   const user_ID_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  // console.log(user_ID_list);
   let random_number = Math.floor(Math.random() * 11);
+  // console.log(random_number);
   return (
     <ul>
       <li>
