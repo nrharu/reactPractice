@@ -1,6 +1,6 @@
 import React from "react";
-import SidemenuUser from "./sidemenu_child/sidemenu_user.js";
-import SidemenuTopic from "./sidemenu_child/sidemenu_topic.js";
+import SidemenuUser from "./sidemenu_right_child/sidemenu_user.js";
+import SidemenuTopic from "./sidemenu_right_child/sidemenu_topic.js";
 
 const SidemenuRight = () => {
   return (
