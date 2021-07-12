@@ -1,4 +1,5 @@
 import React from "react";
+import "../../style/style.scss";
 
 const MainTweet = () => {
   // フォームの作成途中
@@ -27,8 +28,8 @@ const MainTweet = () => {
         </div>
       </div>
       <div>
-        <ul>
-          <li>
+        <ul className="test">
+          <li className="test">
             <img src="" alt="メディア" />
           </li>
           <li>
