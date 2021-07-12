@@ -1,0 +1,92 @@
+$breakpoint-up: (
+  "xm": "(min-width: 0px)",
+  "sm": "(min-width: 500px)",
+  "md": "(min-width: 1000px)",
+  "lg": "(min-width:1268px)",
+) !default;
+@mixin mq-up($breakpoint: "xm") {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+.body {
+  margin: auto;
+}
+.loginform {
+  display: none;
+}
+.tweet_wrapper {
+  width: 100%;
+  max-width: 598px;
+  // margin: 0 auto;
+}
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  height: 53px;
+  width: 100%;
+  max-width: 598px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(210, 210, 250);
+  .header_title {
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .header_button {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+main {
+  margin-top: 53px;
+}
+.sidemenu_left_twitter_icon {
+  height: 20px;
+  width: 20px;
+}
+.searchbox_icon {
+  height: 20px;
+  width: 20px;
+}
+.navigation_list_icon {
+  height: 20px;
+  width: 20px;
+}
+.tweeted_list_icon_coment {
+  height: 20px;
+  width: 20px;
+}
+.sidemenu_left {
+  // position: fixed;
+  // left: 0;
+  top: 0;
+  background-color: rgb(210, 210, 250);
+  display: none;
+  @include mq-up(sm) {
+    display: block;
+  }
+}
+.sidemenu_right {
+  overflow: scroll;
+  // position: fixed;
+  // right: 0;
+  top: 0;
+  background-color: rgb(210, 210, 250);
+  display: none;
+  @include mq-up(md) {
+    display: block;
+  }
+}

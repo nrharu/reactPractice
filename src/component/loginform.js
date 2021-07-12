@@ -2,7 +2,7 @@ import React from "react";
 
 const Loginform = () => {
   return (
-    <dev>
+    <div className="loginform">
       <ul>
         <li>
           <p>アカウント名</p>
@@ -16,12 +16,10 @@ const Loginform = () => {
           <p>アカウントアイコン</p>
           <img src="{my_icon}" alt="アカウントアイコン" />
         </li>
-        <li>
-          <p></p>
-          <input type="text" />
-        </li>
       </ul>
       <button>決定</button>
-    </dev>
+    </div>
   );
 };
+
+export default Loginform;

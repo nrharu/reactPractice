@@ -27,8 +27,8 @@ const MainTweet = () => {
         </div>
       </div>
       <div>
-        <ul>
-          <li>
+        <ul className="test">
+          <li className="test">
             <img src="" alt="メディア" />
           </li>
           <li>
