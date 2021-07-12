@@ -1,4 +1,5 @@
 import React from "react";
+// import Icon from "../../../img/rabbit_icon_1.png";
 
 const SidemenuUser = () => {
   const user_name_list = [
@@ -13,8 +14,18 @@ const SidemenuUser = () => {
     "f",
     "g",
   ];
-  console.log(user_name_list);
-  const user_icon_list = ["", "", "", "", "", "", "", "", "", ""];
+  // const user_icon_list = [
+  //   "rabbit_icon_1.png",
+  //   "rabbit_icon_2.png",
+  //   "rabbit_icon_3.png",
+  //   "rabbit_icon_4.png",
+  //   "rabbit_icon_5.png",
+  //   "rabbit_icon_6.png",
+  //   "rabbit_icon_7.png",
+  //   "cheetah_icon.png",
+  //   "squirrel_icon.png",
+  //   "dog_icon.png",
+  // ];
   // console.log(user_icon_list);
   const user_ID_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   // console.log(user_ID_list);
@@ -27,12 +38,14 @@ const SidemenuUser = () => {
       </li>
       <li>
         <img
-          src={user_icon_list[random_number]}
+          src=""
+          // src={user_icon_list[random_number]}
+          // src={Icon}
           alt="おすすめユーザーのアイコン"
         />
-        <a href="#top">
-          <img src="" alt="" />
-        </a>
+        {/* <a href="#top">
+          <img src="../../../img/rabbit_icon_1.png" alt="" />
+        </a> */}
         <div>
           <div>
             <div>
