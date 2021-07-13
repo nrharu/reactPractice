@@ -25,7 +25,7 @@ const SidemenuTopic = () => {
     "Home&Familly",
     "Outdoor",
   ];
-  const random_number = Math.floor(Math.random() * 11);
+  const random_number = Math.floor(Math.random() * 10);
   return (
     <ul>
       <li>

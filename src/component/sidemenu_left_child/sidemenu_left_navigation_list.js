@@ -9,7 +9,7 @@ import NavigationListIcon7 from "./sidemenu_left_grand_child/navigation_list_ico
 import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_icon_ditails_button";
 
 const SidemenuLeftNavigationList = () => {
-  const sidemenu_left_navigaiton_list_names = [
+  const sidemenu_left_navigation_list_names = [
     "ホーム",
     "話題を検索",
     "通知",
@@ -18,33 +18,34 @@ const SidemenuLeftNavigationList = () => {
     "プロフィール",
     "もっと見る",
   ];
-  const sidemenu_left_navigaiton_list_name = () => {
-    for (let i = 0; i < sidemenu_left_navigaiton_list_names.length; i++) {
-      return sidemenu_left_navigaiton_list_names[i];
+  const sidemenu_left_navigation_list_icons = [
+    <NavigationListIcon1 />,
+    <NavigationListIcon2 />,
+    <NavigationListIcon3 />,
+    <NavigationListIcon4 />,
+    <NavigationListIcon5 />,
+    <NavigationListIcon6 />,
+    <NavigationListIcon7 />,
+    <NavigationListIcon8 />,
+    // "usagi",
+    // "rabbit",
+  ];
+  // console.log(sidemenu_left_navigation_list_icons);
+  const sidemenu_left_navigation_list_icon = () => {
+    for (let i = 0; i < sidemenu_left_navigation_list_icons.length; i++) {
+      return sidemenu_left_navigation_list_icons[i];
     }
-    const sidemenu_left_navigation_list_icons = [
-      <NavigationListIcon1 />,
-      <NavigationListIcon2 />,
-      <NavigationListIcon3 />,
-      <NavigationListIcon4 />,
-      <NavigationListIcon5 />,
-      <NavigationListIcon6 />,
-      <NavigationListIcon7 />,
-      <NavigationListIcon8 />,
-    ];
-
-    const sidemenu_left_navigaiton_list_icon = () => {
-      for (let n = 0; n < sidemenu_left_navigation_list_icons.length; n++) {
-        return sidemenu_left_navigation_list_icons[n];
-      }
-    };
   };
-
+  const sidemenu_left_navigation_list_name = () => {
+    for (let i = 0; i < sidemenu_left_navigation_list_names.length; i++) {
+      return sidemenu_left_navigation_list_names[i];
+    }
+  };
   return (
     <li>
       <a href="#top">
-        <div>{sidemenu_left_navigaiton_list_icon()}</div>
-        <p>{sidemenu_left_navigaiton_list_name()}</p>
+        <div>{sidemenu_left_navigation_list_icon()}</div>
+        <p>{sidemenu_left_navigation_list_name()}</p>
       </a>
     </li>
   );
