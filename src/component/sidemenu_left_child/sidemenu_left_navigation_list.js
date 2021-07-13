@@ -4,7 +4,7 @@ import NavigationListIcon2 from "./sidemenu_left_grand_child/navigation_list_ico
 import NavigationListIcon3 from "./sidemenu_left_grand_child/navigation_list_icon_bell";
 import NavigationListIcon4 from "./sidemenu_left_grand_child/navigation_list_icon_mail";
 import NavigationListIcon5 from "./sidemenu_left_grand_child/navigation_list_icon_bookmark";
-import NavigationListIcon6 from "./sidemenu_left_grand_child/navigaiton_list_icon_paper";
+import NavigationListIcon6 from "./sidemenu_left_grand_child/navigation_list_icon_paper";
 import NavigationListIcon7 from "./sidemenu_left_grand_child/navigation_list_icon_human";
 import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_icon_ditails_button";
 
@@ -23,7 +23,7 @@ const SidemenuLeftNavigationList = () => {
       return sidemenu_left_navigaiton_list_names[i];
     }
     const sidemenu_left_navigation_list_icons = [
-      <NavigaitonListIcon1 />,
+      <NavigationListIcon1 />,
       <NavigationListIcon2 />,
       <NavigationListIcon3 />,
       <NavigationListIcon4 />,
@@ -32,17 +32,18 @@ const SidemenuLeftNavigationList = () => {
       <NavigationListIcon7 />,
       <NavigationListIcon8 />,
     ];
-    {
-      /* const sidemenu_left_navigaiton_list_icon = () => {
-    for
-  } */
-    }
+
+    const sidemenu_left_navigaiton_list_icon = () => {
+      for (let n = 0; n < sidemenu_left_navigation_list_icons.length; n++) {
+        return sidemenu_left_navigation_list_icons[n];
+      }
+    };
   };
 
   return (
     <li>
       <a href="#top">
-        <div>{/* アイコン */}</div>
+        <div>{sidemenu_left_navigaiton_list_icon()}</div>
         <p>{sidemenu_left_navigaiton_list_name()}</p>
       </a>
     </li>
