@@ -26,7 +26,7 @@ const Main = () => {
       <main className="main">
         <div className="main_translate">
           {/* ツイートするところ */}
-          <div>
+          <div className="main_tweet">
             <div>
               <img src="" alt="my_icon" />
             </div>
@@ -38,8 +38,10 @@ const Main = () => {
             <p>ホーム</p>
           </div>
           {/* 投稿されたツイート */}
+
           <MainTweetedList />
         </div>
+
         <p>テスト</p>
         <p>テスト</p>
         <p>テスト</p>
