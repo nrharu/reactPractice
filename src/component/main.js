@@ -34,9 +34,7 @@ const Main = () => {
           </div>
           {/*  */}
           {/* 固定ヘッダー */}
-          <div>
-            <p>ホーム</p>
-          </div>
+          <div className="main_margin_box"></div>
           {/* 投稿されたツイート */}
 
           <MainTweetedList />
