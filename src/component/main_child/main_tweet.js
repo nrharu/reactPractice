@@ -12,15 +12,12 @@ const MainTweet = () => {
       <div className="main_tweet_textform_box">
         <form>
           {/*onSubmit={handleSubmit}*/}
-          <input
-            type="text"
-            placeholder="いまどうしてる？"
+          <textarea
             className="main_tweet_textform"
-            // value={message}
-            // onChange={handleChange}
-          />
+            placeholder="いまどうしてる？"
+            maxLength="35"
+          ></textarea>
         </form>
-
         <div className="main_tweet_open_button_wrap">
           <button className="main_tweet_open_button">
             {/* 地球アイコン */}
@@ -111,8 +108,9 @@ const MainTweet = () => {
           </li>
         </ul>
         <button className="main_tweet_submit_button_wrap">
-          <input type="submit" value="送信" />
-          <a href="#top">ツイートする</a>
+          {/* <input type="submit" value="送信" />
+          <a href="#top">ツイートする</a> */}
+          <p className="main_tweet_submit_button">Tweet</p>
         </button>
       </div>
     </div>
