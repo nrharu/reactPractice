@@ -33,8 +33,8 @@ const SidemenuRight = () => {
       {/*  */}
 
       {/* いまどうしてる？ */}
-      <div>
-        <ul>
+      <div className="sidemenu_right_doingnow sidemenu_right_article_list">
+        <ul className="sidemenu_right_article">
           <li>
             <p>いまどうしてる？</p>
           </li>
@@ -46,25 +46,35 @@ const SidemenuRight = () => {
           </li>
         </ul>
       </div>
-      <div>
-        <p>おすすめユーザー</p>
-      </div>
-      <SidemenuUser />
-      <SidemenuUser />
-      <SidemenuUser />
-      <div>
-        <a href="#top"> さらに表示</a>
+      <div className="sidemenu_right_user sidemenu_right_article_list">
+        <div className="sidemenu_right_header_wrap">
+          <p className="sidemenu_right_header">おすすめユーザー</p>
+        </div>
+        <SidemenuUser />
+        <SidemenuUser />
+        <SidemenuUser />
+        <div className="sidemenu_right_showmore_button_wrap">
+          <a href="#top" className="sidemenu_right_showmore_button">
+            {" "}
+            さらに表示
+          </a>
+        </div>
       </div>
       {/* おすすめのトピック */}
-      <div>
-        <p>おすすめトピック</p>
-      </div>
-      <SidemenuTopic />
-      <SidemenuTopic />
-      <SidemenuTopic />
-      {/* 同じものの繰り返し */}
-      <div>
-        <a href="#top"> さらに表示</a>
+      <div className="sidemenu_right_topic sidemenu_right_article_list">
+        <div className="sidemenu_right_header_wrap">
+          <p className="sidemenu_right_header">おすすめトピック</p>
+        </div>
+        <SidemenuTopic />
+        <SidemenuTopic />
+        <SidemenuTopic />
+        {/* 同じものの繰り返し */}
+        <div className="sidemenu_right_showmore_button_wrap">
+          <a href="#top" className="sidemenu_right_showmore_button">
+            {" "}
+            さらに表示
+          </a>
+        </div>
       </div>
       {/*  */}
       {/*  */}

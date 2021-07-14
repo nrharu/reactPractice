@@ -32,12 +32,10 @@ const SidemenuUser = () => {
   const random_number = Math.floor(Math.random() * 10);
   // console.log(random_number);
   return (
-    <ul>
-      <li>
-        <p>{user_ID_list[random_number]}</p>
-      </li>
-      <li>
+    <article className="sidemenu_right_article">
+      <div className="sidemenu_right_article_content">
         <img
+          className="sidemenu_right_article_account_icon"
           src=""
           // src={user_icon_list[random_number]}
           // src={Icon}
@@ -46,19 +44,17 @@ const SidemenuUser = () => {
         {/* <a href="#top">
           <img src="../../../img/rabbit_icon_1.png" alt="" />
         </a> */}
-        <div>
+        <div className="sidemenu_right_article_name_wrap">
           <div>
-            <div>
-              <p>{user_name_list[random_number]}</p>
-            </div>
-            <div>{/* アカウントId */}</div>
+            <p>{user_name_list[random_number]}</p>
+            <p>{user_ID_list[random_number]}</p>
           </div>
-          <div>
+          <div className="sidemenu_right_article_button">
             <a href="#top">フォローする</a>
           </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </article>
   );
 };
 
