@@ -110,10 +110,10 @@ const MainTweet = () => {
             </svg>
           </li>
         </ul>
-        <div className="main_tweet_submit_button_wrap">
+        <button className="main_tweet_submit_button_wrap">
           <input type="submit" value="送信" />
           <a href="#top">ツイートする</a>
-        </div>
+        </button>
       </div>
     </div>
   );
