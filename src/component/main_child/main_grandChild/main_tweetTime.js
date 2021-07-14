@@ -27,10 +27,27 @@ const MainTweetTime = () => {
     return nowtime_trncate + unitTime;
   };
   return (
-    <div>
-      <div>アカウント名</div>
-      <p>@id名・{tweet_time()}</p>
-      <button>詳細ボタン</button>
+    <div className="main_tweeted_list_article_header">
+      <div className="maintweeted_list_article_header_account_name">
+        アカウント名
+      </div>
+      <p className="main_tweeted_list_article_header_ID_time">
+        @id名・{tweet_time()}
+      </p>
+      <button className="main_tweeted_list_article_header_button">
+        {/* 詳細ボタン */}
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="main_tweeted_list_article_header_button_icon"
+        >
+          <g>
+            <circle cx="5" cy="12" r="2"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+            <circle cx="19" cy="12" r="2"></circle>
+          </g>
+        </svg>
+      </button>
     </div>
   );
 };
