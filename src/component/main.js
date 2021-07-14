@@ -41,86 +41,39 @@ const Main = () => {
             {/* 投稿されたツイート */}
           </div>
           <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
+          <MainTweetedList />
         </div>
-
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
-        <p>テスト</p>
         <div className="sidemenu_left_wrap">
           <SidemenuLeft />
         </div>

@@ -54,7 +54,8 @@ $breakpoint-up: (
   max-width: 598px;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(210, 210, 250);
+  border: solid rgb(239, 243, 244) 1px;
+  background-color: white;
   @include mq-up(md) {
     transform: translateX(-50px);
   }
@@ -94,6 +95,9 @@ $breakpoint-up: (
   z-index: -1;
 }
 .main_translate {
+  border-left: solid rgb(239, 243, 244) 1px;
+  border-right: solid rgb(239, 243, 244) 1px;
+  border-bottom: solid rgb(239, 243, 244) 1px;
   @include mq-up(md) {
     transform: translateX(-50px);
   }
@@ -200,6 +204,7 @@ $breakpoint-up: (
 
 .main_tweeted_list_wrap {
   display: flex;
+  border-bottom: solid rgb(239, 243, 244) 1px;
   .main_tweeted_list_article_icon {
     flex: 1;
   }
@@ -246,10 +251,14 @@ $breakpoint-up: (
     width: 20px;
   }
 }
+
+// sidemenu_left.js
+
 .sidemenu_left_wrap {
   position: fixed;
   top: 0;
   @include mq-up(md) {
+    // 変更予定箇所
     transform: translateX(-301px);
   }
   transform: translateX(-251px);
@@ -268,7 +277,9 @@ $breakpoint-up: (
 .sidemenu_right_wrap {
   margin-left: 30px;
   position: fixed;
+  // 変更予定箇所
   width: 598px;
+  max-width: 598px;
   top: 0;
   height: 100vh;
   transform: translateX(300px);
@@ -291,6 +302,7 @@ $breakpoint-up: (
   height: 53px;
   margin-bottom: 50px;
   border-radius: 60px/50px;
+  margin: 5px 0;
   .sidemenu_right_searchbox_icon {
     height: 20px;
     width: 20px;
@@ -318,7 +330,7 @@ $breakpoint-up: (
   margin-bottom: 20px;
 }
 .sidemenu_right_article {
-  border-bottom: solid rgb(239, 243, 244) 1px;
+  border-bottom: rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
   .sidemenu_right_article_content {
@@ -334,7 +346,7 @@ $breakpoint-up: (
 .sidemenu_right_header_wrap {
   display: flex;
   padding: 12px 16px;
-  border-bottom: solid rgb(239, 243, 244) 1px;
+  border-bottom: rgb(239, 243, 244) 1px;
   .sidemenu_right_header {
     align-items: center;
     margin: 0;
