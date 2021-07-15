@@ -1,5 +1,5 @@
 $breakpoint-up: (
-  "xm": "(min-width: 0px)",
+  "xm": "(min-width: 700px)",
   "sm": "(min-width: 500px)",
   "md": "(min-width: 990px)",
   "lg": "(min_width:1074px)",
@@ -15,32 +15,65 @@ $breakpoint-up: (
   list-style-type: none;
   box-sizing: border-box;
 }
-.body {
-  display: flex;
-  justify-content: center;
-}
-// .content {
-//   // display: flex;
-//   // justify-content: center;
-//   margin: 0 auto;
-//   // width: 100vw;
-//   // position: relative;
+// .body {
+//   display: flex;
+//   justify-content: center;
 // }
 .body {
   margin: 0;
   width: 100vw;
 }
+.content {
+  // margin: 0 auto;
+  @include mq-up(sm) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.responsive_box {
+  display: flex;
+  width: 100vw;
+  @include mq-up() {
+    width: auto;
+  }
+}
+.sidemenu_left_box_space {
+  height: auto;
+  width: 88px;
+  display: none;
+  @include mq-up(sm) {
+    display: block;
+  }
+}
+.sidemenu_right_box_space {
+  height: auto;
+  width: 298px;
+  display: none;
+  @include mq-up(md) {
+    display: block;
+  }
+}
 .loginform {
   display: none;
 }
 .tweet_wrapper {
-  width: 100%;
+  // margin: 0 auto;
+  width: 100vw;
   max-width: 598px;
   position: relative;
   margin-top: 53px;
-  // margin-left: 88px;
+  margin-left: 0;
+  @include mq-up {
+    margin-left: 88px;
+  }
+  @include mq-up(sm) {
+    margin: 0;
+    width: calc(100% - 88px);
+  }
+
+  // margin-left: ;
   // @include mq-up(sm) {
-  //   // width: calc(100% - 88px);
+  //   // width: calc(100% - );
   //   margin: 0 auto;
   // }
 }
@@ -60,9 +93,9 @@ $breakpoint-up: (
   align-items: center;
   border: solid rgb(239, 243, 244) 1px;
   background-color: white;
-  @include mq-up(md) {
-    transform: translateX(-50px);
-  }
+  // @include mq-up(md) {
+  //   transform: translateX(-50px);
+  // }
 }
 .header_title_wrap {
   display: flex;
@@ -102,9 +135,9 @@ $breakpoint-up: (
   border-left: solid rgb(239, 243, 244) 1px;
   border-right: solid rgb(239, 243, 244) 1px;
   border-bottom: solid rgb(239, 243, 244) 1px;
-  @include mq-up(md) {
-    transform: translateX(-50px);
-  }
+  // @include mq-up(md) {
+  //   transform: translateX(-50px);
+  // }
 }
 .main_disabled_box {
   display: none;
@@ -264,11 +297,11 @@ $breakpoint-up: (
   @include mq-up(sm) {
     transform: translateX(-88px);
   }
-  @include mq-up(md) {
-    transform: translateX(-138px);
-  }
+  // @include mq-up(md) {
+  //   transform: translateX(-138px);
+  // }
   @include mq-up(lg) {
-    transform: translateX(-301px);
+    transform: translateX(-251px);
   }
   .sidemenu_left {
     background-color: rgb(210, 210, 250);
@@ -293,15 +326,18 @@ $breakpoint-up: (
   max-width: 598px;
   top: 0;
   height: 100vh;
+  // @include mq-up(md) {
+  //   transform: translateX(-50px);
+  // }
+  display: none;
   @include mq-up(md) {
-    transform: translateX(-50px);
+    display: block;
   }
   .sidemenu_right {
     height: 100vh;
     max-width: 298px;
     width: 350px;
     overflow-y: scroll;
-    display: none;
     float: right;
     transform: translateX(290px);
     @include mq-up(md) {
@@ -309,7 +345,6 @@ $breakpoint-up: (
     }
     @include mq-up(lg) {
       width: 350px;
-      display: none;
     }
   }
 }

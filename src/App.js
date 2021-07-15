@@ -9,7 +9,11 @@ const App = () => {
     <div className="body">
       <Loginform />
       <div className="content">
-        <Main />
+        <div className="responsive_box">
+          <div className="sidemenu_left_box_space"></div>
+          <Main />
+        </div>
+        <div className="sidemenu_right_box_space"></div>
       </div>
     </div>
   );
