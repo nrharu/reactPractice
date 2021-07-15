@@ -1,8 +1,9 @@
 $breakpoint-up: (
   "xm": "(min-width: 0px)",
   "sm": "(min-width: 500px)",
-  "md": "(min-width: 1000px)",
-  "lg": "(min-width:1268px)",
+  "md": "(min-width: 990px)",
+  "lg": "(min_width:1074px)",
+  "xl": "(min-width:1268px)",
 ) !default;
 @mixin mq-up($breakpoint: "xm") {
   @media #{map-get($breakpoint-up, $breakpoint)} {
@@ -14,17 +15,17 @@ $breakpoint-up: (
   list-style-type: none;
   box-sizing: border-box;
 }
-// body {
-//   margin: 0;
-//   width: 100vw;
-// }
-.content {
-  // display: flex;
-  // justify-content: center;
-  margin: 0 auto;
-  width: 100vw;
-  // position: relative;
+.body {
+  display: flex;
+  justify-content: center;
 }
+// .content {
+//   // display: flex;
+//   // justify-content: center;
+//   margin: 0 auto;
+//   // width: 100vw;
+//   // position: relative;
+// }
 .body {
   margin: 0;
   width: 100vw;
@@ -35,10 +36,13 @@ $breakpoint-up: (
 .tweet_wrapper {
   width: 100%;
   max-width: 598px;
-  margin: 0 auto;
   position: relative;
   margin-top: 53px;
-  width: 598px;
+  // margin-left: 88px;
+  // @include mq-up(sm) {
+  //   // width: calc(100% - 88px);
+  //   margin: 0 auto;
+  // }
 }
 
 // header main.js内
@@ -257,17 +261,24 @@ $breakpoint-up: (
 .sidemenu_left_wrap {
   position: fixed;
   top: 0;
+  @include mq-up(sm) {
+    transform: translateX(-88px);
+  }
   @include mq-up(md) {
-    // 変更予定箇所
+    transform: translateX(-138px);
+  }
+  @include mq-up(lg) {
     transform: translateX(-301px);
   }
-  transform: translateX(-251px);
   .sidemenu_left {
     background-color: rgb(210, 210, 250);
     display: none;
-    width: 251px;
     @include mq-up(sm) {
       display: block;
+      width: 88px;
+    }
+    @include mq-up(lg) {
+      width: 251px;
     }
   }
 }
@@ -275,23 +286,30 @@ $breakpoint-up: (
 // sidemenu_right
 
 .sidemenu_right_wrap {
-  margin-left: 30px;
+  // margin-left: 30px;
   position: fixed;
   // 変更予定箇所
   width: 598px;
   max-width: 598px;
   top: 0;
   height: 100vh;
-  transform: translateX(300px);
+  @include mq-up(md) {
+    transform: translateX(-50px);
+  }
   .sidemenu_right {
     height: 100vh;
-    max-width: 350px;
-    width: 70%;
+    max-width: 298px;
+    width: 350px;
     overflow-y: scroll;
     display: none;
     float: right;
+    transform: translateX(290px);
     @include mq-up(md) {
       display: block;
+    }
+    @include mq-up(lg) {
+      width: 350px;
+      display: none;
     }
   }
 }
