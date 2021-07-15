@@ -2,7 +2,7 @@ $breakpoint-up: (
   "xm": "(min-width: 700px)",
   "sm": "(min-width: 500px)",
   "md": "(min-width: 990px)",
-  "lg": "(min0-width:1074px)",
+  "lg": "(min-width:1074px)",
   "xl": "(min-width:1268px)",
 ) !default;
 @mixin mq-up($breakpoint: "xm") {
@@ -89,7 +89,6 @@ $breakpoint-up: (
     padding: 0 16px;
     position: fixed;
     top: 0;
-    width: 100%;
     display: flex;
     height: 53px;
     // width: 100%;
@@ -103,11 +102,15 @@ $breakpoint-up: (
     // }
     @include mq-up(sm) {
       width: auto;
+      right: calc((100% - (67.83% + 88px)) / 2);
+      left: calc((100% - (67.83% + 88px)) / 2 + 90px);
+    }
+    @include mq-up(md) {
       right: calc((100% - 984px) / 2 + 300px);
-      left: calc((100% - 984px) / 2);
+      left: calc((100% - 984px) / 2 + 90px);
     }
     @include mq-up(lg) {
-      right: calc((100% - 984px) / 2 + 300px);
+      right: calc((100% - 984px) / 2 + 350px);
       left: calc((100% - 984px) / 2 + 90px);
     }
   }
@@ -354,13 +357,14 @@ $breakpoint-up: (
     height: 100vh;
     overflow-y: scroll;
     float: right;
-    transform: translateX(290px);
     @include mq-up(md) {
       display: block;
       width: 298px;
+      transform: translateX(298px);
     }
     @include mq-up(lg) {
       width: 350px;
+      transform: translateX(350px);
     }
   }
 }
