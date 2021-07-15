@@ -1,6 +1,5 @@
 import React from "react";
-// import logo from "../../../img/rabbit_icon_1.png";
-
+// import Icon from "../../../img/rabbit_icon_1.png";
 const SidemenuUser = () => {
   const user_name_list = [
     "rabbit",

@@ -21,10 +21,12 @@ $breakpoint-up: (
 // }
 .body {
   margin: 0;
-  width: 100vw;
+  box-sizing: border-box;
+  // width: 100vw;
 }
 .content {
   // margin: 0 auto;
+  width: auto;
   @include mq-up(sm) {
     display: flex;
     justify-content: center;
@@ -67,7 +69,7 @@ $breakpoint-up: (
     margin-left: 88px;
   }
   @include mq-up(sm) {
-    margin: 0;
+    margin-left: 0;
     width: calc(100% - 88px);
   }
 
@@ -149,7 +151,10 @@ $breakpoint-up: (
 // main_tweet.js
 
 .main_tweet {
-  display: flex;
+  display: none;
+  @include mq-up(sm) {
+    display: flex;
+  }
 }
 .main_tweet_textform_box {
   .main_tweet_textform {
