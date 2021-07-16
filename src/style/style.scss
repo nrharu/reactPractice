@@ -32,29 +32,14 @@ $breakpoint-up: (
     justify-content: center;
   }
 }
-.responsive_box {
-  display: flex;
-  width: 100vw;
-  @include mq-up() {
-    width: auto;
-  }
-}
-.sidemenu_left_box_space {
-  height: auto;
-  width: 88px;
-  display: none;
-  @include mq-up(sm) {
-    display: block;
-  }
-}
-.sidemenu_right_box_space {
-  height: auto;
-  width: 298px;
-  display: none;
-  @include mq-up(md) {
-    display: block;
-  }
-}
+// .responsive_box {
+//   display: flex;
+//   width: 100vw;
+//   @include mq-up() {
+//     width: auto;
+//   }
+// }
+
 .loginform {
   display: none;
 }
@@ -63,7 +48,7 @@ $breakpoint-up: (
   width: 100vw;
   max-width: 598px;
   // position: relative;
-  margin-top: 53px;
+  // margin-top: 53px;
   margin-left: 0;
   @include mq-up {
     margin-left: 88px;
@@ -85,6 +70,8 @@ $breakpoint-up: (
 
 .header_wrap {
   width: 100%;
+  position: sticky;
+  top: 0;
   .header {
     z-index: 1;
     padding: 0 16px;
@@ -100,24 +87,6 @@ $breakpoint-up: (
     background-color: white;
     // @include mq-up(md) {
     //   transform: translateX(-50px);
-    // }
-    @include mq-up(sm) {
-      width: auto;
-      right: 0;
-      left: 88px;
-    }
-    @include mq-up() {
-      right: calc((100% - 676.73px) / 2);
-      left: calc((100% - 676.73px) / 2 + 88px);
-    }
-    @include mq-up(md) {
-      right: calc((100% - 984px) / 2 + 302px);
-      left: calc((100% - 984px) / 2 + 92px);
-    }
-    // メディアクエリが効いていない
-    // @include mq-up(lg) {
-    //   right: calc((100% - 984px) / 2 + 302px);
-    //   left: calc((100% - 984px) / 2 + 92px);
     // }
   }
 }
@@ -333,20 +302,19 @@ $breakpoint-up: (
 
 // sidemenu_left.js
 
+.sidemenu_left_box_space {
+  height: auto;
+  width: 88px;
+  display: none;
+  @include mq-up(sm) {
+    display: block;
+  }
+}
 .sidemenu_left_wrap {
   // position: fixed;
+  position: sticky;
   top: 0;
-  @include mq-up(sm) {
-    // transform: translateX(-88px);
-  }
-  // @include mq-up(md) {
-  //   transform: translateX(-138px);
-  // }
-  @include mq-up(xl) {
-    // transform: translateX(-251px);
-    width: 251px;
-    padding: 0 12px;
-  }
+
   .sidemenu_left {
     background-color: rgb(210, 210, 250);
     display: none;
@@ -359,11 +327,20 @@ $breakpoint-up: (
 
 // sidemenu_right
 
+.sidemenu_right_box_space {
+  height: auto;
+  width: 298px;
+  display: none;
+  @include mq-up(lg) {
+    display: block;
+  }
+}
 .sidemenu_right_wrap {
   // margin-left: 30px;
   // position: fixed;
   // 変更予定箇所
-  width: 598px;
+  // width: 598px;
+  position: sticky;
   max-width: 598px;
   top: 0;
   height: 100vh;
@@ -377,17 +354,17 @@ $breakpoint-up: (
   .sidemenu_right {
     height: 100vh;
     overflow-y: scroll;
-    float: right;
-    @include mq-up(md) {
-      display: block;
-      width: 298px;
-      // transform: translateX(298px);
-    }
+    // float: right;
+    // @include mq-up(md) {
+    //   display: block;
+    // width: 298px;
+    //   // transform: translateX(298px);
+    // }
 
-    @include mq-up(lg) {
-      width: 350px;
-      // transform: translateX(350px);
-    }
+    // @include mq-up(lg) {
+    //   width: 350px;
+    //   // transform: translateX(350px);
+    // }
   }
 }
 .sidemenu_right_searchbox_wrap {

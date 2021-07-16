@@ -9,14 +9,12 @@ const App = () => {
     <div className="body">
       <Loginform />
       <div className="content">
-        <div className="responsive_box">
-          <div className="sidemenu_left_box_space">
-            <div className="sidemenu_left_wrap">
-              <SidemenuLeft />
-            </div>
+        <div className="sidemenu_left_box_space">
+          <div className="sidemenu_left_wrap">
+            <SidemenuLeft />
           </div>
-          <Main />
         </div>
+        <Main />
         <div className="sidemenu_right_box_space">
           <div className="sidemenu_right_wrap">
             <SidemenuRight />
