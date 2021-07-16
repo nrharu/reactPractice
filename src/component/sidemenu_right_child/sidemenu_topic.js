@@ -33,8 +33,10 @@ const SidemenuTopic = () => {
           <div>{topic_name_list[random_number]}</div>
           <div>{topic_genre_list[random_number]}</div>
         </div>
-        <div className="sidemenu_right_article_button">
-          <a href="#top">フォローする</a>
+        <div className="sidemenu_right_article_button_list">
+          <button className="sidemenu_right_article_button_wrap">
+            <p className="sidemenu_right_article_button">Follow</p>
+          </button>
           <div className="sidemenu_right_article_close_icon_wrap">
             <svg
               viewBox="0 0 24 24"

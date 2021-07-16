@@ -15,7 +15,7 @@ const MainTweet = () => {
           <textarea
             className="main_tweet_textform"
             placeholder="いまどうしてる？"
-            maxLength="35"
+            maxLength="140"
           ></textarea>
         </form>
         <div className="main_tweet_open_button_wrap">
@@ -107,6 +107,7 @@ const MainTweet = () => {
             </svg>
           </li>
         </ul>
+        {/* ツイートボタン */}
         <button className="main_tweet_submit_button_wrap">
           {/* <input type="submit" value="送信" />
           <a href="#top">ツイートする</a> */}

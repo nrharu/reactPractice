@@ -17,6 +17,7 @@ const Main = () => {
             </div>
           </div>
           <div className="header_button_wrap">
+            {/* ヘッダーのアイコン */}
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"

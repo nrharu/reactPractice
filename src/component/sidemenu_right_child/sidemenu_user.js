@@ -48,9 +48,9 @@ const SidemenuUser = () => {
             <p>{user_name_list[random_number]}</p>
             <p>{user_ID_list[random_number]}</p>
           </div>
-          <div className="sidemenu_right_article_button">
-            <a href="#top">フォローする</a>
-          </div>
+          <button className="sidemenu_right_article_button_wrap">
+            <p className="sidemenu_right_article_button">Follow</p>
+          </button>
         </div>
       </div>
     </article>

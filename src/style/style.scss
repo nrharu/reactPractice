@@ -89,6 +89,7 @@ $breakpoint-up: (
   align-items: center;
   justify-content: center;
   .header_button {
+    fill: rgba(29, 161, 242, 1);
     height: 22px;
     width: 22px;
   }
@@ -355,23 +356,38 @@ $breakpoint-up: (
   margin-bottom: 20px;
 }
 .sidemenu_right_article {
-  border-bottom: rgb(239, 243, 244) 1px;
+  border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
   .sidemenu_right_article_content {
     display: flex;
     padding: 12px 16px;
     justify-content: space-between;
+    height: 72px;
   }
 }
-.sidemenu_right_article_button {
+.sidemenu_right_article_button_list {
   display: flex;
   align-items: center;
+}
+.sidemenu_right_article_button_wrap {
+  background-color: rgb(29, 161, 242);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 85px;
+  border: none;
+  border-radius: 50px/50px;
+  .sidemenu_right_article_button {
+    color: white;
+    font-size: 15px;
+  }
 }
 .sidemenu_right_header_wrap {
   display: flex;
   padding: 12px 16px;
-  border-bottom: rgb(239, 243, 244) 1px;
+  border-bottom: solid rgb(239, 243, 244) 1px;
   .sidemenu_right_header {
     align-items: center;
     margin: 0;
@@ -385,6 +401,7 @@ $breakpoint-up: (
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .sidemenu_right_showmore_button_wrap {
   padding: 16px;
