@@ -318,6 +318,31 @@ $breakpoint-up: (
     color: white;
   }
 }
+.sidemenu_left_my_account {
+  position: absolute;
+  bottom: -570px;
+  display: flex;
+  .sidemenu_left_my_account_name_box {
+    display: none;
+    @include mq-up(xl) {
+      display: block;
+    }
+  }
+  .sidemenu_left_my_account_ditails_button_wrap {
+    display: none;
+    @include mq-up(xl) {
+      display: block;
+    }
+    .sidemenu_left_my_account_ditails_button {
+      fill: rgb(15, 20, 25);
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.sidemenu_left_my_account_name {
+  margin: 0;
+}
 
 // sidemenu_right
 
@@ -325,7 +350,7 @@ $breakpoint-up: (
   margin-left: 20px;
   // height: auto;
   width: 298px;
-  height: 100vh;
+  height: auto;
   display: none;
   @include mq-up(md) {
     display: block;
@@ -337,10 +362,9 @@ $breakpoint-up: (
 .sidemenu_right_wrap {
   position: sticky;
   top: 0;
-  height: 100vh;
-  .sidemenu_right {
-    overflow-y: scroll;
-  }
+  // .sidemenu_right {
+  //   overflow-y: scroll;
+  // }
 }
 
 .sidemenu_right_searchbox_wrap {
@@ -393,16 +417,16 @@ $breakpoint-up: (
   align-items: center;
 }
 .sidemenu_right_article_button_wrap {
-  background-color: rgb(29, 161, 242);
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 38px;
   width: 85px;
-  border: none;
+  border: solid rgb(29, 161, 242) 1px;
   border-radius: 50px/50px;
   .sidemenu_right_article_button {
-    color: white;
+    color: rgb(29, 161, 242);
     font-size: 15px;
   }
 }

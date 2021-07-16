@@ -35,18 +35,32 @@ const SidemenuLeft = () => {
       {/* ツイートボタン */}
       <SidemenuLeftTweetButton />
       {/* 自分のアカウント */}
-      <a href="#top">
+      <div className="sidemenu_left_my_account">
         {/* 自分のアカウントアイコン */}
-        <img src="" alt=""></img>
-        <div>
-          <p>{/* 自分のアカウント名 */}</p>
-          <p>{/* 自分のアカウントID  */}</p>
+        <img src="" alt="my_icon"></img>
+        <div className="sidemenu_left_my_account_name_box">
+          <p className="sidemenu_left_my_account_name">
+            {/* 自分のアカウント名 */}test
+          </p>
+          <p className="sidemenu_left_my_account_name">
+            {/* 自分のアカウントID  */}test
+          </p>
         </div>
-        <div>
+        <div className="sidemenu_left_my_account_ditails_button_wrap">
           {/* 詳細ボタン */}
-          <img src="" alt="" />
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="sidemenu_left_my_account_ditails_button"
+          >
+            <g>
+              <circle cx="5" cy="12" r="2"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+              <circle cx="19" cy="12" r="2"></circle>
+            </g>
+          </svg>
         </div>
-      </a>
+      </div>
     </section>
   );
 };
