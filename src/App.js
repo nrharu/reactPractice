@@ -1,4 +1,4 @@
-import SidemenuLeft from "./component/sidemenu_left_.js";
+import SidemenuLeft from "./component/sidemenu_left.js";
 import Main from "./component/main.js";
 import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
@@ -9,9 +9,17 @@ const App = () => {
     <div className="body">
       <Loginform />
       <div className="content">
-        <SidemenuLeft />
+        <div className="sidemenu_left_box_space">
+          <div className="sidemenu_left_wrap">
+            <SidemenuLeft />
+          </div>
+        </div>
         <Main />
-        <SidemenuRight />
+        <div className="sidemenu_right_box_space">
+          <div className="sidemenu_right_wrap">
+            <SidemenuRight />
+          </div>
+        </div>
       </div>
     </div>
   );

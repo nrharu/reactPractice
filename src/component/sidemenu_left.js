@@ -6,6 +6,7 @@ const SidemenuLeft = () => {
     <section className="sidemenu_left">
       {/* <!--ヘッダーアイコン--> */}
       <div>
+        {/* ツイッターのアイコン */}
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -24,15 +25,16 @@ const SidemenuLeft = () => {
       {/* ナビゲーションリスト */}
       <ul>
         <SidemenuLeftNavigationList />
+        <SidemenuLeftNavigationList />
       </ul>
       {/*  */}
       {/*  */}
       {/*  */}
       {/*  */}
       {/* ツイートボタン */}
-      <div>
-        <p>ツイートする</p>
-      </div>
+      <button className="sidemenu_left_tweet_button_wrap">
+        <p className="sidemenu_left_tweet_button">Tweet</p>
+      </button>
       {/* 自分のアカウント */}
       <a href="#top">
         {/* 自分のアカウントアイコン */}
