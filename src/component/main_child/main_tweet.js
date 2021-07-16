@@ -8,7 +8,7 @@ const MainTweet = () => {
   // }
 
   return (
-    <div>
+    <div className="main_tweet_content">
       <div className="main_tweet_textform_box">
         <form>
           {/*onSubmit={handleSubmit}*/}

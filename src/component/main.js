@@ -1,8 +1,6 @@
 import React from "react";
 import MainTweetedList from "./main_child/main_tweeted_list.js";
 import MainTweet from "./main_child/main_tweet.js";
-import SidemenuRight from "./sidemenu_right.js";
-import SidemenuLeft from "./sidemenu_left.js";
 
 const Main = () => {
   return (
@@ -36,8 +34,8 @@ const Main = () => {
           <div className="main_disabled_box">
             {/* ツイートするところ */}
             <div className="main_tweet">
-              <div>
-                <img src="" alt="my_icon" />
+              <div className="main_tweet_my_icon_wrap">
+                <img src="" alt="my_icon" className="main_tweet_my_icon" />
               </div>
               <MainTweet />
             </div>
@@ -79,12 +77,6 @@ const Main = () => {
           <MainTweetedList />
           <MainTweetedList />
           <MainTweetedList />
-        </div>
-        <div className="sidemenu_left_wrap">
-          <SidemenuLeft />
-        </div>
-        <div className="sidemenu_right_wrap">
-          <SidemenuRight />
         </div>
       </main>
     </div>
