@@ -199,11 +199,6 @@ $breakpoint-up: (
   }
 }
 
-.sidemenu_left_twitter_icon {
-  height: 20px;
-  width: 20px;
-}
-
 .navigation_list_icon {
   height: 20px;
   width: 20px;
@@ -275,12 +270,21 @@ $breakpoint-up: (
 
 // sidemenu_left.js
 
+.sidemenu_left_twitter_icon {
+  height: 46px;
+  width: 46px;
+  fill: rgba(29, 161, 242, 1);
+}
 .sidemenu_left_box_space {
   height: auto;
   width: 88px;
+  padding: 0 12px;
   display: none;
   @include mq-up(sm) {
     display: block;
+  }
+  @include mq-up(xl) {
+    width: 251px;
   }
 }
 .sidemenu_left_wrap {
@@ -291,10 +295,27 @@ $breakpoint-up: (
   .sidemenu_left {
     background-color: rgb(210, 210, 250);
     display: none;
+    width: 100%;
     @include mq-up(sm) {
       display: block;
-      width: 88px;
     }
+  }
+}
+.sidemenu_left_tweet_button_wrap {
+  background-color: rgb(29, 161, 242);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 85px;
+  border: none;
+  border-radius: 50px/50px;
+  @include mq-up(xl) {
+    width: 85%;
+    margin-left: 15px;
+  }
+  .sidemenu_left_tweet_button {
+    color: white;
   }
 }
 
