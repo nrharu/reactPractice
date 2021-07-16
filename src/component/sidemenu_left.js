@@ -1,5 +1,6 @@
 import React from "react";
 import SidemenuLeftNavigationList from "./sidemenu_left_child/sidemenu_left_navigation_list.js";
+import SidemenuLeftTweetButton from "./sidemenu_left_child/sidemenu_left_tweet_button.js";
 
 const SidemenuLeft = () => {
   return (
@@ -32,9 +33,7 @@ const SidemenuLeft = () => {
       {/*  */}
       {/*  */}
       {/* ツイートボタン */}
-      <button className="sidemenu_left_tweet_button_wrap">
-        <p className="sidemenu_left_tweet_button">Tweet</p>
-      </button>
+      <SidemenuLeftTweetButton />
       {/* 自分のアカウント */}
       <a href="#top">
         {/* 自分のアカウントアイコン */}

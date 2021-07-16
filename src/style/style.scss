@@ -293,7 +293,7 @@ $breakpoint-up: (
   top: 0;
 
   .sidemenu_left {
-    background-color: rgb(210, 210, 250);
+    // background-color: rgb(210, 210, 250);
     display: none;
     width: 100%;
     @include mq-up(sm) {
@@ -323,8 +323,9 @@ $breakpoint-up: (
 
 .sidemenu_right_box_space {
   margin-left: 20px;
-  height: auto;
+  // height: auto;
   width: 298px;
+  height: 100vh;
   display: none;
   @include mq-up(md) {
     display: block;
