@@ -15,55 +15,32 @@ $breakpoint-up: (
   list-style-type: none;
   box-sizing: border-box;
 }
-// .body {
-//   display: flex;
-//   justify-content: center;
-// }
 .body {
   margin: 0;
   box-sizing: border-box;
-  // width: 100vw;
 }
 .content {
-  // margin: 0 auto;
   width: auto;
   @include mq-up(sm) {
     display: flex;
     justify-content: center;
   }
 }
-// .responsive_box {
-//   display: flex;
-//   width: 100vw;
-//   @include mq-up() {
-//     width: auto;
-//   }
-// }
 
 .loginform {
   display: none;
 }
 .tweet_wrapper {
-  // margin: 0 auto;
   width: 100vw;
   max-width: 598px;
-  // position: relative;
-  // margin-top: 53px;
   margin-left: 0;
   @include mq-up {
     margin-left: 88px;
   }
   @include mq-up(sm) {
     margin-left: 0;
-    // width: calc(100% - 88px);
     width: 100%;
   }
-
-  // margin-left: ;
-  // @include mq-up(sm) {
-  //   // width: calc(100% - );
-  //   margin: 0 auto;
-  // }
 }
 
 // header main.js内
@@ -85,9 +62,6 @@ $breakpoint-up: (
     align-items: center;
     border: solid rgb(239, 243, 244) 1px;
     background-color: white;
-    // @include mq-up(md) {
-    //   transform: translateX(-50px);
-    // }
   }
 }
 .header_title_wrap {
@@ -129,8 +103,6 @@ $breakpoint-up: (
   border-left: solid rgb(239, 243, 244) 1px;
   border-right: solid rgb(239, 243, 244) 1px;
   border-bottom: solid rgb(239, 243, 244) 1px;
-  // @include mq-up(md) {
-  //   transform: translateX(-50px);
   // }
 }
 .main_disabled_box {
@@ -328,45 +300,26 @@ $breakpoint-up: (
 // sidemenu_right
 
 .sidemenu_right_box_space {
+  margin-left: 20px;
   height: auto;
   width: 298px;
-  display: none;
-  @include mq-up(lg) {
-    display: block;
-  }
-}
-.sidemenu_right_wrap {
-  // margin-left: 30px;
-  // position: fixed;
-  // 変更予定箇所
-  // width: 598px;
-  position: sticky;
-  max-width: 598px;
-  top: 0;
-  height: 100vh;
-  // @include mq-up(md) {
-  //   transform: translateX(-50px);
-  // }
   display: none;
   @include mq-up(md) {
     display: block;
   }
-  .sidemenu_right {
-    height: 100vh;
-    overflow-y: scroll;
-    // float: right;
-    // @include mq-up(md) {
-    //   display: block;
-    // width: 298px;
-    //   // transform: translateX(298px);
-    // }
-
-    // @include mq-up(lg) {
-    //   width: 350px;
-    //   // transform: translateX(350px);
-    // }
+  @include mq-up(lg) {
+    width: 350px;
   }
 }
+.sidemenu_right_wrap {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  .sidemenu_right {
+    overflow-y: scroll;
+  }
+}
+
 .sidemenu_right_searchbox_wrap {
   background-color: rgb(239, 243, 244);
   display: flex;
