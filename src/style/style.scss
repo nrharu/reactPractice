@@ -276,6 +276,7 @@ $breakpoint-up: (
   fill: rgba(29, 161, 242, 1);
 }
 .sidemenu_left_box_space {
+  position: relative;
   height: auto;
   width: 88px;
   padding: 0 12px;
@@ -320,7 +321,8 @@ $breakpoint-up: (
 }
 .sidemenu_left_my_account {
   position: absolute;
-  bottom: -570px;
+  // bottom: -570px;
+  top: calc(100vh - 50px);
   display: flex;
   .sidemenu_left_my_account_name_box {
     display: none;
