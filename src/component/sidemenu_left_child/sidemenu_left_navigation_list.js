@@ -9,6 +9,7 @@ import NavigationListIcon7 from "./sidemenu_left_grand_child/navigation_list_ico
 import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_icon_ditails_button";
 
 const SidemenuLeftNavigationList = () => {
+  // サイドメニューのmap関数実装
   const sidemenu_left_navigation_list_names = [
     "ホーム",
     "話題を検索",

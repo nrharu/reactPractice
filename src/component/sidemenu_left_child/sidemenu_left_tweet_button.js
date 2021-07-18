@@ -2,6 +2,7 @@ import React from "react";
 // import SidemenuLeftChangeButton from "./sidemenu_left_grand_child/sidemenu_left_change_button.js";
 
 const SidemenuLeftTweetButton = () => {
+  // サイドメニューのツイッターボタンの実装　screenがうまく動作しない
   // const ViewWidth=navigator.userAgent()
   //   const screen_width = screen.location.width;
   //   const change_style = () => {

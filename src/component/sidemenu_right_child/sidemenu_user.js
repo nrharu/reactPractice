@@ -1,6 +1,7 @@
 import React from "react";
-// import Icon from "../../../img/rabbit_icon_1.png";
+import Icon from "img/rabbit_icon_1.png";
 const SidemenuUser = () => {
+  // 画像のインポートエラー
   const user_name_list = [
     "rabbit",
     "lapin",
@@ -14,7 +15,7 @@ const SidemenuUser = () => {
     "g",
   ];
   // const user_icon_list = [
-  //   "rabbit_icon_1.png",
+  //   Icon,
   //   "rabbit_icon_2.png",
   //   "rabbit_icon_3.png",
   //   "rabbit_icon_4.png",
@@ -25,6 +26,8 @@ const SidemenuUser = () => {
   //   "squirrel_icon.png",
   //   "dog_icon.png",
   // ];
+  // const_user_icon_list = Icon;
+
   // console.log(user_icon_list);
   const user_ID_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   // console.log(user_ID_list);
@@ -37,7 +40,7 @@ const SidemenuUser = () => {
           className="sidemenu_right_article_account_icon"
           src=""
           // src={user_icon_list[random_number]}
-          // src={Icon}
+          src={Icon}
           alt="おすすめユーザーのアイコン"
         />
         {/* <a href="#top">

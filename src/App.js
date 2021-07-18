@@ -5,6 +5,8 @@ import "./style/style.scss";
 import Loginform from "./component/loginform.js";
 
 const App = () => {
+  // sidemenu_rightとmainのスクロールの連動実装
+
   return (
     <div className="body">
       <Loginform />
