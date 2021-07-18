@@ -82,7 +82,7 @@ const SidemenuRight = () => {
       {/*  */}
       {/*  */}
 
-      {/* ダイレクトメッセージ */}
+      {/* ダイレクトメッセージ
       <div>
         <ul>
           <li>
@@ -98,7 +98,7 @@ const SidemenuRight = () => {
             <div></div>
           </li>
         </ul>
-      </div>
+      </div> */}
       <Footer />
     </section>
   );
