@@ -3,11 +3,11 @@ import Icon1 from "../../img/user_icon_rabbit_1.png";
 import Icon2 from "../../img/user_icon_rabbit_2.png";
 import Icon3 from "../../img/user_icon_rabbit_3.png";
 import Icon4 from "../../img/user_icon_rabbit_4.png";
-import Icon5 from "../../img/user_icon_whale.png";
+import Icon5 from "../../img/user_icon_banana.png";
 import Icon6 from "../../img/user_icon_ika.png";
-import Icon7 from "../../img/user_icon_cow.png";
+import Icon7 from "../../img/user_icon_risu.png";
 import Icon8 from "../../img/user_icon_cheetah.png";
-import Icon9 from "../../img/user_icon_alpaca.png";
+import Icon9 from "../../img/user_icon_seahorse.png";
 import Icon10 from "../../img/user_icon_wolf.png";
 
 const SidemenuUser = () => {
