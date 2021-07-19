@@ -38,11 +38,13 @@ const App = () => {
             <SidemenuLeft />
           </div>
         </div>
+        {/*  */}
         <Main />
         <div
           className="sidemenu_right_box_space"
           id="sidemenu_right_gearing_scroll"
         >
+          {/*  */}
           <div className="sidemenu_right_wrap">
             <SidemenuRight />
           </div>

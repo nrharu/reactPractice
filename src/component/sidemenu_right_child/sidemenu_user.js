@@ -1,5 +1,15 @@
 import React from "react";
-// import Icon from "../../img/rabbit_icon_1.png";
+import Icon1 from "../../img/user_icon_rabbit_1.png";
+import Icon2 from "../../img/user_icon_rabbit_2.png";
+import Icon3 from "../../img/user_icon_rabbit_3.png";
+import Icon4 from "../../img/user_icon_rabbit_4.png";
+import Icon5 from "../../img/user_icon_whale.png";
+import Icon6 from "../../img/user_icon_ika.png";
+import Icon7 from "../../img/user_icon_cow.png";
+import Icon8 from "../../img/user_icon_cheetah.png";
+import Icon9 from "../../img/user_icon_alpaca.png";
+import Icon10 from "../../img/user_icon_wolf.png";
+
 const SidemenuUser = () => {
   // 画像のインポートエラー
   const user_name_list = [
@@ -14,18 +24,19 @@ const SidemenuUser = () => {
     "f",
     "g",
   ];
-  // const user_icon_list = [
-  //   Icon,
-  //   "rabbit_icon_2.png",
-  //   "rabbit_icon_3.png",
-  //   "rabbit_icon_4.png",
-  //   "rabbit_icon_5.png",
-  //   "rabbit_icon_6.png",
-  //   "rabbit_icon_7.png",
-  //   "cheetah_icon.png",
-  //   "squirrel_icon.png",
-  //   "dog_icon.png",
-  // ];
+  const user_icon_list = [
+    Icon1,
+    Icon2,
+    Icon3,
+    Icon3,
+    Icon4,
+    Icon5,
+    Icon6,
+    Icon7,
+    Icon8,
+    Icon9,
+    Icon10,
+  ];
   // const_user_icon_list = Icon;
 
   // console.log(user_icon_list);
@@ -38,9 +49,8 @@ const SidemenuUser = () => {
       <div className="sidemenu_right_article_content">
         <img
           className="sidemenu_right_article_account_icon"
-          src=""
-          // src={user_icon_list[random_number]}
-          // src={Icon}
+          // src=""
+          src={user_icon_list[random_number]}
           alt="おすすめユーザーのアイコン"
         />
         {/* <a href="#top">
