@@ -18,7 +18,7 @@ const SidemenuLeft = () => {
       {/*  */}
       {/*  */}
       {/* ナビゲーションリスト */}
-      <ul>
+      <ul className="sidmenu_left_navigation_list">
         <SidemenuLeftNavigationList />
         <SidemenuLeftNavigationList />
       </ul>
