@@ -4,7 +4,7 @@ import MainTweet from "./main_child/main_tweet.js";
 
 const Main = () => {
   return (
-    <div className="tweet_wrapper">
+    <div className="tweet_wrapper" id="main_gearing_scroll">
       {/* 固定ヘッダー */}
       <div className="header_wrap">
         <header className="header">

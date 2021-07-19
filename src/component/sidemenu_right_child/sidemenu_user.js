@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "img/rabbit_icon_1.png";
+// import Icon from "../../img/rabbit_icon_1.png";
 const SidemenuUser = () => {
   // 画像のインポートエラー
   const user_name_list = [
@@ -40,7 +40,7 @@ const SidemenuUser = () => {
           className="sidemenu_right_article_account_icon"
           src=""
           // src={user_icon_list[random_number]}
-          src={Icon}
+          // src={Icon}
           alt="おすすめユーザーのアイコン"
         />
         {/* <a href="#top">
