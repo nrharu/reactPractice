@@ -3,10 +3,17 @@ import Main from "./component/main.js";
 import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
 import Loginform from "./component/loginform.js";
+import { useEffect } from "react";
 // import React, { useRef, useEffect } from "react";
 
 const App = () => {
   // sidemenu_rightとmainのスクロールの連動実装
+
+  // const sampleRef = useRef(null);
+  // useEffect(() => {
+  //   sampleRef.current.focus();
+  // }, []);
+
   // export const Intersecting = () => {
   //   const ref = useRef(null);
   //   useEffrct(() => {
