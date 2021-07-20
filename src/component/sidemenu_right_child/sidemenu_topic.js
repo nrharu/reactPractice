@@ -28,11 +28,15 @@ const SidemenuTopic = () => {
   ];
   const random_number = Math.floor(Math.random() * 10);
   return (
-    <article className="sidemenu_right_article">
-      <div className="sidemenu_right_article_content">
-        <div>
-          <div>{topic_name_list[random_number]}</div>
-          <div>{topic_genre_list[random_number]}</div>
+    <article className="sidemenu_right_topic_wrap">
+      <div className="sidemenu_right_topic">
+        <div className="sidemenu_right_topic_name_wrap">
+          <div className="sidemenu_right_topic_name">
+            {topic_name_list[random_number]}
+          </div>
+          <div className="sidemenu_right_topic_genre">
+            {topic_genre_list[random_number]}
+          </div>
         </div>
         <div className="sidemenu_right_article_button_list">
           <button className="sidemenu_right_article_button_wrap">
@@ -40,7 +44,6 @@ const SidemenuTopic = () => {
           </button>
           <div className="sidemenu_right_article_close_icon_wrap">
             {/* クローズアイコン */}
-
             <SidemenuTopicCloseIcon />
           </div>
         </div>

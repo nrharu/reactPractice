@@ -372,6 +372,8 @@ $breakpoint-up: (
   // }
 }
 
+// sidemenu_searchbox
+
 .sidemenu_right_searchbox_wrap {
   background-color: rgb(239, 243, 244);
   display: flex;
@@ -392,25 +394,33 @@ $breakpoint-up: (
     font-size: 16px;
   }
 }
-// .sidemenu_right_doingnow {
-//   background-color: rgb(239, 243, 244);
-// }
-// .sidemenu_right_user {
-//   background-color: rgb(239, 243, 244);
-// }
-// .sidemenu_right_topic {
-//   background-color: rgb(239, 243, 244);
-// }
 .sidemenu_right_article_list {
   background-color: rgb(247, 249, 249);
   border-radius: 15px;
   margin-bottom: 20px;
 }
-.sidemenu_right_article {
+
+// sidemenu_right_doingnow
+
+.sidemenu_right_doingnow_wrap {
+  .sidemenu_right_doing_now {
+    // display: flex;
+    padding: 12px 16px;
+    // justify-content: space-between;
+    height: 72px;
+  }
+}
+.sidemenu_right_doing_now_text {
+  margin: 0;
+}
+
+// sidemenu_right_user
+
+.sidmenu_right_user_wrap {
   border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
-  .sidemenu_right_article_content {
+  .sidmenu_right_user {
     display: flex;
     padding: 12px 16px;
     justify-content: space-between;
@@ -444,18 +454,62 @@ $breakpoint-up: (
     margin: 0;
   }
 }
-.sidemenu_right_article_account_icon {
+.sidemenu_right_user_icon_wrap {
   width: 48px;
   height: 48px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  border-radius: 50px 50px;
+  .sidemenu_right_user_icon {
+    width: 30px;
+    height: 30px;
+  }
 }
-.sidemenu_right_article_name_wrap {
+.sidemenu_right_user_content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
 }
 .sidemenu_right_showmore_button_wrap {
   padding: 16px;
+}
+.sidemenu_right_user_name {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+.sidemenu_right_user_ID {
+  font-size: 15px;
+  color: rgb(83, 100, 113);
+  margin: 0;
+}
+
+// sidemenu_right_topic
+
+.sidemenu_right_topic_wrap {
+  border-bottom: solid rgb(239, 243, 244) 1px;
+  margin: 0;
+  padding: 0;
+  .sidemenu_right_topic {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    height: 72px;
+  }
+}
+.sidemenu_right_topic_name {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+}
+.sidemenu_right_topic_genre {
+  font-size: 15px;
+  color: rgb(83, 100, 113);
+  margin: 0;
 }
 .sidemenu_right_article_close_icon_wrap {
   width: 30px;

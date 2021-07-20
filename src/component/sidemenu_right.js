@@ -26,10 +26,10 @@ const SidemenuRight = () => {
       {/*  */}
 
       {/* いまどうしてる？ */}
-      <div className="sidemenu_right_doingnow sidemenu_right_article_list">
-        <ul className="sidemenu_right_article">
+      <div className="sidemenu_right_doingnow_wrap sidemenu_right_article_list">
+        <ul className="sidemenu_right_doing_now">
           <li>
-            <p>いまどうしてる？</p>
+            <p className="sidemenu_right_doing_now_text">いまどうしてる？</p>
           </li>
           <li>{/* ニュース */}</li>
           <li>{/* 広告 */}</li>
