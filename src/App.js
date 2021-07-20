@@ -3,25 +3,15 @@ import Main from "./component/main.js";
 import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
 import Loginform from "./component/loginform.js";
-import { useEffect } from "react";
+// import { useRef } from "react";
+// import { useEffect } from "react";
 // import React, { useRef, useEffect } from "react";
 
 const App = () => {
   // sidemenu_rightとmainのスクロールの連動実装
 
-  // const sampleRef = useRef(null);
-  // useEffect(() => {
-  //   sampleRef.current.focus();
-  // }, []);
-
-  // export const Intersecting = () => {
-  //   const ref = useRef(null);
-  //   useEffrct(() => {
-  //     if (ref.current) {
-  //     }
-  //   }, []);
-  //   return <div ref={ref} className="target_dom"></div>;
-  // };
+  // const sidemenu_right_gearing_scroll = useRef(null);
+  // const main_gearing_scroll = useRef(null);
 
   // const right_scroll = document.getByElementId("sidmenu_right_gearing_scroll");
   // const main_scroll = document.getByElementById("main_gearing_scroll");
@@ -40,10 +30,7 @@ const App = () => {
         </div>
         {/*  */}
         <Main />
-        <div
-          className="sidemenu_right_box_space"
-          id="sidemenu_right_gearing_scroll"
-        >
+        <div className="sidemenu_right_box_space">
           {/*  */}
           <div className="sidemenu_right_wrap">
             <SidemenuRight />

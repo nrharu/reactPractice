@@ -8,7 +8,7 @@ const SidemenuLeft = () => {
   return (
     <section className="sidemenu_left">
       {/* <!--ヘッダーアイコン--> */}
-      <div>
+      <div className="sidemenu_left_twitter_icon_wrap">
         {/* ツイッターのアイコン */}
         <SidemenuLeftNavigationTwitterIcon />
       </div>
@@ -18,7 +18,7 @@ const SidemenuLeft = () => {
       {/*  */}
       {/*  */}
       {/* ナビゲーションリスト */}
-      <ul className="sidmenu_left_navigation_list">
+      <ul className="sidmenu_left_navigation_list_wrap">
         <SidemenuLeftNavigationList />
         <SidemenuLeftNavigationList />
       </ul>
@@ -27,18 +27,26 @@ const SidemenuLeft = () => {
       {/*  */}
       {/*  */}
       {/* ツイートボタン */}
-      <SidemenuLeftTweetButton />
+      <div className="sidemenu_left_tweet_button_wrap">
+        <SidemenuLeftTweetButton />
+      </div>
       {/* 自分のアカウント */}
-      <div className="sidemenu_left_my_account">
+      <div className="sidemenu_left_my_account_wrap">
         {/* 自分のアカウントアイコン */}
-        <img src="" alt="my_icon"></img>
-        <div className="sidemenu_left_my_account_name_box">
-          <p className="sidemenu_left_my_account_name">
-            {/* 自分のアカウント名 */}test
-          </p>
-          <p className="sidemenu_left_my_account_name">
-            {/* 自分のアカウントID  */}test
-          </p>
+        <div className="sidemenu_left_my_account">
+          <img
+            src=""
+            alt="my_icon"
+            className="sidemenu_left_my_account_icon"
+          ></img>
+          <div className="sidemenu_left_my_account_name_box">
+            <p className="sidemenu_left_my_account_name">
+              {/* 自分のアカウント名 */}test
+            </p>
+            <p className="sidemenu_left_my_account_name">
+              {/* 自分のアカウントID  */}test
+            </p>
+          </div>
         </div>
         <div className="sidemenu_left_my_account_ditails_button_wrap">
           {/* 詳細ボタン */}

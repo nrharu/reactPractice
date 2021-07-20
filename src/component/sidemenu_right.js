@@ -29,7 +29,7 @@ const SidemenuRight = () => {
       <div className="sidemenu_right_doingnow_wrap sidemenu_right_article_list">
         <ul className="sidemenu_right_doing_now">
           <li>
-            <p className="sidemenu_right_doing_now_text">いまどうしてる？</p>
+            <p className="sidemenu_right_doing_now_header">いまどうしてる？</p>
           </li>
           <li>{/* ニュース */}</li>
           <li>{/* 広告 */}</li>
@@ -40,8 +40,8 @@ const SidemenuRight = () => {
         </ul>
       </div>
       <div className="sidemenu_right_user sidemenu_right_article_list">
-        <div className="sidemenu_right_header_wrap">
-          <p className="sidemenu_right_header">おすすめユーザー</p>
+        <div className="sidemenu_right_user_header_wrap">
+          <p className="sidemenu_right_user_header">おすすめユーザー</p>
         </div>
         <SidemenuUser />
         <SidemenuUser />
@@ -55,8 +55,8 @@ const SidemenuRight = () => {
       </div>
       {/* おすすめのトピック */}
       <div className="sidemenu_right_topic sidemenu_right_article_list">
-        <div className="sidemenu_right_header_wrap">
-          <p className="sidemenu_right_header">おすすめトピック</p>
+        <div className="sidemenu_right_topic_header_wrap">
+          <p className="sidemenu_right_topic_header">おすすめトピック</p>
         </div>
         <SidemenuTopic />
         <SidemenuTopic />

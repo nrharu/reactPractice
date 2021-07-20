@@ -63,9 +63,11 @@ const SidemenuLeftNavigationList = () => {
   // console.log(sidemenu_left_navigation());
   return (
     <li>
-      <a href="#top">
+      <a href="#top" className="sidemenu_left_navigation_list">
         <div>{sidemenu_left_navigation()[1]}</div>
-        <p>{sidemenu_left_navigation()[0]}</p>
+        <p className="sidemenu_left_navigation_list_name">
+          {sidemenu_left_navigation()[0]}
+        </p>
         {/* <div>{sidemenu_left_navigation_icon()}</div>
         <p>{sidemenu_left_navigation_name()}</p> */}
       </a>

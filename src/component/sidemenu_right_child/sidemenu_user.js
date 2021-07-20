@@ -78,9 +78,11 @@ const SidemenuUser = () => {
             </p>
           </div>
         </div>
-        <button className="sidemenu_right_article_button_wrap">
-          <p className="sidemenu_right_article_button">Follow</p>
-        </button>
+        <div className="sidemenu_right_user_button_wrap">
+          <button className="sidemenu_right_article_button_wrap">
+            <p className="sidemenu_right_article_button">Follow</p>
+          </button>
+        </div>
       </div>
     </article>
   );
