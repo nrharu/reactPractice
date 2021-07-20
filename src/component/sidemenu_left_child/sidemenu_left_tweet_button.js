@@ -7,6 +7,7 @@ const SidemenuLeftTweetButton = () => {
   // console.log(ViewWidth);
   const screen_width = window.screen.width;
   console.log(screen_width);
+  // window.onresize=screen_width
   const change_style = () => {
     if (screen_width <= 1268) {
       // return <SidemenuLeftChangeButton />;
@@ -16,12 +17,11 @@ const SidemenuLeftTweetButton = () => {
       console.log(<p>test</p>);
     }
   };
-  // console.log(change_style);
-  // console.log(chenge_style());
   return (
     <button className="sidemenu_left_tweet_button_wrap">
       {/* <div className="sidemenu_left_tweet_button">test</div> */}
       <div className="sidemenu_left_tweet_button">{change_style}</div>
+      <p>{screen_width}</p>
     </button>
   );
 };
