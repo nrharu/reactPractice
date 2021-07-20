@@ -310,13 +310,16 @@ $breakpoint-up: (
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 38px;
-  width: 85px;
+
+  height: 46px;
+  width: 46px;
   border: none;
   border-radius: 50px/50px;
   @include mq-up(xl) {
     width: 85%;
     margin-left: 15px;
+    height: 38px;
+    width: 85px;
   }
   .sidemenu_left_tweet_button {
     color: white;
@@ -357,6 +360,7 @@ $breakpoint-up: (
   width: 298px;
   height: auto;
   display: none;
+
   @include mq-up(md) {
     display: block;
   }
@@ -367,9 +371,6 @@ $breakpoint-up: (
 .sidemenu_right_wrap {
   position: sticky;
   top: 0;
-  // .sidemenu_right {
-  //   overflow-y: scroll;
-  // }
 }
 
 // sidemenu_searchbox

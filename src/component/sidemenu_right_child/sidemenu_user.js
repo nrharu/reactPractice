@@ -53,7 +53,7 @@ const SidemenuUser = () => {
   ];
   // console.log(user_ID_list);
   const random_number = Math.floor(Math.random() * 10);
-  console.log(random_number);
+  // console.log(random_number);
   return (
     <article className="sidmenu_right_user_wrap">
       <div className="sidmenu_right_user">

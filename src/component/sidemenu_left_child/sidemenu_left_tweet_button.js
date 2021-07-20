@@ -9,9 +9,11 @@ const SidemenuLeftTweetButton = () => {
   console.log(screen_width);
   const change_style = () => {
     if (screen_width <= 1268) {
-      return <SidemenuLeftChangeButton />;
+      // return <SidemenuLeftChangeButton />;
+      console.log(<SidemenuLeftChangeButton />);
     } else {
-      return "Tweet";
+      // return "<p>text</p>";
+      console.log(<p>test</p>);
     }
   };
   // console.log(change_style);

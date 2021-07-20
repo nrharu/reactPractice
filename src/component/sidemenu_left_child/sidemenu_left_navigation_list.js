@@ -60,7 +60,7 @@ const SidemenuLeftNavigationList = () => {
   // const result = sidemenu_left_navigation_list.map(() => {
 
   // });
-  console.log(sidemenu_left_navigation());
+  // console.log(sidemenu_left_navigation());
   return (
     <li>
       <a href="#top">
