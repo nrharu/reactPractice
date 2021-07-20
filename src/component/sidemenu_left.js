@@ -43,8 +43,8 @@ const SidemenuLeft = () => {
             <p className="sidemenu_left_my_account_name">
               {/* 自分のアカウント名 */}test
             </p>
-            <p className="sidemenu_left_my_account_name">
-              {/* 自分のアカウントID  */}test
+            <p className="sidemenu_left_my_account_ID">
+              {/* 自分のアカウントID  */}@test
             </p>
           </div>
         </div>

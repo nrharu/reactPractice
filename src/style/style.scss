@@ -370,6 +370,16 @@ $breakpoint-up: (
     @include mq-up(xl) {
       display: block;
     }
+    .sidemenu_left_my_account_name {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .sidemenu_left_my_account_ID {
+      font-size: 15px;
+      color: rgb(83, 100, 113);
+      margin: 0;
+    }
   }
   .sidemenu_left_my_account_icon {
     width: 40px;
@@ -522,6 +532,11 @@ $breakpoint-up: (
 }
 .sidemenu_right_showmore_button_wrap {
   padding: 16px;
+  .sidemenu_right_showmore_button {
+    font-size: 15px;
+    color: rgba(29, 161, 242, 1);
+    text-decoration: none;
+  }
 }
 .sidemenu_right_user_name {
   font-size: 15px;
