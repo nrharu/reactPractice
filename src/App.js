@@ -8,11 +8,17 @@ import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu
 // import { useEffect } from "react";
 // import React, { useRef, useEffect } from "react";
 
-const App = () => {
+const App = (props) => {
   // sidemenu_rightとmainのスクロールの連動実装
 
-  // const sidemenu_right_gearing_scroll = useRef(null);
-  // const main_gearing_scroll = useRef(null);
+  const sidemenu_right_gearing_scroll = useRef(null);
+  const main_gearing_scroll = useRef(null);
+  const sidemenu_right_gearing_scroll_dom =
+    sidemenu_right_gearing_scroll.current;
+  const main_gearing_scroll_dom = main_gearing_scroll.current;
+  main_gearing_scroll_dom.addEventlistener("scloll", () => {
+    sidemenu_right_gearing_scroll_dom = main_gearing_scroll_dom.scrollTop;
+  });
 
   // const right_scroll = document.getByElementId("sidmenu_right_gearing_scroll");
   // const main_scroll = document.getByElementById("main_gearing_scroll");
@@ -30,8 +36,13 @@ const App = () => {
           </div>
         </div>
         {/*  */}
-        <Main />
-        <div className="sidemenu_right_box_space">
+        <div className="main_wrap" ref={main_gearing_scroll}>
+          <Main />
+        </div>
+        <div
+          className="sidemenu_right_box_space"
+          ref={sidemenu_right_gearing_scroll}
+        >
           {/*  */}
           <div className="sidemenu_right_searchbox_sticky">
             <div className="sidemenu_right_searchbox_wrap">

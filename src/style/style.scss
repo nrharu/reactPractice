@@ -26,11 +26,7 @@ $breakpoint-up: (
     justify-content: center;
   }
 }
-
-.loginform {
-  display: none;
-}
-.tweet_wrapper {
+.main_wrap {
   width: 100vw;
   max-width: 598px;
   margin-left: 0;
@@ -41,6 +37,21 @@ $breakpoint-up: (
     margin-left: 0;
     width: 100%;
   }
+}
+.loginform {
+  display: none;
+}
+.tweet_wrapper {
+  width: 100%;
+  // max-width: 598px;
+  // margin-left: 0;
+  // @include mq-up {
+  //   margin-left: 88px;
+  // }
+  // @include mq-up(sm) {
+  //   margin-left: 0;
+  //   width: 100%;
+  // }
 }
 
 // header main.js内
@@ -434,6 +445,7 @@ $breakpoint-up: (
   height: 53px;
   z-index: 1;
   top: 0;
+  background-color: white;
 }
 .sidemenu_right_searchbox_wrap {
   background-color: rgb(239, 243, 244);
