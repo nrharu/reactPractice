@@ -42,7 +42,7 @@ const MainTweetedListFunctionList = () => {
           {/* カウント数 */}x
         </p>
       </li>
-      <li className="mmain_tweeted_list_function">
+      <li className="main_tweeted_list_function">
         {/* 共有アイコン */}
         <div className="main_tweeted_list_icon_wrap">
           <MainTweetedListShareIcon />
