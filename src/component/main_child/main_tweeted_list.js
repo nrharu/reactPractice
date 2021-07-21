@@ -1,9 +1,6 @@
 import React from "react";
 import MainTweetTime from "./main_grand_child/main_tweetTime.js";
-import MainTweetedListCommentIcon from "./main_grand_child_icon/main_tweeted_list_comment_icon.js";
-import MainTweetedListGoodIcon from "./main_grand_child_icon/main_tweeted_list_good_icon.js";
-import MainTweetedListShareIcon from "./main_grand_child_icon/main_tweeted_list_share_icon.js";
-import MainTweetedListRetweetIcon from "./main_grand_child_icon/main_tweeted_list_retweet_icon.js";
+import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list";
 
 const MainTweetedList = () => {
   return (
@@ -20,26 +17,7 @@ const MainTweetedList = () => {
           </div>
         </div>
         {/* いいねリツイートなどリスト */}
-        <ul className="main_tweeted_list_icon_list">
-          <li>
-            {/* コメントアイコン */}
-            <MainTweetedListCommentIcon />
-            <div>{/* カウント数 */}</div>
-          </li>
-          <li>
-            {/* リツイートアイコン*/}
-
-            <MainTweetedListRetweetIcon />
-          </li>
-          <li>
-            {/* いいねアイコン */}
-            <MainTweetedListGoodIcon />
-          </li>
-          <li>
-            {/* 共有アイコン */}
-            <MainTweetedListShareIcon />
-          </li>
-        </ul>
+        <MainTweetedListFunctionList />
       </div>
     </article>
   );

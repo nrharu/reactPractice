@@ -58,9 +58,11 @@ const MainTweet = () => {
           </li>
         </ul>
         {/* ツイートボタン */}
-        <button className="main_tweet_submit_button_wrap">
-          <p className="main_tweet_submit_button">Tweet</p>
+        {/* <div className="main_tweet_submit_button_wrap"> */}
+        <button className="main_tweet_submit_button">
+          <p className="main_tweet_submit_button_text">Tweet</p>
         </button>
+        {/* </div> */}
       </div>
     </div>
   );

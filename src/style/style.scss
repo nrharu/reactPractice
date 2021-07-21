@@ -26,6 +26,8 @@ $breakpoint-up: (
     justify-content: center;
   }
 }
+// ホバーカーソル変更させる要素
+
 .main_wrap {
   width: 100vw;
   max-width: 598px;
@@ -130,6 +132,7 @@ $breakpoint-up: (
   display: none;
   @include mq-up(sm) {
     display: flex;
+    padding: 0 16px;
   }
   @include mq-up() {
     width: auto;
@@ -193,19 +196,29 @@ $breakpoint-up: (
   }
 }
 .main_tweet_icon_list {
-  margin-left: 10px;
   fill: rgb(126, 126, 248);
+  border-radius: 50px/50px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
 }
-.main_tweet_submit_button_wrap {
+// .main_tweet_submit_button_wrap {
+// }
+.main_tweet_submit_button {
   background-color: rgb(29, 161, 242);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 38px;
-  width: 85px;
+  width: 120px;
   border: none;
   border-radius: 50px/50px;
-  .main_tweet_submit_button {
+  .main_tweet_submit_button_text {
     color: white;
   }
 }
@@ -497,6 +510,10 @@ $breakpoint-up: (
   border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
   .sidmenu_right_user {
     display: flex;
     padding: 12px 16px;
@@ -517,6 +534,10 @@ $breakpoint-up: (
   width: 79px;
   border: solid rgb(29, 161, 242) 1px;
   border-radius: 50px/50px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
   .sidemenu_right_article_button {
     color: rgb(29, 161, 242);
     font-size: 15px;
@@ -542,6 +563,9 @@ $breakpoint-up: (
   align-items: center;
   background-color: burlywood;
   border-radius: 50px 50px;
+  &:hover {
+    background-color: rgba(26, 26, 26, 0.15);
+  }
   .sidemenu_right_user_icon {
     width: 30px;
     height: 30px;
@@ -554,7 +578,11 @@ $breakpoint-up: (
   align-items: center;
 }
 .sidemenu_right_showmore_button_wrap {
+  cursor: pointer;
   padding: 16px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
   .sidemenu_right_showmore_button {
     font-size: 15px;
     color: rgba(29, 161, 242, 1);
@@ -593,6 +621,10 @@ $breakpoint-up: (
   border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
   .sidemenu_right_topic {
     display: flex;
     padding: 12px 16px;
@@ -616,6 +648,11 @@ $breakpoint-up: (
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
+  border-radius: 50px 50px;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
   .sidemenu_right_article_close_icon {
     width: 16px;
     height: 16px;
