@@ -313,7 +313,7 @@ $breakpoint-up: (
     }
   }
 }
-.sidmenu_left_navigation_list_wrap {
+.sidemenu_left_navigation_list_wrap {
   padding: 0;
   .sidemenu_left_navigation_list {
     display: flex;
@@ -405,6 +405,9 @@ $breakpoint-up: (
 
 // sidemenu_right
 
+.sidemenu_right {
+  padding-top: 16px;
+}
 .sidemenu_right_box_space {
   margin-left: 20px;
   // height: auto;
@@ -421,11 +424,17 @@ $breakpoint-up: (
 }
 .sidemenu_right_wrap {
   position: sticky;
-  top: 0;
+  top: 53px;
 }
 
 // sidemenu_searchbox
 
+.sidemenu_right_searchbox_sticky {
+  position: sticky;
+  height: 53px;
+  z-index: 1;
+  top: 0;
+}
 .sidemenu_right_searchbox_wrap {
   background-color: rgb(239, 243, 244);
   display: flex;
@@ -434,6 +443,7 @@ $breakpoint-up: (
   margin-bottom: 50px;
   border-radius: 60px/50px;
   margin: 5px 0;
+  position: sticky;
   .sidemenu_right_searchbox_icon {
     height: 20px;
     width: 20px;
@@ -460,6 +470,7 @@ $breakpoint-up: (
     padding: 12px 16px;
     // justify-content: space-between;
     height: 72px;
+    margin: 0 0 16px 0;
   }
 }
 .sidemenu_right_doing_now_header {

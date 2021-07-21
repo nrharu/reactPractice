@@ -3,6 +3,7 @@ import Main from "./component/main.js";
 import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
 import Loginform from "./component/loginform.js";
+import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 // import { useRef } from "react";
 // import { useEffect } from "react";
 // import React, { useRef, useEffect } from "react";
@@ -32,6 +33,16 @@ const App = () => {
         <Main />
         <div className="sidemenu_right_box_space">
           {/*  */}
+          <div className="sidemenu_right_searchbox_sticky">
+            <div className="sidemenu_right_searchbox_wrap">
+              <SidemenuRightSearchboxIcon />
+              <input
+                type="search"
+                placeholder="キーワード検索"
+                className="sidemenu_right_searchbox"
+              ></input>
+            </div>
+          </div>
           <div className="sidemenu_right_wrap">
             <SidemenuRight />
           </div>

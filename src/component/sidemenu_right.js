@@ -2,29 +2,28 @@ import React from "react";
 import SidemenuUser from "./sidemenu_right_child/sidemenu_user.js";
 import SidemenuTopic from "./sidemenu_right_child/sidemenu_topic.js";
 import Footer from "./footer.js";
-import SidemenuRightSearchboxIcon from "./sidemenu_right_child/sidemnu_right_searchbox_icon.js";
+// import SidemenuRightSearchboxIcon from "./sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 
 const SidemenuRight = () => {
   return (
     <section className="sidemenu_right">
       {/*  */}
       {/* 検索欄 */}
-      <div className="sidemenu_right_">
-        <div className="sidemenu_right_searchbox_wrap">
-          <SidemenuRightSearchboxIcon />
-          <input
-            type="search"
-            placeholder="キーワード検索"
-            className="sidemenu_right_searchbox"
-          ></input>
-        </div>
-      </div>
       {/*  */}
       {/*  */}
       {/*  */}
       {/*  */}
       {/*  */}
-
+      {/* <div className="sidemenu_right_searchbox_sticky">
+          <div className="sidemenu_right_searchbox_wrap">
+            <SidemenuRightSearchboxIcon />
+            <input
+              type="search"
+              placeholder="キーワード検索"
+              className="sidemenu_right_searchbox"
+            ></input>
+          </div>
+        </div> */}
       {/* いまどうしてる？ */}
       <div className="sidemenu_right_doingnow_wrap sidemenu_right_article_list">
         <ul className="sidemenu_right_doing_now">
