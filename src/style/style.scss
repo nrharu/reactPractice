@@ -272,7 +272,7 @@ $breakpoint-up: (
       height: 100%;
       border: none;
       border-radius: 50px 50px;
-      background-color: none;
+      background-color: white;
       &:hover {
         background-color: rgba(224, 36, 94, 0.1);
       }
@@ -311,6 +311,9 @@ $breakpoint-up: (
   border-radius: 50px 50px;
   &:hover {
     background-color: rgba(224, 36, 94, 0.1);
+  }
+  > .main_tweeted_list_function_count_comment {
+    color: rgba(29, 161, 242, 1);
   }
   .main_tweeted_list_icon {
     height: 20px;
