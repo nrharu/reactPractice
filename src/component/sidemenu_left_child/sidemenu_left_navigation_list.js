@@ -20,10 +20,13 @@ const SidemenuLeftNavigationList = () => {
     ["Profile", <NavigationListIcon7 />],
     ["More", <NavigationListIcon8 />],
   ];
+  navigation_name = () => {
+    for (i = 1; i = sidemenu_left_navigation_list.length;i++)
+  }
 
   return (
     <ul className="sidemenu_left_navigation_list_wrap">
-      <SidemenuLeftNavigationArray />
+      <SidemenuLeftNavigationArray name={navigation_name} icon={navigaiton_icon}/>
     </ul>
   );
 };
