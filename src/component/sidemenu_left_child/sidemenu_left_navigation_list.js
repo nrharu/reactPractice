@@ -11,19 +11,40 @@ import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_ico
 
 const SidemenuLeftNavigationList = () => {
   const sidemenu_left_navigation_list = [
-    ["Home", <NavigationListIcon1 />],
-    ["Explora", <NavigationListIcon2 />],
-    ["Notification", <NavigationListIcon3 />],
-    ["Message", <NavigationListIcon4 />],
-    ["Bookmark", <NavigationListIcon5 />],
-    ["Lists", <NavigationListIcon6 />],
-    ["Profile", <NavigationListIcon7 />],
-    ["More", <NavigationListIcon8 />],
+    [<NavigationListIcon1 />, "Home"],
+    [<NavigationListIcon2 />, "Explora"],
+    [<NavigationListIcon3 />, "Notification"],
+    [<NavigationListIcon4 />, "Message"],
+    [<NavigationListIcon5 />, "Bookmark"],
+    [<NavigationListIcon6 />, "Lists"],
+    [<NavigationListIcon7 />, "Profile"],
+    [<NavigationListIcon8 />, "More"],
   ];
   const list_name = sidemenu_left_navigation_list.map((name) => {
     return <SidemenuLeftNavigationArray name={name} />;
   });
-  return <ul className="sidemenu_left_navigation_list_wrap">{list_name}</ul>;
+
+  const sidemenu_left_navigation_list_name = [
+    "Home",
+    "Explora",
+    "Notification",
+    "Message",
+    "Bookmark",
+    "Lists",
+    "Profile",
+    "More",
+  ];
+  const sidemenu_left_navigation_list_icon = [
+    <NavigationListIcon1 />,
+    <NavigationListIcon2 />,
+    <NavigationListIcon4 />,
+    <NavigationListIcon5 />,
+    <NavigationListIcon6 />,
+    <NavigationListIcon7 />,
+    <NavigationListIcon8 />,
+  ];
+
+  return <li className="sidemenu_left_navigation_list">{list_name}</li>;
 };
 
 export default SidemenuLeftNavigationList;
