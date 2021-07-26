@@ -443,7 +443,19 @@ $breakpoint-up: (
     width: 224px;
   }
   .sidemenu_left_tweet_button_text {
+    display: none;
     color: white;
+    @include mq-up(xl) {
+      display: block;
+    }
+  }
+}
+.sidemenu_left_tweet_change_button_icon {
+  fill: white;
+  width: 22px;
+  height: 22px;
+  @include mq-up(xl) {
+    display: none;
   }
 }
 .sidemenu_left_my_account_wrap {

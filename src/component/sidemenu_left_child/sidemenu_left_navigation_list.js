@@ -30,11 +30,11 @@ const SidemenuLeftNavigationList = () => {
     <NavigationListIcon7 />,
     <NavigationListIcon8 />,
   ];
-  let test_array = [1, 2, 3, 4, 5, 6, 7];
-  let test = test_array.map(function (value) {
-    return value * 2;
-  });
-  console.log(test);
+  // let test_array = [1, 2, 3, 4, 5, 6, 7];
+  // let test = test_array.map((value)=>{
+  //   return value * 2;
+  // });
+  // console.log(test);
   const sidemenu_name_icon = () => {
     // for (let i = 0; i < 9; i++) {
     //   <SidemenuLeftNavigationArray
@@ -42,6 +42,9 @@ const SidemenuLeftNavigationList = () => {
     //     icon={sidemenu_left_navigation_list_icon[i]}
     //   />;
     // }
+    let list_name = sidemenu_left_navigation_list_name.map((value) => {
+      return;
+    });
   };
   console.log(sidemenu_name_icon());
 
