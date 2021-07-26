@@ -8,7 +8,7 @@ const MainTweetedListFunctionList = () => {
     <ul className="main_tweeted_list_function_list">
       <li className="main_tweeted_list_function">
         {/* コメントアイコン */}
-        <div className="main_tweeted_list_icon_wrap">
+        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_comment">
           <MainTweetedListCommentIcon />
         </div>
         <p
@@ -20,7 +20,7 @@ const MainTweetedListFunctionList = () => {
       </li>
       <li className="main_tweeted_list_function">
         {/* リツイートアイコン*/}
-        <div className="main_tweeted_list_icon_wrap">
+        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_retweet">
           <MainTweetedListRetweetIcon />
         </div>
         <p
@@ -32,7 +32,7 @@ const MainTweetedListFunctionList = () => {
       </li>
       <li className="main_tweeted_list_function">
         {/* いいねアイコン */}
-        <div className="main_tweeted_list_icon_wrap">
+        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_good">
           <MainTweetedListGoodIcon />
         </div>
         <p
@@ -44,7 +44,7 @@ const MainTweetedListFunctionList = () => {
       </li>
       <li className="main_tweeted_list_function">
         {/* 共有アイコン */}
-        <div className="main_tweeted_list_icon_wrap">
+        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_share">
           <MainTweetedListShareIcon />
         </div>
         <p
