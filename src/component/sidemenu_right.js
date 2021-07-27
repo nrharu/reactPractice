@@ -7,23 +7,6 @@ import Footer from "./footer.js";
 const SidemenuRight = () => {
   return (
     <section className="sidemenu_right">
-      {/*  */}
-      {/* 検索欄 */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/* <div className="sidemenu_right_searchbox_sticky">
-          <div className="sidemenu_right_searchbox_wrap">
-            <SidemenuRightSearchboxIcon />
-            <input
-              type="search"
-              placeholder="キーワード検索"
-              className="sidemenu_right_searchbox"
-            ></input>
-          </div>
-        </div> */}
       {/* いまどうしてる？ */}
       <div className="sidemenu_right_doingnow_wrap sidemenu_right_article_list">
         <ul className="sidemenu_right_doing_now">
@@ -33,8 +16,11 @@ const SidemenuRight = () => {
           <li>{/* ニュース */}</li>
           <li>{/* 広告 */}</li>
           <li>{/* トレンド*/}</li>
-          <li>
-            <a href="#top"> さらに表示</a>
+          <li className="sidemenu_right_showmore_button_wrap">
+            <a href="#top" className="sidemenu_right_showmore_button">
+              {" "}
+              さらに表示
+            </a>
           </li>
         </ul>
       </div>
@@ -68,29 +54,6 @@ const SidemenuRight = () => {
           </a>
         </div>
       </div>
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-
-      {/* ダイレクトメッセージ
-      <div>
-        <ul>
-          <li>
-            <p>メッセージ</p>
-            <a href="#top">
-              <img src="" alt="" />
-            </a>
-            <a href="#top">
-              <img src="" alt="" />
-            </a>
-          </li>
-          <li>
-            <div></div>
-          </li>
-        </ul>
-      </div> */}
       <p>test</p>
       <p>test</p>
       <p>test</p>

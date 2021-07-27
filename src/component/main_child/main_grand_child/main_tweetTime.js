@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainTweetTime = () => {
+const MainTweetTime = (props) => {
   // const tweet_time = "usagi";
   // console.log(tweet_time);
 
@@ -30,14 +30,14 @@ const MainTweetTime = () => {
     <div className="main_tweeted_list_article_header">
       <div className="main_tweeted_list_article_header_name_wrap">
         <div className="main_tweeted_list_article_header_account_name">
-          アカウント名
+          アカウント名{props.name}
         </div>
         <p className="main_tweeted_list_article_header_ID_time">
-          @id名・{tweet_time()}
+          @id名{props.ID}・{tweet_time()}
         </p>
       </div>
       <div className="main_tweeted_list_article_header_button_wrap">
-        <button className="main_tweetd_list_article_header_button">
+        <div className="main_tweetd_list_article_header_button">
           {/* 詳細ボタン */}
           <svg
             viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ const MainTweetTime = () => {
               <circle cx="19" cy="12" r="2"></circle>
             </g>
           </svg>
-        </button>
+        </div>
       </div>
     </div>
   );

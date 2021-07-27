@@ -14,9 +14,7 @@ const MainTweetedListFunctionList = () => {
         <p
           className="main_tweeted_list_function_count 
             main_tweeted_list_function_count_comment"
-        >
-          {/* カウント数 */}x
-        </p>
+        ></p>
       </li>
       <li className="main_tweeted_list_function">
         {/* リツイートアイコン*/}
@@ -50,9 +48,7 @@ const MainTweetedListFunctionList = () => {
         <p
           className="main_tweeted_list_function_count 
             main_tweeted_list_function_count_share"
-        >
-          {/* カウント数 */}x
-        </p>
+        ></p>
       </li>
     </ul>
   );

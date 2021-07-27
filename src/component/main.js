@@ -3,6 +3,8 @@ import MainTweetedList from "./main_child/main_tweeted_list.js";
 import MainTweet from "./main_child/main_tweet.js";
 
 const Main = () => {
+  // const main_article = <MainTweetedList />;
+  // const new_main_article = new main_article();
   return (
     <div className="tweet_wrapper">
       {/* 固定ヘッダー */}
@@ -45,7 +47,7 @@ const Main = () => {
             <div className="main_margin_box"></div>
             {/* 投稿されたツイート */}
           </div>
-          <MainTweetedList />
+          <MainTweetedList content="" icon="" />
           <MainTweetedList />
           <MainTweetedList />
           <MainTweetedList />

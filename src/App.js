@@ -31,6 +31,9 @@ const App = () => {
   //   right_scroll.scrollTop = main_scroll.scrollTop;
   // });
 
+  // this.test = React.createRef;
+  // this.test2 = React.createRef;
+
   return (
     <div className="body">
       <Loginform />
@@ -43,7 +46,7 @@ const App = () => {
         {/*  */}
         <div
           className="main_wrap"
-          // ref={main_gearing_scroll}
+          // ref={this.test2}
         >
           <Main />
         </div>
@@ -62,7 +65,10 @@ const App = () => {
               ></input>
             </div>
           </div>
-          <div className="sidemenu_right_wrap">
+          <div
+            className="sidemenu_right_wrap"
+            // ref={this.test}
+          >
             <SidemenuRight />
           </div>
         </div>

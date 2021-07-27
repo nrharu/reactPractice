@@ -12,10 +12,12 @@ import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_ico
 const SidemenuLeftNavigationList = () => {
   const sidemenu_left_navigation_list = [
     [
-      <div className="sidemenu_left_navigation_list_icon_wrap">
+      <div className="sidemenu_left_navigation_list_icon_wrap sidemenu_left_navigation_list_icon_wrap_home">
         <NavigationListIcon1 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name">Home</p>,
+      <p className="sidemenu_left_navigation_list_name sidemenu_left_navigation_list_name_wrap_home">
+        Home
+      </p>,
     ],
     [
       <div className="sidemenu_left_navigation_list_icon_wrap">
