@@ -7,29 +7,31 @@ import SidemenuLeftMyAccountDitailsButtonIcon from "./sidemenu_left_child/sideme
 const SidemenuLeft = () => {
   return (
     <section className="sidemenu_left">
-      {/* <!--ヘッダーアイコン--> */}
-      <div className="sidemenu_left_header">
-        {/* ツイッターのアイコン */}
-        <div className="sidemenu_left_twitter_icon_wrap">
-          <SidemenuLeftNavigationTwitterIcon />
+      <div className="sidmenu_left_navigation_wrap">
+        {/* <!--ヘッダーアイコン--> */}
+        <div className="sidemenu_left_header">
+          {/* ツイッターのアイコン */}
+          <div className="sidemenu_left_twitter_icon_wrap">
+            <SidemenuLeftNavigationTwitterIcon />
+          </div>
         </div>
-      </div>
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/* ナビゲーションリスト */}
-      <div className="sidemenu_left_navigation_list_wrap">
-        <SidemenuLeftNavigationList />
-      </div>
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/*  */}
-      {/* ツイートボタン */}
-      <div className="sidemenu_left_tweet_button_wrap">
-        <SidemenuLeftTweetButton />
+        {/*  */}
+        {/*  */}
+        {/*  */}
+        {/*  */}
+        {/*  */}
+        {/* ナビゲーションリスト */}
+        <div className="sidemenu_left_navigation_list_wrap">
+          <SidemenuLeftNavigationList />
+        </div>
+        {/*  */}
+        {/*  */}
+        {/*  */}
+        {/*  */}
+        {/* ツイートボタン */}
+        <div className="sidemenu_left_tweet_button_wrap">
+          <SidemenuLeftTweetButton />
+        </div>
       </div>
       {/* 自分のアカウント */}
       <div className="sidemenu_left_my_account_wrap">

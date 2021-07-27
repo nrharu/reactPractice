@@ -17,7 +17,7 @@ const Loginform = () => {
           <img src="{my_icon}" alt="アカウントアイコン" />
         </li>
       </ul>
-      <button>決定</button>
+      <input type="submit" value="確定" onClick={() => this.doSomething()} />
     </div>
   );
 };

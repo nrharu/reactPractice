@@ -240,6 +240,7 @@ $breakpoint-up: (
   border-radius: 50px/50px;
   .main_tweet_submit_button_text {
     color: white;
+    font-weight: bold;
   }
 }
 
@@ -436,7 +437,9 @@ $breakpoint-up: (
     width: 100%;
     height: 100vh;
     @include mq-up(sm) {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
@@ -547,14 +550,22 @@ $breakpoint-up: (
   }
 }
 .sidemenu_left_my_account_wrap {
-  position: absolute;
-  // bottom: -570px;
+  height: 64px;
+  // position: absolute;
   width: 100%;
-  top: calc(100vh - 50px);
+  // top: calc(100vh - 70px);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-radius: 50px/50px;
+  padding: 0 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
   .sidemenu_left_my_account {
     display: flex;
+    height: 40px;
   }
   .sidemenu_left_my_account_name_box {
     display: none;
@@ -585,8 +596,10 @@ $breakpoint-up: (
     }
     .sidemenu_left_my_account_ditails_button {
       fill: rgb(15, 20, 25);
-      width: 15px;
-      height: 15px;
+      width: 18.75px;
+      height: 18.75px;
+      // border-radius: 50px/50px;
+      // background-color: blue;
     }
   }
 }
