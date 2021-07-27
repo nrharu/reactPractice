@@ -15,12 +15,12 @@ const MainTweet = () => {
 
   return (
     <div className="main_tweet_content">
-      <div className="main_tweet_textform_box">
-        <form>
+      <div className="main_tweet_textform_wrap">
+        <form className="main_tweet_textform">
           {/*onSubmit={handleSubmit}*/}
           <textarea
-            className="main_tweet_textform"
-            placeholder="いまどうしてる？"
+            className="main_tweet_textform_area"
+            placeholder="What's happening？"
             maxLength="140"
           ></textarea>
         </form>

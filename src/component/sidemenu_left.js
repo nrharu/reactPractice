@@ -8,9 +8,11 @@ const SidemenuLeft = () => {
   return (
     <section className="sidemenu_left">
       {/* <!--ヘッダーアイコン--> */}
-      <div className="sidemenu_left_twitter_icon_wrap">
+      <div className="sidemenu_left_header">
         {/* ツイッターのアイコン */}
-        <SidemenuLeftNavigationTwitterIcon />
+        <div className="sidemenu_left_twitter_icon_wrap">
+          <SidemenuLeftNavigationTwitterIcon />
+        </div>
       </div>
       {/*  */}
       {/*  */}
