@@ -672,9 +672,9 @@ $breakpoint-up: (
 .sidemenu_right_doingnow_wrap {
   .sidemenu_right_doing_now {
     // display: flex;
-    padding: 12px 16px;
     // justify-content: space-between;
     // height: 72px;
+    padding: 0;
     margin: 0 0 16px 0;
   }
 }
@@ -682,6 +682,7 @@ $breakpoint-up: (
   margin: 0;
   font-size: 20px;
   font-weight: bold;
+  padding: 12px 16px;
 }
 
 // sidemenu_right_user
@@ -837,4 +838,13 @@ $breakpoint-up: (
     width: 16px;
     height: 16px;
   }
+}
+
+.footer_text {
+  font-size: 13px;
+  color: rgb(83, 100, 113);
+}
+.footer_copy_write {
+  font-size: 13px;
+  color: rgb(83, 100, 113);
 }
