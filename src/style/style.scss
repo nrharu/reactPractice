@@ -368,6 +368,7 @@ $breakpoint-up: (
     justify-content: flex-start;
   }
   .sidemenu_left_twitter_icon {
+    cursor: pointer;
     height: 30px;
     width: 46px;
     fill: rgba(29, 161, 242, 1);
@@ -394,44 +395,86 @@ $breakpoint-up: (
   // position: fixed;
   position: sticky;
   top: 0;
+  height: 100vh;
 
   .sidemenu_left {
     // : rgb(210, 210, 250);
+    padding-top: 15px;
     display: none;
     width: 100%;
+    height: 100vh;
     @include mq-up(sm) {
       display: block;
     }
   }
 }
 .sidemenu_left_navigation_list_wrap {
+  cursor: pointer;
   padding: 0;
+  // height: 500px;
+  height: auto;
   .sidemenu_left_navigation_list {
-    // width: 100%;
-    height: 58px;
+    padding: 0;
   }
 }
-.sidemenu_left_navigation_list_item {
+.sidemenu_left_navigation_list_item_wrap {
+  height: 58.25px;
+  width: 100%;
   display: flex;
   justify-content: center;
-  @include mq-up(xl) {
-    justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    // @include mq-up(sm) {
+    //   background-color: rgba(29, 161, 242, 0.1);
+    //   fill: rgba(29, 161, 242, 1);
+    // }
+    > .sidemenu_left_navigation_list_item {
+      background-color: rgba(29, 161, 242, 0.1);
+      color: rgba(29, 161, 242, 1);
+      fill: rgba(29, 161, 242, 1);
+    }
+  }
+  .sidemenu_left_navigation_list_item {
+    border-radius: 50px/50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50.25px;
+    width: 50.25px;
+    // background-color: yellow;
+    @include mq-up(xl) {
+      justify-content: flex-start;
+      width: 200px;
+      padding-left: 10px;
+    }
   }
 }
-.sidemenu_left_navigation_list_name_icon {
+
+.sidemenu_left_navigation_list_name {
   margin: 0;
   display: none;
+  padding-left: 25px;
   @include mq-up(xl) {
     display: block;
     font-weight: bold;
     font-size: 20px;
   }
 }
-.wrap {
+.sidemenu_left_navigation_list_icon_wrap {
+  display: flex;
+  align-items: center;
+}
+.sidemenu_left_tweet_button_wrap {
   display: flex;
   justify-content: center;
+  &:hover {
+    > .sidemenu_left_tweet_button {
+      background-color: rgb(26, 145, 218);
+    }
+  }
 }
 .sidemenu_left_tweet_button {
+  cursor: pointer;
   background-color: rgb(29, 161, 242);
   display: flex;
   align-items: center;
@@ -453,6 +496,8 @@ $breakpoint-up: (
     color: white;
     @include mq-up(xl) {
       display: block;
+      font-weight: bold;
+      font-size: 15px;
     }
   }
 }

@@ -12,58 +12,58 @@ import NavigationListIcon8 from "./sidemenu_left_grand_child/navigation_list_ico
 const SidemenuLeftNavigationList = () => {
   const sidemenu_left_navigation_list = [
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon1 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Home</p>,
+      <p className="sidemenu_left_navigation_list_name">Home</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon2 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Explora</p>,
+      <p className="sidemenu_left_navigation_list_name">Explora</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon3 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Notification</p>,
+      <p className="sidemenu_left_navigation_list_name">Notification</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon4 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Message</p>,
+      <p className="sidemenu_left_navigation_list_name">Message</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon5 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Bookmark</p>,
+      <p className="sidemenu_left_navigation_list_name">Bookmark</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon6 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Lists</p>,
+      <p className="sidemenu_left_navigation_list_name">Lists</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon7 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">Profile</p>,
+      <p className="sidemenu_left_navigation_list_name">Profile</p>,
     ],
     [
-      <div>
+      <div className="sidemenu_left_navigation_list_icon_wrap">
         <NavigationListIcon8 />
       </div>,
-      <p className="sidemenu_left_navigation_list_name_icon">More</p>,
+      <p className="sidemenu_left_navigation_list_name">More</p>,
     ],
   ];
   const list_name = sidemenu_left_navigation_list.map((name) => {
     return <SidemenuLeftNavigationArray name={name} />;
   });
-  return <li className="sidemenu_left_navigation_list">{list_name}</li>;
+  return <ul className="sidemenu_left_navigation_list">{list_name}</ul>;
 };
 
 export default SidemenuLeftNavigationList;
