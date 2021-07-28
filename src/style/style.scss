@@ -321,6 +321,9 @@ $breakpoint-up: (
     justify-content: space-around;
     width: 56px;
     height: 30px;
+    background: none;
+    border: none;
+    padding: 0;
   }
 }
 .main_tweeted_list_icon_wrap {
@@ -330,13 +333,10 @@ $breakpoint-up: (
   width: 30px;
   height: 30px;
   border-radius: 50px 50px;
-  &:hover {
-    background-color: rgba(224, 36, 94, 0.1);
-  }
 
   .main_tweeted_list_icon {
-    height: 20px;
-    width: 20px;
+    height: 18.75px;
+    width: 18.75px;
   }
 }
 
@@ -347,35 +347,51 @@ $breakpoint-up: (
   align-items: center;
 }
 
-.main_tweeted_list_icon_wrap_comment {
+.main_tweeted_list_function_comment {
   &:hover {
     fill: rgba(29, 161, 242, 1);
-    ~ .main_tweeted_list_function_count_comment {
+    > .main_tweeted_list_function_count_comment {
       color: rgba(29, 161, 242, 1);
+    }
+    > .main_tweeted_list_icon_wrap_comment {
+      background-color: rgba(224, 36, 94, 0.1);
     }
   }
 }
-.main_tweeted_list_icon_wrap_retweet {
+.main_tweeted_list_function_retweet {
+  display: flex;
+  align-items: center;
   &:hover {
     fill: rgba(54, 242, 29);
-    ~ .main_tweeted_list_function_count_retweet {
+    > .main_tweeted_list_function_count_retweet {
       color: rgb(54, 242, 29);
     }
-  }
-}
-.main_tweeted_list_icon_wrap_good {
-  &:hover {
-    fill: rgb(252, 7, 170);
-    ~ .main_tweeted_list_function_count_good {
-      color: rgb(252, 7, 170);
+    > .main_tweeted_list_icon_wrap_retweet {
+      background-color: rgba(224, 36, 94, 0.1);
     }
   }
 }
-.main_tweeted_list_icon_wrap_share {
+.main_tweeted_list_function_good {
+  display: flex;
+  align-items: center;
+  &:hover {
+    fill: rgb(252, 7, 170);
+    > .main_tweeted_list_function_count_good {
+      color: rgb(252, 7, 170);
+    }
+    > .main_tweeted_list_icon_wrap_good {
+      background-color: rgba(224, 36, 94, 0.1);
+    }
+  }
+}
+.main_tweeted_list_function_share {
   &:hover {
     fill: rgba(29, 161, 242, 1);
-    ~ .main_tweeted_list_function_count_share {
+    > .main_tweeted_list_function_count_share {
       color: rgba(29, 161, 242, 1);
+    }
+    > .main_tweeted_list_icon_wrap_share {
+      background-color: rgba(224, 36, 94, 0.1);
     }
   }
 }

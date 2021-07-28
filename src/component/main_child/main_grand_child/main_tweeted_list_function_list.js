@@ -5,12 +5,12 @@ import MainTweetedListRetweetIcon from "../main_grand_child_icon/main_tweeted_li
 import React, { useState } from "react";
 
 const MainTweetedListFunctionList = () => {
-  const [count_retweet, set_count_retweet] = useState(0);
-  const [count_good, set_count_good] = useState(0);
+  const [count_retweet, set_count_retweet] = useState(null);
+  const [count_good, set_count_good] = useState(null);
 
   return (
     <div className="main_tweeted_list_function_list">
-      <button className="main_tweeted_list_function">
+      <button className="main_tweeted_list_function main_tweeted_list_function_comment">
         {/* コメントアイコン */}
         <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_comment">
           <MainTweetedListCommentIcon />
@@ -22,7 +22,7 @@ const MainTweetedListFunctionList = () => {
       </button>
       <button
         onClick={() => set_count_retweet(count_retweet + 1)}
-        className="main_tweeted_list_function"
+        className="main_tweeted_list_function main_tweeted_list_function_retweet"
       >
         {/* リツイートアイコン*/}
         <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_retweet">
@@ -38,7 +38,7 @@ const MainTweetedListFunctionList = () => {
       </button>
       <button
         onClick={() => set_count_good(count_good + 1)}
-        className="main_tweeted_list_function"
+        className="main_tweeted_list_function main_tweeted_list_function_good"
       >
         {/* いいねアイコン */}
         <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_good">
@@ -52,7 +52,7 @@ const MainTweetedListFunctionList = () => {
           {/* カウント数 */}
         </p>
       </button>
-      <button className="main_tweeted_list_function">
+      <button className="main_tweeted_list_function main_tweeted_list_function_share">
         {/* 共有アイコン */}
         <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_share">
           <MainTweetedListShareIcon />
