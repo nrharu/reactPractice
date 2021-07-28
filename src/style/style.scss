@@ -40,9 +40,9 @@ $breakpoint-up: (
     width: 100%;
   }
 }
-.loginform {
-  display: none;
-}
+// .loginform {
+//   display: none;
+// }
 .tweet_wrapper {
   width: 100%;
   // max-width: 598px;
@@ -84,6 +84,9 @@ $breakpoint-up: (
   .header_title {
     font-size: 20px;
   }
+}
+.header_title_text {
+  font-weight: bold;
 }
 .header_icon_wrap {
   width: 56px;
@@ -324,6 +327,7 @@ $breakpoint-up: (
     background: none;
     border: none;
     padding: 0;
+    cursor: pointer;
   }
 }
 .main_tweeted_list_icon_wrap {
@@ -675,6 +679,12 @@ $breakpoint-up: (
     border: none;
     width: 75%;
     font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    outline: none;
+    background: transparent;
   }
 }
 .sidemenu_right_article_list {

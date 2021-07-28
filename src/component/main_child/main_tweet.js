@@ -5,6 +5,7 @@ import MainTweetIconGraph from "./main_grand_child_icon/main_tweet_icon_graph.js
 import MainTweetIconMedia from "./main_grand_child_icon/main_tweet_icon_media.js";
 import MainTweetIconReservation from "./main_grand_child_icon/main_tweet_icon_reservation.js";
 import MainTweetOpenButtonIcon from "./main_grand_child_icon/main_tweet_open_button_icon.js";
+// import React,{useState} from "react";
 
 const MainTweet = () => {
   // フォームの作成途中
@@ -12,6 +13,8 @@ const MainTweet = () => {
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   setMessage(e.target.value);
   // }
+
+  // const []
 
   return (
     <div className="main_tweet_content">

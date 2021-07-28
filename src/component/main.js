@@ -15,7 +15,7 @@ const Main = () => {
               <img src="" alt="my_icon" className="header_icon" />
             </div>
             <div className="header_title">
-              <p>ホーム</p>
+              <p className="header_title_text">Home</p>
             </div>
           </div>
           <div className="header_button_wrap">

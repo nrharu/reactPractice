@@ -1,16 +1,33 @@
-import React from "react";
+// import React from "react";
+import React, { useState } from "react";
 
 const Loginform = () => {
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
+  const handleChange = (e) => {
+    set_name(() => e.target.value);
+  };
+
   return (
     <div className="loginform">
       <ul>
         <li>
-          <p>アカウント名</p>
-          <input type="text" id="account_name" />
+          <p>アカウント名{name}</p>
+          <input
+            value={name}
+            onChange={handleChange}
+            type="text"
+            id="account_name"
+          />
         </li>
         <li>
-          <p>アカウントID</p>
-          <input type="text" id="account_id" />
+          <p>アカウントID{ID}</p>
+          <input
+            value={ID}
+            onChange={handleChange}
+            type="text"
+            id="account_id"
+          />
         </li>
         <li>
           <p>アカウントアイコン</p>
