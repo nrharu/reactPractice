@@ -4,7 +4,7 @@ import SidemenuLeftTweetButton from "./sidemenu_left_child/sidemenu_left_tweet_b
 import SidemenuLeftNavigationTwitterIcon from "./sidemenu_left_child/sidemenu_left_navigation_twitter_icon.js";
 import SidemenuLeftMyAccountDitailsButtonIcon from "./sidemenu_left_child/sidemenu_left_my_account_ditails_button_icon";
 
-const SidemenuLeft = () => {
+const SidemenuLeft = (props) => {
   return (
     <section className="sidemenu_left">
       <div className="sidmenu_left_navigation_wrap">
@@ -44,10 +44,10 @@ const SidemenuLeft = () => {
           ></img>
           <div className="sidemenu_left_my_account_name_box">
             <p className="sidemenu_left_my_account_name">
-              {/* 自分のアカウント名 */}test
+              {/* 自分のアカウント名 */}test{props.name}
             </p>
             <p className="sidemenu_left_my_account_ID">
-              {/* 自分のアカウントID  */}@test
+              {/* 自分のアカウントID  */}@test{props.ID}
             </p>
           </div>
         </div>

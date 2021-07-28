@@ -65,11 +65,7 @@ const SidemenuRight = () => {
       <p>test</p>
       <p>test</p>
       <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
+
       <Footer />
     </section>
   );
