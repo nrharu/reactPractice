@@ -32,56 +32,7 @@ const Main = () => {
           </div>
         </header>
       </div>
-      <main className="main">
-        <div className="main_translate">
-          <div className="main_disabled_box">
-            {/* ツイートするところ */}
-            <div className="main_tweet">
-              <div className="main_tweet_my_icon_wrap">
-                <img src="" alt="my_icon" className="main_tweet_my_icon" />
-              </div>
-              <MainTweet />
-            </div>
-            {/*  */}
-            {/* 固定ヘッダー */}
-            <div className="main_margin_box"></div>
-            {/* 投稿されたツイート */}
-          </div>
-          <MainTweetedList content="" icon="" />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-        </div>
-      </main>
+      <MainTweet />
     </div>
   );
 };

@@ -6,20 +6,23 @@ import Loginform from "./component/loginform.js";
 import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 
 // import { useEffect } from "react";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 
 const App = () => {
   // sidemenu_rightとmainのスクロールの連動実装
 
-  useEffect(() => {
-    const sidemenu_right = document.getElementById(
-      "sidemenu_right_scroll_gearing"
-    );
-    const main = document.getElementById("main_scroll_gearing");
-    main.addEventListener("scroll", () => {
-      sidemenu_right.scrollTop = main.scrollTop;
-    });
-  });
+  // useEffect(() => {
+  //   const sidemenu_right = document.getElementById(
+  //     "sidemenu_right_scroll_gearing"
+  //   );
+  //   const main = document.getElementById("main_scroll_gearing");
+  //   // main.addEventListener("scroll", () => {
+  //   //   sidemenu_right.scrollTop = main.scrollTop;
+  //   // });
+  //   const scroll_gearing = () => {
+  //     sidemenu_right.scrollTop = main.scrollTop;
+  //   };
+  // });
 
   // const [isDisplay, setIsDisplay] = useState(false);
   // const isRunning = useRef(false); //スクロール多発防止用フラグ
@@ -77,6 +80,7 @@ const App = () => {
         {/*  */}
         <div
           className="main_wrap"
+          // onScroll={scroll_gearing()}
           // ref={this.test2}
         >
           <Main />

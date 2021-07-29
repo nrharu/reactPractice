@@ -631,7 +631,7 @@ $breakpoint-up: (
 // sidemenu_right
 
 .sidemenu_right {
-  overflow: scroll;
+  // overflow: scroll;
   padding-top: 16px;
 }
 .sidemenu_right_box_space {
@@ -651,6 +651,8 @@ $breakpoint-up: (
 .sidemenu_right_wrap {
   position: sticky;
   top: 53px;
+  // height: calc(100vh - 53px);
+  // bottom: 0;
 }
 
 // sidemenu_searchbox
