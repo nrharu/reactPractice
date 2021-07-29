@@ -6,35 +6,53 @@ import Loginform from "./component/loginform.js";
 import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 
 // import { useEffect } from "react";
-import React, { useRef, useEffect, useCallback, useState } from "react";
+import React, { useEffect } from "react";
 
 const App = () => {
   // sidemenu_rightとmainのスクロールの連動実装
-  const TestDom = () => {
-    const [isDisplay, setIsDisplay] = useState(false);
-    const isunning = useRef(false);
-  };
-
-  const isScrollToggle = useCallback(() => {
-    if (isRunning.current) return;
-    isRunning.current = true;
-    const scrollTop = window.pageY0ffset || document.documentElement.scrollTop;
-    requestAnimationFrame(() => {
-      if (scrollTop > 100) {
-        setIsDiplay(true);
-      } else {
-        setIsDisplay(false);
-      }
-      isRunning.current = false;
-    });
-  }, []);
 
   useEffect(() => {
-    document.addEventListener("scroll", isScrollToggle, { passive: true });
-    return () => {
-      document.removeEventListener("scroll", isScrollToggle, { passive: true });
-    };
-  }, []);
+    const sidemenu_right = document.getElementById(
+      "sidemenu_right_scroll_gearing"
+    );
+    const main = document.getElementById("main_scroll_gearing");
+    main.addEventListener("scroll", () => {
+      sidemenu_right.scrollTop = main.scrollTop;
+    });
+  });
+
+  // const [isDisplay, setIsDisplay] = useState(false);
+  // const isRunning = useRef(false); //スクロール多発防止用フラグ
+
+  // //リスナに登録する関数
+  // const isScrollToggle = useCallback(() => {
+  //   if (isRunning.current) return;
+  //   isRunning.current = true;
+  //   const scrollTop = window.pageY0ffset || document.documentElement.scrollTop;
+  //   requestAnimationFrame(() => {
+  //     if (scrollTop > 100) {
+  //       setIsDisplay(true);
+  //     } else {
+  //       setIsDisplay(false);
+  //     }
+  //     isRunning.current = false;
+  //   });
+  // }, []);
+
+  // //登録と後始末
+  // useEffect(() => {
+  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
+  //   return () => {
+  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
+  //   return () => {
+  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
+  //   };
+  // }, []);
 
   // main_gearing_scroll.current.addEventListener("scroll", () => {
   //   sidemenu_right_gearing_scroll.current.scrollTop =
