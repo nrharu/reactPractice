@@ -107,8 +107,10 @@ $breakpoint-up: (
   align-items: center;
   justify-content: center;
   border-radius: 50px/50px;
+  transition: 0.5s;
   &:hover {
     background-color: rgba(29, 161, 242, 0.1);
+    transition: 0.5s;
   }
   .header_button {
     fill: rgba(29, 161, 242, 1);
@@ -193,8 +195,10 @@ $breakpoint-up: (
   height: 44px;
   border-radius: 50px/50px;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
     background-color: rgba(29, 161, 242, 0.1);
+    transition: 0.5s;
   }
   .main_tweet_open_button_icon_wrap {
     display: flex;
@@ -229,7 +233,9 @@ $breakpoint-up: (
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(29, 161, 242, 0.1);
   }
 }
@@ -273,7 +279,9 @@ $breakpoint-up: (
   display: flex;
   border-bottom: solid rgb(239, 243, 244) 1px;
   cursor: pointer;
+  transition: 0.2s;
   &:hover {
+    transition: 0.2s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .main_tweeted_list_article_icon {
@@ -299,7 +307,9 @@ $breakpoint-up: (
       border: none;
       border-radius: 50px 50px;
       // background-color: white;
+      transition: 0.5s;
       &:hover {
+        transition: 0.5s;
         background-color: rgba(224, 36, 94, 0.1);
       }
     }
@@ -354,12 +364,16 @@ $breakpoint-up: (
 }
 
 .main_tweeted_list_function_comment {
+  transition: 0.3s;
   &:hover {
-    fill: rgba(29, 161, 242, 1);
+    // >.main_tweeted_list_icon
     > .main_tweeted_list_function_count_comment {
+      // transition: 0.5s;
       color: rgba(29, 161, 242, 1);
     }
     > .main_tweeted_list_icon_wrap_comment {
+      // transition: 0.5s;
+      fill: rgba(29, 161, 242, 1);
       background-color: rgba(224, 36, 94, 0.1);
     }
   }
@@ -367,12 +381,13 @@ $breakpoint-up: (
 .main_tweeted_list_function_retweet {
   display: flex;
   align-items: center;
+  transition: 0.3s;
   &:hover {
-    fill: rgba(54, 242, 29);
     > .main_tweeted_list_function_count_retweet {
       color: rgb(54, 242, 29);
     }
     > .main_tweeted_list_icon_wrap_retweet {
+      fill: rgba(54, 242, 29);
       background-color: rgba(224, 36, 94, 0.1);
     }
   }
@@ -380,26 +395,31 @@ $breakpoint-up: (
 .main_tweeted_list_function_good {
   display: flex;
   align-items: center;
+  transition: 0.3s;
   &:hover {
-    fill: rgb(252, 7, 170);
     > .main_tweeted_list_function_count_good {
       color: rgb(252, 7, 170);
     }
     > .main_tweeted_list_icon_wrap_good {
+      fill: rgb(252, 7, 170);
       background-color: rgba(224, 36, 94, 0.1);
     }
   }
 }
 .main_tweeted_list_function_share {
+  transition: 0.3s;
   &:hover {
-    fill: rgba(29, 161, 242, 1);
     > .main_tweeted_list_function_count_share {
       color: rgba(29, 161, 242, 1);
     }
     > .main_tweeted_list_icon_wrap_share {
+      fill: rgba(29, 161, 242, 1);
       background-color: rgba(224, 36, 94, 0.1);
     }
   }
+}
+.main_tweeted_list_transition {
+  transition: 0.3s;
 }
 
 // sidemenu_left.js
@@ -419,7 +439,10 @@ $breakpoint-up: (
   border-radius: 50px/50px;
   display: flex;
   align-items: center;
+  transition: 0.5s;
+
   &:hover {
+    transition: 0.5s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_left_twitter_icon {
@@ -484,6 +507,7 @@ $breakpoint-up: (
     justify-content: flex-start;
   }
   &:hover {
+    transition: 0.5s;
     > .sidemenu_left_navigation_list_item {
       background-color: rgba(29, 161, 242, 0.1);
       color: rgba(29, 161, 242, 1);
@@ -496,6 +520,7 @@ $breakpoint-up: (
     justify-content: center;
     align-items: center;
     height: 50.25px;
+    transition: 0.5s;
     width: 50.25px;
     // background-color: yellow;
     @include mq-up(xl) {
@@ -524,6 +549,7 @@ $breakpoint-up: (
   display: flex;
   justify-content: center;
   &:hover {
+    transition: 0.3s;
     > .sidemenu_left_tweet_button {
       background-color: rgb(26, 145, 218);
     }
@@ -536,6 +562,7 @@ $breakpoint-up: (
   color: rgba(29, 161, 242, 1);
 }
 .sidemenu_left_tweet_button {
+  transition: 0.3s;
   cursor: pointer;
   background-color: rgb(29, 161, 242);
   display: flex;
@@ -582,7 +609,9 @@ $breakpoint-up: (
   border-radius: 50px/50px;
   padding: 0 10px;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
+    transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_left_my_account {
@@ -721,8 +750,10 @@ $breakpoint-up: (
   border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
+  transition: 0.5s;
   cursor: pointer;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidmenu_right_user {
@@ -746,7 +777,9 @@ $breakpoint-up: (
   border: solid rgb(29, 161, 242) 1px;
   border-radius: 50px/50px;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
+    transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_right_article_button {
@@ -774,7 +807,9 @@ $breakpoint-up: (
   align-items: center;
   background-color: burlywood;
   border-radius: 50px 50px;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(26, 26, 26, 0.15);
   }
   .sidemenu_right_user_icon {
@@ -791,7 +826,9 @@ $breakpoint-up: (
 .sidemenu_right_showmore_button_wrap {
   cursor: pointer;
   padding: 16px;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidemenu_right_showmore_button {
@@ -833,7 +870,9 @@ $breakpoint-up: (
   margin: 0;
   padding: 0;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidemenu_right_topic {
@@ -861,7 +900,9 @@ $breakpoint-up: (
   align-items: center;
   margin-left: 5px;
   border-radius: 50px 50px;
+  transition: 0.3s;
   &:hover {
+    transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_right_article_close_icon {

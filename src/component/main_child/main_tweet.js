@@ -30,6 +30,7 @@ const MainTweet = () => {
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
   const classNameChange = () =>
     setClassName("main_jtweet_open_button_wrap_change");
+
   return (
     <main className="main">
       <div className="main_translate">

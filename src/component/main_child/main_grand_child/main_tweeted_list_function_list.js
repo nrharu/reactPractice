@@ -10,27 +10,41 @@ const MainTweetedListFunctionList = () => {
 
   return (
     <div className="main_tweeted_list_function_list">
-      <button className="main_tweeted_list_function main_tweeted_list_function_comment">
+      <button
+        className="main_tweeted_list_function 
+      main_tweeted_list_function_comment"
+      >
         {/* コメントアイコン */}
-        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_comment">
+        <div
+          className="main_tweeted_list_icon_wrap 
+        main_tweeted_list_icon_wrap_comment
+        main_tweeted_list_transition"
+        >
           <MainTweetedListCommentIcon />
         </div>
         <p
           className="main_tweeted_list_function_count 
-            main_tweeted_list_function_count_comment"
+            main_tweeted_list_function_count_comment
+            main_tweeted_list_transition"
         ></p>
       </button>
       <button
         onClick={() => set_count_retweet(count_retweet + 1)}
-        className="main_tweeted_list_function main_tweeted_list_function_retweet"
+        className="main_tweeted_list_function 
+        main_tweeted_list_function_retweet"
       >
         {/* リツイートアイコン*/}
-        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_retweet">
+        <div
+          className="main_tweeted_list_icon_wrap
+        main_tweeted_list_icon_wrap_retweet
+        main_tweeted_list_transition"
+        >
           <MainTweetedListRetweetIcon />
         </div>
         <p
           className="main_tweeted_list_function_count 
-            main_tweeted_list_function_count_retweet"
+            main_tweeted_list_function_count_retweet
+            main_tweeted_list_transition"
         >
           {count_retweet}
           {/* カウント数 */}
@@ -38,28 +52,42 @@ const MainTweetedListFunctionList = () => {
       </button>
       <button
         onClick={() => set_count_good(count_good + 1)}
-        className="main_tweeted_list_function main_tweeted_list_function_good"
+        className="main_tweeted_list_function 
+        main_tweeted_list_function_good"
       >
         {/* いいねアイコン */}
-        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_good">
+        <div
+          className="main_tweeted_list_icon_wrap 
+        main_tweeted_list_icon_wrap_good
+        main_tweeted_list_transition"
+        >
           <MainTweetedListGoodIcon />
         </div>
         <p
           className="main_tweeted_list_function_count 
-            main_tweeted_list_function_count_good"
+            main_tweeted_list_function_count_good
+            main_tweeted_list_transition"
         >
           {count_good}
           {/* カウント数 */}
         </p>
       </button>
-      <button className="main_tweeted_list_function main_tweeted_list_function_share">
+      <button
+        className="main_tweeted_list_function 
+      main_tweeted_list_function_share"
+      >
         {/* 共有アイコン */}
-        <div className="main_tweeted_list_icon_wrap main_tweeted_list_icon_wrap_share">
+        <div
+          className="main_tweeted_list_icon_wrap
+        main_tweeted_list_icon_wrap_share
+        main_tweeted_list_transition"
+        >
           <MainTweetedListShareIcon />
         </div>
         <p
           className="main_tweeted_list_function_count 
-            main_tweeted_list_function_count_share"
+            main_tweeted_list_function_count_share
+             main_tweeted_list_transition"
         ></p>
       </button>
     </div>
