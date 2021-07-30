@@ -6,21 +6,31 @@ import MainTweetIconReservation from "./main_grand_child_icon/main_tweet_icon_re
 import MainTweetOpenButtonIcon from "./main_grand_child_icon/main_tweet_open_button_icon.js";
 import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState } from "react";
-import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list.js";
+// import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list.js";
 
 const MainTweet = () => {
   // フォームの作成途中
   const [content, set_content] = useState("");
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
+  //   set_content(() => e.target.value);
+  // };
+  const handleSubmit = (e) => {
     set_content(() => e.target.value);
   };
-  const MainTweetedList = () => ({
-    type: "MainTweetedList",
-    props: {
-      content = content
-    }
-  });
-  const article=new MainTweetedList(handleChange)
+  // console.log(handleChange());
+  // // const Article = () => ({
+  // //   type: MainTweetedList,
+  // //   props: {
+  // //     content: content,
+  // //   },
+  // // });
+  // const Article = (content) => ({
+  //   type: MainTweetedList,
+  //   props: {
+  //     content: content,
+  //   },
+  // });
+  // const article = new Article(handleChange);
   return (
     <main className="main">
       <div className="main_translate">
@@ -32,13 +42,16 @@ const MainTweet = () => {
             </div>
             <div className="main_tweet_content">
               <div className="main_tweet_textform_wrap">
-                <form className="main_tweet_textform">
-                  {/*onSubmit={handleSubmit}*/}
+                <form
+                  className="main_tweet_textform"
+                  id="tweet_submit"
+                  onSubmit={handleSubmit}
+                >
                   <textarea
                     className="main_tweet_textform_area"
                     placeholder="What's happening？"
                     maxLength="140"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     value={content}
                   ></textarea>
                 </form>
@@ -79,9 +92,12 @@ const MainTweet = () => {
                 </ul>
                 {/* ツイートボタン */}
                 {/* <div className="main_tweet_submit_button_wrap"> */}
-                <button className="main_tweet_submit_button" >
-                  <p className="main_tweet_submit_button_text">Tweet</p>
-                </button>
+                <input
+                  type="submit"
+                  value="Tweet"
+                  form="tweet_submit"
+                  className="main_tweet_submit_button"
+                />
                 {/* </div> */}
               </div>
             </div>
@@ -92,8 +108,8 @@ const MainTweet = () => {
           <div className="main_margin_box"></div>
           {/* 投稿されたツイート */}
         </div>
-        {article}
-        {/* <MainTweetedList content="" icon="" />
+        {/* {article} */}
+        <MainTweetedList content="" icon="" />
         <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
@@ -125,7 +141,7 @@ const MainTweet = () => {
         <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
-        <MainTweetedList /> */}
+        <MainTweetedList />
       </div>
     </main>
   );

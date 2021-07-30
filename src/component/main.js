@@ -1,5 +1,5 @@
 import React from "react";
-import MainTweetedList from "./main_child/main_tweeted_list.js";
+// import MainTweetedList from "./main_child/main_tweeted_list.js";
 import MainTweet from "./main_child/main_tweet.js";
 
 const Main = () => {

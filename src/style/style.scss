@@ -242,10 +242,9 @@ $breakpoint-up: (
   width: 75px;
   border: none;
   border-radius: 50px/50px;
-  .main_tweet_submit_button_text {
-    color: white;
-    font-weight: bold;
-  }
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .navigation_list_icon {
