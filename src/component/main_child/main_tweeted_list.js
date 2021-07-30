@@ -12,7 +12,6 @@ const MainTweetedList = (props) => {
           <div>
             {/* ツイート内容ツイートしたところから内容を取得　表示*/}
             {props.content}
-            ツイート内容
           </div>
         </div>
         {/* いいねリツイートなどリスト */}

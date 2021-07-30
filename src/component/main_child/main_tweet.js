@@ -12,7 +12,7 @@ const MainTweet = () => {
   // フォームの作成途中
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
-  const [ID, set_ID] = useState(null);
+  const [ID, set_ID] = useState(0);
   // const handleChange = (e) => {
   //   set_content(() => e.target.value);
   // };
@@ -21,7 +21,7 @@ const MainTweet = () => {
   };
   const add = () => {
     const new_content = { content };
-    const new_tweet_lists = [tweet_lists, new_content];
+    const new_tweet_lists = [new_content, ...tweet_lists];
     const tweet_ID = tweet_lists.length;
     set_tweet_lists(new_tweet_lists);
     set_content("");
@@ -29,26 +29,7 @@ const MainTweet = () => {
   };
 
   console.log(content);
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   set_tweet_lists.push({ content });
-  //   e.target.tweet_form.value=""
-  // }
 
-  // console.log(handleChange());
-  // // const Article = () => ({
-  // //   type: MainTweetedList,
-  // //   props: {
-  // //     content: content,
-  // //   },
-  // // });
-  // const Article = (content) => ({
-  //   type: MainTweetedList,
-  //   props: {
-  //     content: content,
-  //   },
-  // });
-  // const article = new Article(handleChange);
   return (
     <main className="main">
       <div className="main_translate">
@@ -130,11 +111,12 @@ const MainTweet = () => {
         </div>
         {/* {article} */}
         <ul>
-          {tweet_lists.map(() => (
-            <MainTweetedList content={content} key={ID} />
+          {tweet_lists.map((tweet) => (
+            <MainTweetedList content={tweet.content} key={tweet.ID} />
           ))}
           {/* <MainTweetedList content={content} /> */}
         </ul>
+        {/* <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
@@ -143,8 +125,7 @@ const MainTweet = () => {
         <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
+        <MainTweetedList /> */}
       </div>
     </main>
   );
