@@ -6,7 +6,7 @@ import MainTweetIconReservation from "./main_grand_child_icon/main_tweet_icon_re
 import MainTweetOpenButtonIcon from "./main_grand_child_icon/main_tweet_open_button_icon.js";
 import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState } from "react";
-// import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list.js";
+import MyAccountIcon from "../../img/my_account_icon.js";
 
 const MainTweet = () => {
   // 投稿機能
@@ -38,7 +38,8 @@ const MainTweet = () => {
           {/* ツイートするところ */}
           <div className="main_tweet">
             <div className="main_tweet_my_icon_wrap">
-              <img src="" alt="my_icon" className="main_tweet_my_icon" />
+              <MyAccountIcon />
+              {/* <img src="" alt="my_icon" className="main_tweet_my_icon" /> */}
             </div>
             <div className="main_tweet_content" onClick={classNameChange}>
               <div className="main_tweet_textform_wrap">
@@ -110,22 +111,12 @@ const MainTweet = () => {
           {/* 投稿されたツイート */}
         </div>
         {/* {article} */}
-        <ul>
+        <ul className="main_tweeted_list_wrap">
           {tweet_lists.map((tweet) => (
             <MainTweetedList content={tweet.content} key={tweet.ID} />
           ))}
           {/* <MainTweetedList content={content} /> */}
         </ul>
-        {/* <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList /> */}
       </div>
     </main>
   );

@@ -26,6 +26,13 @@ $breakpoint-up: (
     justify-content: center;
   }
 }
+.my_account_icon {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(212, 208, 208);
+  border-radius: 40px/40px;
+}
+
 // ホバーカーソル変更させる要素
 
 .main_wrap {
@@ -154,6 +161,7 @@ $breakpoint-up: (
 }
 .main_tweet_my_icon_wrap {
   width: 58px;
+  padding-top: 10px;
   .main_tweet_my_icon {
     width: 48px;
     height: 48px;
@@ -275,7 +283,13 @@ $breakpoint-up: (
 // main_tweeted_list
 
 .main_tweeted_list_wrap {
+  margin: 0;
+  padding: 0;
+  // display: flex;
+}
+.main_tweeted_list {
   // display: none;
+  padding: 10px 10px 0 10px;
   display: flex;
   border-bottom: solid rgb(239, 243, 244) 1px;
   cursor: pointer;
@@ -604,12 +618,15 @@ $breakpoint-up: (
   width: 100%;
   // top: calc(100vh - 70px);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 50px/50px;
   padding: 0 10px;
   cursor: pointer;
   transition: 0.3s;
+  @include mq-up(xl) {
+    justify-content: space-between;
+  }
   &:hover {
     transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
@@ -622,6 +639,7 @@ $breakpoint-up: (
     display: none;
     @include mq-up(xl) {
       display: block;
+      margin-left: 10px;
     }
     .sidemenu_left_my_account_name {
       font-size: 15px;

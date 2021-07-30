@@ -3,6 +3,7 @@ import SidemenuLeftNavigationList from "./sidemenu_left_child/sidemenu_left_navi
 import SidemenuLeftTweetButton from "./sidemenu_left_child/sidemenu_left_tweet_button.js";
 import SidemenuLeftNavigationTwitterIcon from "./sidemenu_left_child/sidemenu_left_navigation_twitter_icon.js";
 import SidemenuLeftMyAccountDitailsButtonIcon from "./sidemenu_left_child/sidemenu_left_my_account_ditails_button_icon";
+import MyAccountIcon from "../img/my_account_icon.js";
 
 const SidemenuLeft = (props) => {
   return (
@@ -37,11 +38,7 @@ const SidemenuLeft = (props) => {
       <div className="sidemenu_left_my_account_wrap">
         {/* 自分のアカウントアイコン */}
         <div className="sidemenu_left_my_account">
-          <img
-            src=""
-            alt="my_icon"
-            className="sidemenu_left_my_account_icon"
-          ></img>
+          <MyAccountIcon />
           <div className="sidemenu_left_my_account_name_box">
             <p className="sidemenu_left_my_account_name">
               {/* 自分のアカウント名 */}test{props.name}
