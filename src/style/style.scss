@@ -69,7 +69,6 @@ $breakpoint-up: (
   width: 100%;
   position: sticky;
   top: 0;
-  overflow: scroll;
   .header {
     z-index: 1;
     padding: 0 16px;
@@ -305,6 +304,7 @@ $breakpoint-up: (
     flex: 8;
   }
 }
+
 .main_tweeted_list_article_header {
   display: flex;
   height: 22px;
@@ -319,11 +319,11 @@ $breakpoint-up: (
     .main_tweetd_list_article_header_button {
       height: 100%;
       border: none;
-      border-radius: 50px 50px;
+      border-radius: 50px/50px;
       // background-color: white;
-      transition: 0.5s;
+      transition: 0.3s;
       &:hover {
-        transition: 0.5s;
+        transition: 0.3s;
         background-color: rgba(224, 36, 94, 0.1);
       }
     }
@@ -332,9 +332,9 @@ $breakpoint-up: (
     margin: 0;
     flex: 1;
   }
-  //   .main_tweeted_list_article_header_account_name{
-  // max-width: ;
-  //   }
+  .main_tweeted_list_article_header_account_name {
+    margin: 0;
+  }
 }
 .main_tweeted_list_article_header_button_icon {
   height: 20px;

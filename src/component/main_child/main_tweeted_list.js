@@ -11,7 +11,7 @@ const MainTweetedList = (props) => {
       </div>
       <div className="main_tweeted_list_article_wrap">
         <div>
-          <MainTweetTime name="" ID="" />
+          <MainTweetTime name="" ID="" time={props.time} />
           <div>
             {/* ツイート内容ツイートしたところから内容を取得　表示*/}
             {props.content}
