@@ -21,6 +21,7 @@ const MainTweet = () => {
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
     set_tweet_lists(new_tweet_lists);
+    set_content("");
 
     //
     // let now_time = Date.now();
