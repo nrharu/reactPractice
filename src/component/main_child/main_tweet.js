@@ -9,13 +9,10 @@ import React, { useState } from "react";
 // import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list.js";
 
 const MainTweet = () => {
-  // フォームの作成途中
+  // 投稿機能
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
   const [ID, set_ID] = useState(0);
-  // const handleChange = (e) => {
-  //   set_content(() => e.target.value);
-  // };
   const handleSubmit = (e) => {
     set_content(() => e.target.value);
   };
@@ -27,9 +24,12 @@ const MainTweet = () => {
     set_content("");
     set_ID(tweet_ID);
   };
-
   console.log(content);
 
+  //クラス変更機能
+  const [className, setClassName] = useState("main_tweet_open_button_wrap");
+  const classNameChange = () =>
+    setClassName("main_jtweet_open_button_wrap_change");
   return (
     <main className="main">
       <div className="main_translate">
@@ -39,7 +39,7 @@ const MainTweet = () => {
             <div className="main_tweet_my_icon_wrap">
               <img src="" alt="my_icon" className="main_tweet_my_icon" />
             </div>
-            <div className="main_tweet_content">
+            <div className="main_tweet_content" onClick={classNameChange}>
               <div className="main_tweet_textform_wrap">
                 <form
                   className="main_tweet_textform"
@@ -53,10 +53,9 @@ const MainTweet = () => {
                     maxLength="140"
                     onChange={handleSubmit}
                     value={content}
-                    name="tweet_form"
                   ></textarea>
                 </form>
-                <div className="main_tweet_open_button_wrap">
+                <div className={className}>
                   <button className="main_tweet_open_button">
                     {/* 地球アイコン */}
                     <div className="main_tweet_open_button_icon_wrap">

@@ -180,9 +180,11 @@ $breakpoint-up: (
   height: 20px;
 }
 .main_tweet_open_button_wrap {
+  display: none;
+}
+.main_tweet_open_button_wrap_change {
   border-bottom: solid black 1px;
   height: 45px;
-  // display: none;
 }
 .main_tweet_open_button {
   display: flex;
