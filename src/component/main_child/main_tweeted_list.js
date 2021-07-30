@@ -1,25 +1,26 @@
 import React from "react";
 import MainTweetTime from "./main_grand_child/main_tweetTime.js";
 import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_function_list";
+import MyAccountIcon from "../../img/my_account_icon.js";
 
-const MainTweetedList = () => {
+const MainTweetedList = (props) => {
   return (
-    <article className="main_tweeted_list_wrap">
+    <li className="main_tweeted_list">
       <div className="main_tweeted_list_article_icon">
-        <img src="" alt="my_icon" />
+        <MyAccountIcon />
       </div>
       <div className="main_tweeted_list_article_wrap">
         <div>
-          <MainTweetTime />
+          <MainTweetTime name="" ID="" time={props.time} />
           <div>
             {/* ツイート内容ツイートしたところから内容を取得　表示*/}
-            ツイート内容
+            {props.content}
           </div>
         </div>
         {/* いいねリツイートなどリスト */}
         <MainTweetedListFunctionList />
       </div>
-    </article>
+    </li>
   );
 };
 export default MainTweetedList;

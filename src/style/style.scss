@@ -26,6 +26,13 @@ $breakpoint-up: (
     justify-content: center;
   }
 }
+.my_account_icon {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(212, 208, 208);
+  border-radius: 40px/40px;
+}
+
 // ホバーカーソル変更させる要素
 
 .main_wrap {
@@ -40,9 +47,9 @@ $breakpoint-up: (
     width: 100%;
   }
 }
-.loginform {
-  display: none;
-}
+// .loginform {
+//   display: none;
+// }
 .tweet_wrapper {
   width: 100%;
   // max-width: 598px;
@@ -75,6 +82,7 @@ $breakpoint-up: (
     align-items: center;
     border: solid rgb(239, 243, 244) 1px;
     background-color: white;
+    cursor: pointer;
   }
 }
 .header_title_wrap {
@@ -83,6 +91,9 @@ $breakpoint-up: (
   .header_title {
     font-size: 20px;
   }
+}
+.header_title_text {
+  font-weight: bold;
 }
 .header_icon_wrap {
   width: 56px;
@@ -101,6 +112,12 @@ $breakpoint-up: (
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50px/50px;
+  transition: 0.5s;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+    transition: 0.5s;
+  }
   .header_button {
     fill: rgba(29, 161, 242, 1);
     height: 22px;
@@ -143,18 +160,28 @@ $breakpoint-up: (
 }
 .main_tweet_my_icon_wrap {
   width: 58px;
+  padding-top: 10px;
   .main_tweet_my_icon {
     width: 48px;
     height: 48px;
     margin-right: 10px;
   }
 }
-.main_tweet_textform_box {
-  .main_tweet_textform {
+.main_tweet_textform {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  .main_tweet_textform_area {
     width: 100%;
-    height: 56px;
+    height: 28px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    outline: none;
+    background: transparent;
   }
 }
 .main_tweet_icon {
@@ -162,15 +189,24 @@ $breakpoint-up: (
   height: 20px;
 }
 .main_tweet_open_button_wrap {
+  display: none;
+}
+.main_tweet_open_button_wrap_change {
   border-bottom: solid black 1px;
   height: 45px;
-  // display: none;
 }
 .main_tweet_open_button {
   display: flex;
   background-color: white;
   border: none;
   height: 44px;
+  border-radius: 50px/50px;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+    transition: 0.5s;
+  }
   .main_tweet_open_button_icon_wrap {
     display: flex;
     align-items: center;
@@ -203,7 +239,10 @@ $breakpoint-up: (
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(29, 161, 242, 0.1);
   }
 }
@@ -215,17 +254,17 @@ $breakpoint-up: (
   align-items: center;
   justify-content: center;
   height: 38px;
-  width: 120px;
+  width: 75px;
   border: none;
   border-radius: 50px/50px;
-  .main_tweet_submit_button_text {
-    color: white;
-  }
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .navigation_list_icon {
-  height: 20px;
-  width: 20px;
+  height: 26.25px;
+  width: 26.25px;
 }
 
 // main_margin_box
@@ -243,11 +282,19 @@ $breakpoint-up: (
 // main_tweeted_list
 
 .main_tweeted_list_wrap {
+  margin: 0;
+  padding: 0;
+  // display: flex;
+}
+.main_tweeted_list {
   // display: none;
+  padding: 10px 10px 0 10px;
   display: flex;
   border-bottom: solid rgb(239, 243, 244) 1px;
   cursor: pointer;
+  transition: 0.2s;
   &:hover {
+    transition: 0.2s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .main_tweeted_list_article_icon {
@@ -257,6 +304,7 @@ $breakpoint-up: (
     flex: 8;
   }
 }
+
 .main_tweeted_list_article_header {
   display: flex;
   height: 22px;
@@ -271,9 +319,11 @@ $breakpoint-up: (
     .main_tweetd_list_article_header_button {
       height: 100%;
       border: none;
-      border-radius: 50px 50px;
-      background-color: white;
+      border-radius: 50px/50px;
+      // background-color: white;
+      transition: 0.3s;
       &:hover {
+        transition: 0.3s;
         background-color: rgba(224, 36, 94, 0.1);
       }
     }
@@ -282,9 +332,9 @@ $breakpoint-up: (
     margin: 0;
     flex: 1;
   }
-  //   .main_tweeted_list_article_header_account_name{
-  // max-width: ;
-  //   }
+  .main_tweeted_list_article_header_account_name {
+    margin: 0;
+  }
 }
 .main_tweeted_list_article_header_button_icon {
   height: 20px;
@@ -300,6 +350,10 @@ $breakpoint-up: (
     justify-content: space-around;
     width: 56px;
     height: 30px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 }
 .main_tweeted_list_icon_wrap {
@@ -309,15 +363,10 @@ $breakpoint-up: (
   width: 30px;
   height: 30px;
   border-radius: 50px 50px;
-  &:hover {
-    background-color: rgba(224, 36, 94, 0.1);
-  }
-  > .main_tweeted_list_function_count_comment {
-    color: rgba(29, 161, 242, 1);
-  }
+
   .main_tweeted_list_icon {
-    height: 20px;
-    width: 20px;
+    height: 18.75px;
+    width: 18.75px;
   }
 }
 
@@ -328,15 +377,90 @@ $breakpoint-up: (
   align-items: center;
 }
 
+.main_tweeted_list_function_comment {
+  transition: 0.3s;
+  &:hover {
+    // >.main_tweeted_list_icon
+    > .main_tweeted_list_function_count_comment {
+      // transition: 0.5s;
+      color: rgba(29, 161, 242, 1);
+    }
+    > .main_tweeted_list_icon_wrap_comment {
+      // transition: 0.5s;
+      fill: rgba(29, 161, 242, 1);
+      background-color: rgba(224, 36, 94, 0.1);
+    }
+  }
+}
+.main_tweeted_list_function_retweet {
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    > .main_tweeted_list_function_count_retweet {
+      color: rgb(54, 242, 29);
+    }
+    > .main_tweeted_list_icon_wrap_retweet {
+      fill: rgba(54, 242, 29);
+      background-color: rgba(224, 36, 94, 0.1);
+    }
+  }
+}
+.main_tweeted_list_function_good {
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    > .main_tweeted_list_function_count_good {
+      color: rgb(252, 7, 170);
+    }
+    > .main_tweeted_list_icon_wrap_good {
+      fill: rgb(252, 7, 170);
+      background-color: rgba(224, 36, 94, 0.1);
+    }
+  }
+}
+.main_tweeted_list_function_share {
+  transition: 0.3s;
+  &:hover {
+    > .main_tweeted_list_function_count_share {
+      color: rgba(29, 161, 242, 1);
+    }
+    > .main_tweeted_list_icon_wrap_share {
+      fill: rgba(29, 161, 242, 1);
+      background-color: rgba(224, 36, 94, 0.1);
+    }
+  }
+}
+.main_tweeted_list_transition {
+  transition: 0.3s;
+}
+
 // sidemenu_left.js
 
-.sidemenu_left_twitter_icon_wrap {
+.sidemenu_left_header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  // margin: 0;
   @include mq-up(xl) {
     justify-content: flex-start;
   }
+}
+.sidemenu_left_twitter_icon_wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 50px/50px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: rgba(29, 161, 242, 0.1);
+  }
   .sidemenu_left_twitter_icon {
+    cursor: pointer;
     height: 30px;
     width: 46px;
     fill: rgba(29, 161, 242, 1);
@@ -363,38 +487,97 @@ $breakpoint-up: (
   // position: fixed;
   position: sticky;
   top: 0;
+  height: 100vh;
 
   .sidemenu_left {
     // : rgb(210, 210, 250);
+    padding-top: 15px;
     display: none;
     width: 100%;
+    height: 100vh;
     @include mq-up(sm) {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
 .sidemenu_left_navigation_list_wrap {
+  cursor: pointer;
   padding: 0;
+  // height: 500px;
+  height: auto;
   .sidemenu_left_navigation_list {
+    padding: 0;
+  }
+}
+.sidemenu_left_navigation_list_item_wrap {
+  height: 58.25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mq-up(xl) {
+    justify-content: flex-start;
+  }
+  &:hover {
+    transition: 0.5s;
+    > .sidemenu_left_navigation_list_item {
+      background-color: rgba(29, 161, 242, 0.1);
+      color: rgba(29, 161, 242, 1);
+      fill: rgba(29, 161, 242, 1);
+    }
+  }
+  .sidemenu_left_navigation_list_item {
+    border-radius: 50px/50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 50.25px;
+    transition: 0.5s;
+    width: 50.25px;
+    // background-color: yellow;
     @include mq-up(xl) {
       justify-content: flex-start;
+      width: 200px;
+      padding-left: 10px;
     }
   }
 }
+
 .sidemenu_left_navigation_list_name {
   margin: 0;
   display: none;
+  padding-left: 25px;
   @include mq-up(xl) {
     display: block;
+    font-weight: bold;
+    font-size: 20px;
   }
+}
+.sidemenu_left_navigation_list_icon_wrap {
+  display: flex;
+  align-items: center;
 }
 .sidemenu_left_tweet_button_wrap {
   display: flex;
   justify-content: center;
+  &:hover {
+    transition: 0.3s;
+    > .sidemenu_left_tweet_button {
+      background-color: rgb(26, 145, 218);
+    }
+  }
+}
+.sidemenu_left_navigation_list_icon_wrap_home {
+  fill: rgba(29, 161, 242, 1);
+}
+.sidemenu_left_navigation_list_name_wrap_home {
+  color: rgba(29, 161, 242, 1);
 }
 .sidemenu_left_tweet_button {
+  transition: 0.3s;
+  cursor: pointer;
   background-color: rgb(29, 161, 242);
   display: flex;
   align-items: center;
@@ -412,23 +595,51 @@ $breakpoint-up: (
     width: 224px;
   }
   .sidemenu_left_tweet_button_text {
+    display: none;
     color: white;
+    @include mq-up(xl) {
+      display: block;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+}
+.sidemenu_left_tweet_change_button_icon {
+  fill: white;
+  width: 22px;
+  height: 22px;
+  @include mq-up(xl) {
+    display: none;
   }
 }
 .sidemenu_left_my_account_wrap {
-  position: absolute;
-  // bottom: -570px;
+  height: 64px;
+  // position: absolute;
   width: 100%;
-  top: calc(100vh - 50px);
+  // top: calc(100vh - 70px);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px/50px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  @include mq-up(xl) {
+    justify-content: space-between;
+  }
+  &:hover {
+    transition: 0.3s;
+    background-color: rgba(29, 161, 242, 0.1);
+  }
   .sidemenu_left_my_account {
     display: flex;
+    height: 40px;
   }
   .sidemenu_left_my_account_name_box {
     display: none;
     @include mq-up(xl) {
       display: block;
+      margin-left: 10px;
     }
     .sidemenu_left_my_account_name {
       font-size: 15px;
@@ -454,8 +665,10 @@ $breakpoint-up: (
     }
     .sidemenu_left_my_account_ditails_button {
       fill: rgb(15, 20, 25);
-      width: 15px;
-      height: 15px;
+      width: 18.75px;
+      height: 18.75px;
+      // border-radius: 50px/50px;
+      // background-color: blue;
     }
   }
 }
@@ -466,6 +679,7 @@ $breakpoint-up: (
 // sidemenu_right
 
 .sidemenu_right {
+  // overflow: scroll;
   padding-top: 16px;
 }
 .sidemenu_right_box_space {
@@ -485,6 +699,8 @@ $breakpoint-up: (
 .sidemenu_right_wrap {
   position: sticky;
   top: 53px;
+  // height: calc(100vh - 53px);
+  // bottom: 0;
 }
 
 // sidemenu_searchbox
@@ -504,7 +720,6 @@ $breakpoint-up: (
   margin-bottom: 50px;
   border-radius: 60px/50px;
   margin: 5px 0;
-  position: sticky;
   .sidemenu_right_searchbox_icon {
     height: 20px;
     width: 20px;
@@ -515,6 +730,12 @@ $breakpoint-up: (
     border: none;
     width: 75%;
     font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    outline: none;
+    background: transparent;
   }
 }
 .sidemenu_right_article_list {
@@ -528,9 +749,9 @@ $breakpoint-up: (
 .sidemenu_right_doingnow_wrap {
   .sidemenu_right_doing_now {
     // display: flex;
-    padding: 12px 16px;
     // justify-content: space-between;
-    height: 72px;
+    // height: 72px;
+    padding: 0;
     margin: 0 0 16px 0;
   }
 }
@@ -538,6 +759,7 @@ $breakpoint-up: (
   margin: 0;
   font-size: 20px;
   font-weight: bold;
+  padding: 12px 16px;
 }
 
 // sidemenu_right_user
@@ -546,8 +768,10 @@ $breakpoint-up: (
   border-bottom: solid rgb(239, 243, 244) 1px;
   margin: 0;
   padding: 0;
+  transition: 0.5s;
   cursor: pointer;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidmenu_right_user {
@@ -571,7 +795,9 @@ $breakpoint-up: (
   border: solid rgb(29, 161, 242) 1px;
   border-radius: 50px/50px;
   cursor: pointer;
+  transition: 0.3s;
   &:hover {
+    transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_right_article_button {
@@ -599,7 +825,9 @@ $breakpoint-up: (
   align-items: center;
   background-color: burlywood;
   border-radius: 50px 50px;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(26, 26, 26, 0.15);
   }
   .sidemenu_right_user_icon {
@@ -616,7 +844,9 @@ $breakpoint-up: (
 .sidemenu_right_showmore_button_wrap {
   cursor: pointer;
   padding: 16px;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidemenu_right_showmore_button {
@@ -658,7 +888,9 @@ $breakpoint-up: (
   margin: 0;
   padding: 0;
   cursor: pointer;
+  transition: 0.5s;
   &:hover {
+    transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.03);
   }
   .sidemenu_right_topic {
@@ -686,11 +918,22 @@ $breakpoint-up: (
   align-items: center;
   margin-left: 5px;
   border-radius: 50px 50px;
+  transition: 0.3s;
   &:hover {
+    transition: 0.3s;
     background-color: rgba(29, 161, 242, 0.1);
   }
   .sidemenu_right_article_close_icon {
     width: 16px;
     height: 16px;
   }
+}
+
+.footer_text {
+  font-size: 13px;
+  color: rgb(83, 100, 113);
+}
+.footer_copy_write {
+  font-size: 13px;
+  color: rgb(83, 100, 113);
 }

@@ -4,25 +4,62 @@ import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
 import Loginform from "./component/loginform.js";
 import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
-import { useRef } from "react";
+
 // import { useEffect } from "react";
-// import React, { useRef, useEffect } from "react";
+// import React, { useEffect } from "react";
 
 const App = () => {
   // sidemenu_rightとmainのスクロールの連動実装
 
-  // const sidemenu_right_gearing_scroll = useRef(null);
-  // const main_gearing_scroll = useRef(null);
-  // console.log(sidemenu_right_gearing_scroll.current);
-  // console.log(sidemenu_right_gearing_scroll);
+  // useEffect(() => {
+  //   const sidemenu_right = document.getElementById(
+  //     "sidemenu_right_scroll_gearing"
+  //   );
+  //   const main = document.getElementById("main_scroll_gearing");
+  //   // main.addEventListener("scroll", () => {
+  //   //   sidemenu_right.scrollTop = main.scrollTop;
+  //   // });
+  //   const scroll_gearing = () => {
+  //     sidemenu_right.scrollTop = main.scrollTop;
+  //   };
+  // });
 
-  // const sidemenu_right_gearing_scroll_dom =
-  //   sidemenu_right_gearing_scroll.current;
-  // console.log(sidemenu_right_gearing_scroll_dom);
-  // const main_gearing_scroll_dom = main_gearing_scroll.current;
+  // const [isDisplay, setIsDisplay] = useState(false);
+  // const isRunning = useRef(false); //スクロール多発防止用フラグ
 
-  // main_gearing_scroll_dom.addEventlistener("scroll", () => {
-  //   sidemenu_right_gearing_scroll_dom.scrollTop = main_gearing_scroll_dom.scrollTop;
+  // //リスナに登録する関数
+  // const isScrollToggle = useCallback(() => {
+  //   if (isRunning.current) return;
+  //   isRunning.current = true;
+  //   const scrollTop = window.pageY0ffset || document.documentElement.scrollTop;
+  //   requestAnimationFrame(() => {
+  //     if (scrollTop > 100) {
+  //       setIsDisplay(true);
+  //     } else {
+  //       setIsDisplay(false);
+  //     }
+  //     isRunning.current = false;
+  //   });
+  // }, []);
+
+  // //登録と後始末
+  // useEffect(() => {
+  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
+  //   return () => {
+  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
+  //   return () => {
+  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
+  //   };
+  // }, []);
+
+  // main_gearing_scroll.current.addEventListener("scroll", () => {
+  //   sidemenu_right_gearing_scroll.current.scrollTop =
+  //     main_gearing_scroll.current.scrollTop;
   // });
 
   // const right_scroll = document.getByElementId("sidmenu_right_gearing_scroll");
@@ -43,13 +80,15 @@ const App = () => {
         {/*  */}
         <div
           className="main_wrap"
-          // ref={main_gearing_scroll}
+          // onScroll={scroll_gearing()}
+          // ref={this.test2}
         >
           <Main />
         </div>
         <div
           className="sidemenu_right_box_space"
           // ref={sidemenu_right_gearing_scroll}
+          // ref={test}
         >
           {/*  */}
           <div className="sidemenu_right_searchbox_sticky">
@@ -62,7 +101,10 @@ const App = () => {
               ></input>
             </div>
           </div>
-          <div className="sidemenu_right_wrap">
+          <div
+            className="sidemenu_right_wrap"
+            // ref={this.test}
+          >
             <SidemenuRight />
           </div>
         </div>

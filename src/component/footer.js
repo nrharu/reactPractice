@@ -5,16 +5,27 @@ const Footer = () => {
   return (
     <div>
       <div>
-        <a href="#top">利用規約</a>
-        <a href="#top">プライバシーポリシー</a>
+        <a href="#top" className="footer_text">
+          利用規約
+        </a>
+        <a href="#top" className="footer_text">
+          プライバシーポリシー
+        </a>
       </div>
       <div>
-        <a href="#top">Cookieのポリシー</a>
-        <a href="#top">広告情報</a>
+        <a href="#top" className="footer_text">
+          Cookieのポリシー
+        </a>
+        <a href="#top" className="footer_text">
+          広告情報
+        </a>
       </div>
       <div>
-        <a href="#top"> もっと見る</a>
-        <p> @2021 twitter,inc.</p>
+        <a href="#top" className="footer_text">
+          {" "}
+          もっと見る
+        </a>
+        <p className="footer_copy_write"> @2021 twitter,inc.</p>
       </div>
     </div>
   );

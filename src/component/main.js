@@ -1,8 +1,10 @@
 import React from "react";
-import MainTweetedList from "./main_child/main_tweeted_list.js";
+// import MainTweetedList from "./main_child/main_tweeted_list.js";
 import MainTweet from "./main_child/main_tweet.js";
 
 const Main = () => {
+  // const main_article = <MainTweetedList />;
+  // const new_main_article = new main_article();
   return (
     <div className="tweet_wrapper">
       {/* 固定ヘッダー */}
@@ -13,7 +15,7 @@ const Main = () => {
               <img src="" alt="my_icon" className="header_icon" />
             </div>
             <div className="header_title">
-              <p>ホーム</p>
+              <p className="header_title_text">Home</p>
             </div>
           </div>
           <div className="header_button_wrap">
@@ -30,56 +32,7 @@ const Main = () => {
           </div>
         </header>
       </div>
-      <main className="main">
-        <div className="main_translate">
-          <div className="main_disabled_box">
-            {/* ツイートするところ */}
-            <div className="main_tweet">
-              <div className="main_tweet_my_icon_wrap">
-                <img src="" alt="my_icon" className="main_tweet_my_icon" />
-              </div>
-              <MainTweet />
-            </div>
-            {/*  */}
-            {/* 固定ヘッダー */}
-            <div className="main_margin_box"></div>
-            {/* 投稿されたツイート */}
-          </div>
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-          <MainTweetedList />
-        </div>
-      </main>
+      <MainTweet />
     </div>
   );
 };
