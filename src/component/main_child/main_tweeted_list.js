@@ -4,7 +4,7 @@ import MainTweetedListFunctionList from "./main_grand_child/main_tweeted_list_fu
 
 const MainTweetedList = (props) => {
   return (
-    <article className="main_tweeted_list_wrap">
+    <li className="main_tweeted_list_wrap">
       <div className="main_tweeted_list_article_icon">{props.icon}</div>
       <div className="main_tweeted_list_article_wrap">
         <div>
@@ -18,7 +18,7 @@ const MainTweetedList = (props) => {
         {/* いいねリツイートなどリスト */}
         <MainTweetedListFunctionList />
       </div>
-    </article>
+    </li>
   );
 };
 export default MainTweetedList;

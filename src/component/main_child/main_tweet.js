@@ -11,12 +11,30 @@ import React, { useState } from "react";
 const MainTweet = () => {
   // フォームの作成途中
   const [content, set_content] = useState("");
+  const [tweet_lists, set_tweet_lists] = useState([]);
+  const [ID, set_ID] = useState(null);
   // const handleChange = (e) => {
   //   set_content(() => e.target.value);
   // };
   const handleSubmit = (e) => {
     set_content(() => e.target.value);
   };
+  const add = () => {
+    const new_content = { content };
+    const new_tweet_lists = [tweet_lists, new_content];
+    const tweet_ID = tweet_lists.length;
+    set_tweet_lists(new_tweet_lists);
+    set_content("");
+    set_ID(tweet_ID);
+  };
+
+  console.log(content);
+  // handleSubmit(e){
+  //   e.preventDefault();
+  //   set_tweet_lists.push({ content });
+  //   e.target.tweet_form.value=""
+  // }
+
   // console.log(handleChange());
   // // const Article = () => ({
   // //   type: MainTweetedList,
@@ -44,15 +62,17 @@ const MainTweet = () => {
               <div className="main_tweet_textform_wrap">
                 <form
                   className="main_tweet_textform"
-                  id="tweet_submit"
-                  onSubmit={handleSubmit}
+                  id="tweet"
+                  // onSubmit={content}
+                  onSubmit={add}
                 >
                   <textarea
                     className="main_tweet_textform_area"
                     placeholder="What's happening？"
                     maxLength="140"
-                    // onChange={handleChange}
+                    onChange={handleSubmit}
                     value={content}
+                    name="tweet_form"
                   ></textarea>
                 </form>
                 <div className="main_tweet_open_button_wrap">
@@ -95,7 +115,7 @@ const MainTweet = () => {
                 <input
                   type="submit"
                   value="Tweet"
-                  form="tweet_submit"
+                  form="tweet"
                   className="main_tweet_submit_button"
                 />
                 {/* </div> */}
@@ -109,29 +129,12 @@ const MainTweet = () => {
           {/* 投稿されたツイート */}
         </div>
         {/* {article} */}
-        <MainTweetedList content="" icon="" />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
-        <MainTweetedList />
+        <ul>
+          {tweet_lists.map(() => (
+            <MainTweetedList content={content} key={ID} />
+          ))}
+          {/* <MainTweetedList content={content} /> */}
+        </ul>
         <MainTweetedList />
         <MainTweetedList />
         <MainTweetedList />
