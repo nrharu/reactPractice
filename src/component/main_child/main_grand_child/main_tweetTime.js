@@ -1,4 +1,5 @@
 import React from "react";
+import MainTweetIconDitails from "../main_grand_child_icon/main_tweet_icon_ditails.js";
 
 const MainTweetTime = (props) => {
   // const tweet_time = "usagi";
@@ -39,17 +40,7 @@ const MainTweetTime = (props) => {
       <div className="main_tweeted_list_article_header_button_wrap">
         <div className="main_tweetd_list_article_header_button">
           {/* 詳細ボタン */}
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            className="main_tweeted_list_article_header_button_icon"
-          >
-            <g>
-              <circle cx="5" cy="12" r="2"></circle>
-              <circle cx="12" cy="12" r="2"></circle>
-              <circle cx="19" cy="12" r="2"></circle>
-            </g>
-          </svg>
+          <MainTweetIconDitails />
         </div>
       </div>
     </div>
