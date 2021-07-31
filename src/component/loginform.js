@@ -14,8 +14,14 @@ const Loginform = (props) => {
 
   // const test =handleChange_name ;
 
+  //login_formを閉じるボタン
+  const [close, setClose] = useState("login_form");
+  const change_class = () => {
+    setClose("login_form_close");
+  };
+
   return (
-    <div className="loginform">
+    <div className={close}>
       <ul>
         <li>
           <p>アカウント名</p>
@@ -40,7 +46,8 @@ const Loginform = (props) => {
           <img src="{my_icon}" alt="アカウントアイコン" />
         </li> */}
       </ul>
-      <input type="submit" value="確定" onclick={props.value} />
+      <input type="submit" value="確定" onClick={props.value} />
+      <input type="button" value="閉じる" onClick={() => change_class()} />
     </div>
   );
 };

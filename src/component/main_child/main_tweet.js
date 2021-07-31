@@ -25,6 +25,10 @@ const MainTweet = () => {
 
     //
     // let now_time = Date.now();
+    // let test=0
+    // setInterval (() => {
+    //   test++
+    // },1000)
     set_time(now_time);
     //
   };
