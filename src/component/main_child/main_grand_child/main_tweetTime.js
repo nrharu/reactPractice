@@ -9,10 +9,10 @@ const MainTweetTime = (props) => {
     <div className="main_tweeted_list_article_header">
       <div className="main_tweeted_list_article_header_name_wrap">
         <p className="main_tweeted_list_article_header_account_name">
-          アカウント名{props.name}
+          {props.name}
         </p>
         <p className="main_tweeted_list_article_header_ID_time">
-          @id名{props.ID}・{/* {tweet_time()} */}
+          @{props.ID}・{/* {tweet_time()} */}
           {props.time}
         </p>
       </div>

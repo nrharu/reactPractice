@@ -41,10 +41,11 @@ const SidemenuLeft = (props) => {
           <MyAccountIcon />
           <div className="sidemenu_left_my_account_name_box">
             <p className="sidemenu_left_my_account_name">
-              {/* 自分のアカウント名 */}test{props.name}
+              {/* 自分のアカウント名 */}
+              {props.child_name}
             </p>
             <p className="sidemenu_left_my_account_ID">
-              {/* 自分のアカウントID  */}@test{props.ID}
+              {/* 自分のアカウントID  */}@{props.child_ID}
             </p>
           </div>
         </div>

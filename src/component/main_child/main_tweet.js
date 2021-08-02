@@ -8,7 +8,7 @@ import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 
-const MainTweet = () => {
+const MainTweet = (props) => {
   // 投稿機能
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
@@ -175,7 +175,12 @@ const MainTweet = () => {
         {/* {article} */}
         <ul className="main_tweeted_list_wrap">
           {tweet_lists.map((tweet) => (
-            <MainTweetedList content={tweet.content} time={time} />
+            <MainTweetedList
+              content={tweet.content}
+              time={time}
+              name={props.name}
+              ID={props.ID}
+            />
           ))}
           {/* <MainTweetedList content={content} /> */}
         </ul>
