@@ -24,45 +24,39 @@ const MainTweet = () => {
     //
     let get_time = Date.now();
     let indicate_time = null;
-    // let unit_time = "秒";
-    // console.log(unit_time);
-    console.log(get_time);
+    let now_date = null;
     let tweet_time = () => {
-      // const tweet_date = new Date();
+      const tweet_date = new Date();
       let unit_time = "秒";
-      console.log(unit_time);
       let now_time = (Date.now() - get_time) / 1000;
-      // const month = tweet_date.getMonth() + 1;
-      // const day = tweet_date.getDate();
-      if ((unit_time = "秒" && now_time >= 60)) {
+      const month = tweet_date.getMonth() + 1;
+      const day = tweet_date.getDate();
+      if (unit_time === "秒" && now_time >= 60) {
         now_time = (Date.now() - get_time) / 60000;
         unit_time = "分";
       }
-      if ((unit_time = "分" && now_time >= 60)) {
+      if (unit_time === "分" && now_time >= 60) {
         now_time = (Date.now() - get_time) / 3600000;
         unit_time = "時間";
       }
-      // if ((unit_time = "時間" && now_time >= 24)) {
-      //   now_time = month + "月" + day + "日";
-      // console.log(unit_time)
-      // }
-      console.log(unit_time);
+      if (unit_time === "時間" && now_time >= 24) {
+        now_date = month + "月" + day + "日";
+        now_time = null;
+      }
       const integer_time = Math.floor(now_time);
-      indicate_time = integer_time + unit_time;
-      console.log(integer_time + unit_time);
+      if (now_time != null) {
+        indicate_time = integer_time + unit_time;
+      } else {
+        indicate_time = now_date;
+      }
       console.log(indicate_time);
+      set_time(indicate_time);
     };
+    // console.log(indicate_time);
     setInterval(tweet_time, 1000);
-    set_time(indicate_time);
+    // console.log(time);
+    // set_time(integer_time);
   };
-  // console.log(content);
-  // const a = "usagi";
-  // let b = "ウサギ";
-  // let c = 1;
-  // console.log(a + b);
-  // console.log(a + c);
-
-  //
 
   //クラス変更機能
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
