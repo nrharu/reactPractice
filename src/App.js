@@ -4,59 +4,13 @@ import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
 import Loginform from "./component/loginform.js";
 import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
-
+import { useState } from "react";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
 const App = () => {
-  // sidemenu_rightとmainのスクロールの連動実装
-
-  // useEffect(() => {
-  //   const sidemenu_right = document.getElementById(
-  //     "sidemenu_right_scroll_gearing"
-  //   );
-  //   const main = document.getElementById("main_scroll_gearing");
-  //   // main.addEventListener("scroll", () => {
-  //   //   sidemenu_right.scrollTop = main.scrollTop;
-  //   // });
-  //   const scroll_gearing = () => {
-  //     sidemenu_right.scrollTop = main.scrollTop;
-  //   };
-  // });
-
-  // const [isDisplay, setIsDisplay] = useState(false);
-  // const isRunning = useRef(false); //スクロール多発防止用フラグ
-
-  // //リスナに登録する関数
-  // const isScrollToggle = useCallback(() => {
-  //   if (isRunning.current) return;
-  //   isRunning.current = true;
-  //   const scrollTop = window.pageY0ffset || document.documentElement.scrollTop;
-  //   requestAnimationFrame(() => {
-  //     if (scrollTop > 100) {
-  //       setIsDisplay(true);
-  //     } else {
-  //       setIsDisplay(false);
-  //     }
-  //     isRunning.current = false;
-  //   });
-  // }, []);
-
-  // //登録と後始末
-  // useEffect(() => {
-  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
-  //   return () => {
-  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   document.addEventListener("scroll", isScrollToggle, { passive: true });
-  //   return () => {
-  //     document.removeEventListener("scroll", isScrollToggle, { passive: true });
-  //   };
-  // }, []);
-
+  const [name, setName] = useState("");
+  const [ID, setID] = useState("");
   // main_gearing_scroll.current.addEventListener("scroll", () => {
   //   sidemenu_right_gearing_scroll.current.scrollTop =
   //     main_gearing_scroll.current.scrollTop;
@@ -70,11 +24,11 @@ const App = () => {
 
   return (
     <div className="body">
-      <Loginform />
+      <Loginform child_name={setName} child_ID={setID} />
       <div className="content">
         <div className="sidemenu_left_box_space">
           <div className="sidemenu_left_wrap">
-            <SidemenuLeft />
+            <SidemenuLeft child_name={name} child_ID={ID} />
           </div>
         </div>
         {/*  */}
@@ -83,7 +37,7 @@ const App = () => {
           // onScroll={scroll_gearing()}
           // ref={this.test2}
         >
-          <Main />
+          <Main child_name={name} child_ID={ID} />
         </div>
         <div
           className="sidemenu_right_box_space"

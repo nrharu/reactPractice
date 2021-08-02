@@ -2,7 +2,7 @@ import React from "react";
 // import MainTweetedList from "./main_child/main_tweeted_list.js";
 import MainTweet from "./main_child/main_tweet.js";
 
-const Main = () => {
+const Main = (props) => {
   // const main_article = <MainTweetedList />;
   // const new_main_article = new main_article();
   return (
@@ -32,7 +32,7 @@ const Main = () => {
           </div>
         </header>
       </div>
-      <MainTweet />
+      <MainTweet name={props.child_name} ID={props.child_ID} />
     </div>
   );
 };
