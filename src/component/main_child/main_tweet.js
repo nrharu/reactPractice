@@ -15,12 +15,25 @@ const MainTweet = (props) => {
   const handleSubmit = (e) => {
     set_content(() => e.target.value);
   };
+
   const [time, set_time] = useState("");
+
+  let i = 0;
+  const [time_list, set_time_list] = useState([]);
+
   const add = () => {
+    //投稿機能
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
     set_tweet_lists(new_tweet_lists);
-    set_content("");
+    //
+
+    //
+    const new_time = { time };
+    const new_time_list = [new_time, ...time_list];
+    set_time_list(new_time_list);
+    //
+
     //
     let get_time = Date.now();
     let indicate_time = null;
@@ -52,11 +65,13 @@ const MainTweet = (props) => {
       console.log(indicate_time);
       set_time(indicate_time);
     };
-    // console.log(indicate_time);
     setInterval(tweet_time, 1000);
-    // console.log(time);
-    // set_time(integer_time);
   };
+  //
+
+  //
+
+  //
 
   //クラス変更機能
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
@@ -147,6 +162,7 @@ const MainTweet = (props) => {
           {tweet_lists.map((tweet) => (
             <MainTweetedList
               content={tweet.content}
+              // time={time_list[i++]}
               time={time}
               name={props.name}
               ID={props.ID}
