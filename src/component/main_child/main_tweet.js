@@ -64,32 +64,7 @@ const MainTweet = (props) => {
     setClassName("main_tweet_open_button_wrap_change");
   //
 
-  //投稿時からの経過時間の取得機能
-
-  //   let startTime = new Date();
-  //   console.log(startTime);
-  //   let now_time = null;
-  //   console.log(now_time);
-  //   let unitTime = "秒";
-  //   console.log(unitTime);
-  //   now_time = Date.now() - startTime / 1000;
-  //   console.log(now_time);
-  //   if (now_time > 60) {
-  //     now_time = (Date.now() - startTime) / 60000;
-  //     unitTime = "分";
-  //   }
-  //   if ((unitTime = "分" && now_time >= 60)) {
-  //     now_time = (Date.now() - startTime) / 3600000;
-  //     unitTime = "時間";
-  //   }
-  //   const month = startTime.getMonth() + 1;
-  //   const day = startTime.getDate();
-  //   if ((unitTime = "時間" && now_time >= 24)) {
-  //     return month + "月" + day + "日";
-  //   }
-  //   const now_time_trncate = Math.floor(now_time);
-  //   return now_time_trncate + unitTime;
-  // };
+  //テキストエリア
 
   //
   return (
@@ -104,12 +79,7 @@ const MainTweet = (props) => {
             </div>
             <div className="main_tweet_content" onClick={classNameChange}>
               <div className="main_tweet_textform_wrap">
-                <form
-                  className="main_tweet_textform"
-                  id="tweet"
-                  // onSubmit={content}
-                  onSubmit={add}
-                >
+                <form className="main_tweet_textform" id="tweet" onSubmit={add}>
                   <textarea
                     className="main_tweet_textform_area"
                     placeholder="What's happening？"
