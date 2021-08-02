@@ -16,30 +16,56 @@ const MainTweet = () => {
     set_content(() => e.target.value);
   };
   const [time, set_time] = useState("");
-  let now_time = Date.now();
   const add = () => {
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
     set_tweet_lists(new_tweet_lists);
     set_content("");
-
     //
-    // let now_time = Date.now();
-    set_time(now_time);
-    //
+    let get_time = Date.now();
+    let indicate_time = null;
+    let now_date = null;
+    let tweet_time = () => {
+      const tweet_date = new Date();
+      let unit_time = "秒";
+      let now_time = (Date.now() - get_time) / 1000;
+      const month = tweet_date.getMonth() + 1;
+      const day = tweet_date.getDate();
+      if (unit_time === "秒" && now_time >= 60) {
+        now_time = (Date.now() - get_time) / 60000;
+        unit_time = "分";
+      }
+      if (unit_time === "分" && now_time >= 60) {
+        now_time = (Date.now() - get_time) / 3600000;
+        unit_time = "時間";
+      }
+      if (unit_time === "時間" && now_time >= 24) {
+        now_date = month + "月" + day + "日";
+        now_time = null;
+      }
+      const integer_time = Math.floor(now_time);
+      if (now_time != null) {
+        indicate_time = integer_time + unit_time;
+      } else {
+        indicate_time = now_date;
+      }
+      console.log(indicate_time);
+      set_time(indicate_time);
+    };
+    // console.log(indicate_time);
+    setInterval(tweet_time, 1000);
+    // console.log(time);
+    // set_time(integer_time);
   };
-  console.log(content);
-  //
 
   //クラス変更機能
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
   const classNameChange = () =>
-    setClassName("main_jtweet_open_button_wrap_change");
+    setClassName("main_tweet_open_button_wrap_change");
   //
 
   //投稿時からの経過時間の取得機能
-  // const [time, setTime] = useState("");
-  // const tweet_time = () => {
+
   //   let startTime = new Date();
   //   console.log(startTime);
   //   let now_time = null;
@@ -133,6 +159,7 @@ const MainTweet = () => {
                   type="submit"
                   value="Tweet"
                   form="tweet"
+                  // onClick={test1()}
                   className="main_tweet_submit_button"
                 />
                 {/* </div> */}
@@ -148,7 +175,7 @@ const MainTweet = () => {
         {/* {article} */}
         <ul className="main_tweeted_list_wrap">
           {tweet_lists.map((tweet) => (
-            <MainTweetedList content={tweet.content} time={tweet.time} />
+            <MainTweetedList content={tweet.content} time={time} />
           ))}
           {/* <MainTweetedList content={content} /> */}
         </ul>
