@@ -12,8 +12,7 @@ const MainTweetTime = (props) => {
           {props.name}
         </p>
         <p className="main_tweeted_list_article_header_ID_time">
-          @{props.ID}・{/* {tweet_time()} */}
-          {props.time}
+          @{props.ID}・{props.time}
         </p>
       </div>
       <div className="main_tweeted_list_article_header_button_wrap">

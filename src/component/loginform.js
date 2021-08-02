@@ -13,7 +13,6 @@ const Loginform = (props) => {
   const handleChange_ID = (e) => {
     change_ID = e.target.value;
   };
-
   const change = () => {
     child_set_name(change_name);
     child_set_ID(change_ID);
@@ -27,39 +26,61 @@ const Loginform = (props) => {
   //
 
   //login_formを閉じるボタン
-  const [close, setClose] = useState("login_form");
+  const [close, setClose] = useState("login_form_wrap");
   const change_class = () => {
     setClose("login_form_close");
   };
 
   return (
     <div className={close}>
-      <form onSubmit={() => change()} id="account_form">
-        <div>
-          <p>アカウント名{child_name}</p>
-          <input
-            // value={name}
-            onChange={handleChange_name}
-            type="text"
-            id="account_name"
-          />
-        </div>
-        <div>
-          <p>アカウントID{child_ID}</p>
-          <input
-            // value={ID}
-            onChange={handleChange_ID}
-            type="text"
-            id="account_id"
-          />
-        </div>
-        {/* <li>
+      <div className="login_form">
+        <form
+          onSubmit={() => change()}
+          id="account_form"
+          className="login_form_space"
+        >
+          <div className="login_form_name">
+            <p className="login_form_header">アカウント名{child_name}</p>
+            <input
+              // value={name}
+              onChange={handleChange_name}
+              type="text"
+              id="account_name"
+              maxLength="12"
+              className="login_form_input_space"
+            />
+          </div>
+          <div className="login_form_ID">
+            <p className="login_form_header">アカウントID{child_ID}</p>
+            <input
+              // value={ID}
+              onChange={handleChange_ID}
+              type="text"
+              id="account_id"
+              maxLength="12"
+              className="login_form_input_space"
+            />
+          </div>
+          {/* <li>
           <p>アカウントアイコン</p>
           <img src="{my_icon}" alt="アカウントアイコン" />
         </li> */}
-      </form>
-      <input type="submit" value="確定" form="account_form" />
-      <input type="button" value="閉じる" onClick={() => change_class()} />
+        </form>
+        <div className="login_form_button_list">
+          <input
+            type="submit"
+            value="確定"
+            form="account_form"
+            className="login_form_button"
+          />
+          <input
+            type="button"
+            value="閉じる"
+            onClick={() => change_class()}
+            className="login_form_button"
+          />
+        </div>
+      </div>
     </div>
   );
 };
