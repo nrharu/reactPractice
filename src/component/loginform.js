@@ -1,5 +1,5 @@
-// import React from "react";
 import React, { useState } from "react";
+import firebase, { db } from "../firestore.js";
 
 const Loginform = (props) => {
   const [child_name, child_set_name] = useState("");
@@ -17,6 +17,12 @@ const Loginform = (props) => {
     child_set_name(change_name);
     child_set_ID(change_ID);
     setClose("login_form_close");
+    //データベース
+    db.collection("users").doc("875irvF9ySQFlgkggKx9").add({
+      name: change_name,
+      ID: change_ID,
+    });
+    //
   };
 
   //

@@ -8,6 +8,7 @@ import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState, useEffect } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 import MainTweetTextArea from "./main_grand_child/main_tweet_text_area.js";
+import firebase from "firebase";
 
 const MainTweet = (props) => {
   // 投稿機能
@@ -79,7 +80,15 @@ const MainTweet = (props) => {
 
   //テキストエリア
 
+  //データベース
+  //   debug.collection("tweet_list").doc("tweet").set({
+  //     content:{content},
+  //     name:{props.name},
+  //     ID:{props.ID},
+  //       time:
+  // })
   //
+
   return (
     <main className="main">
       <div className="main_translate">
