@@ -298,13 +298,20 @@ $breakpoint-up: (
     background-color: rgba(0, 0, 0, 0.03);
   }
   .main_tweeted_list_article_icon {
-    flex: 1;
+    // flex: 1;
+    width: 11.11111%;
   }
   .main_tweeted_list_article_wrap {
-    flex: 8;
+    // flex: 8;
+    width: 88.8888888%;
   }
 }
-
+.main_tweeted_list_article_content {
+  margin: 0;
+  width: 100%;
+  word-break: break-all;
+  // display: block;
+}
 .main_tweeted_list_article_header {
   display: flex;
   height: 22px;
