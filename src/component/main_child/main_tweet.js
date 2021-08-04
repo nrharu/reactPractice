@@ -14,7 +14,6 @@ const MainTweet = (props) => {
   // 投稿機能
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
-  // const [change_class, set_change_class] = useState("main_tweet_textform");
   const [rows, set_rows] = useState(1);
   //テキストエリアのサイズ調整
   let number = 0;
