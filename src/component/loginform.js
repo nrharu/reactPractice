@@ -1,11 +1,14 @@
+// import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
-import firebase, { db } from "../firestore.js";
+import firebase, { db, auth } from "../firestore.js";
 
 const Loginform = (props) => {
   const [child_name, child_set_name] = useState("");
   const [child_ID, child_set_ID] = useState("");
   let change_ID = null;
   let change_name = null;
+  let change_email = null;
+  let change_pass = null;
 
   const handleChange_name = (e) => {
     change_name = e.target.value;
@@ -13,16 +16,33 @@ const Loginform = (props) => {
   const handleChange_ID = (e) => {
     change_ID = e.target.value;
   };
+  const handleChange_email = (e) => {
+    change_email = e.target.value;
+  };
+  const handleChange_pass = (e) => {
+    change_pass = e.target.value;
+  };
+  // const change = () => {
+  //   child_set_name(change_name);
+  //   child_set_ID(change_ID);
+  //   setClose("login_form_close");
+  //   //データベース
+  //   db.collection("users").doc("userA").update({
+  //     name: { child_name },
+  //     ID: { child_ID },
+  //   });
+  //   //
+  // };
+
   const change = () => {
     child_set_name(change_name);
     child_set_ID(change_ID);
     setClose("login_form_close");
-    //データベース
-    db.collection("users").doc("userA").update({
-      name: { child_name },
-      ID: { child_ID },
-    });
-    //
+    auth
+      .createUserWithEmailAndPassword(change_email, change_pass)
+      .then((cred) => {
+        console.log(cred);
+      });
   };
 
   //
@@ -61,6 +81,28 @@ const Loginform = (props) => {
             <input
               // value={ID}
               onChange={handleChange_ID}
+              type="text"
+              id="account_id"
+              maxLength="12"
+              className="login_form_input_space"
+            />
+          </div>
+          <div className="login_form_email">
+            <p className="login_form_header">メールアドレス</p>
+            <input
+              // value={ID}
+              onChange={handleChange_email}
+              type="text"
+              id="account_id"
+              maxLength="12"
+              className="login_form_input_space"
+            />
+          </div>
+          <div className="login_form_pass">
+            <p className="login_form_header">パスワード</p>
+            <input
+              // value={ID}
+              onChange={handleChange_pass}
               type="text"
               id="account_id"
               maxLength="12"
