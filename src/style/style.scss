@@ -168,21 +168,40 @@ $breakpoint-up: (
   }
 }
 .main_tweet_textform {
-  height: 56px;
+  // height: 56px;
+  // height: 100%;
   display: flex;
   align-items: center;
-  .main_tweet_textform_area {
-    width: 100%;
-    height: 1.3em;
-    border: none;
-    font-size: 18px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    resize: none;
-    outline: none;
-    background: transparent;
-  }
+  margin: 17.5px 0 7.5px 0;
+  // padding: 10px 0;
+}
+// .main_tweet_textform_line2 {
+//   height: 86px;
+//   display: flex;
+//   align-items: center;
+// }
+// .main_tweet_textform_line3 {
+//   height: 116px;
+//   display: flex;
+//   align-items: center;
+// }
+// .main_tweet_textform_line4 {
+//   height: 146px;
+//   display: flex;
+//   align-items: center;
+// }
+.main_tweet_textform_area {
+  width: 100%;
+  // padding-top: 10px 0;
+  // height: 70%;
+  border: none;
+  font-size: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  outline: none;
+  background: transparent;
 }
 .main_tweet_icon {
   width: 20px;
@@ -192,6 +211,7 @@ $breakpoint-up: (
   display: none;
 }
 .main_tweet_open_button_wrap_change {
+  // margin-top: 20px;
   border-bottom: solid black 1px;
   height: 45px;
 }
@@ -298,13 +318,20 @@ $breakpoint-up: (
     background-color: rgba(0, 0, 0, 0.03);
   }
   .main_tweeted_list_article_icon {
-    flex: 1;
+    // flex: 1;
+    width: 11.11111%;
   }
   .main_tweeted_list_article_wrap {
-    flex: 8;
+    // flex: 8;
+    width: 88.8888888%;
   }
 }
-
+.main_tweeted_list_article_content {
+  margin: 0;
+  width: 100%;
+  word-break: break-all;
+  // display: block;
+}
 .main_tweeted_list_article_header {
   display: flex;
   height: 22px;

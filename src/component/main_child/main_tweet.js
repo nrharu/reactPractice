@@ -8,15 +8,27 @@ import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState, useEffect } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 import MainTweetTextArea from "./main_grand_child/main_tweet_text_area.js";
+import firebase from "firebase";
 
 const MainTweet = (props) => {
   // 投稿機能
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
+  const [rows, set_rows] = useState(1);
+  //テキストエリアのサイズ調整
+  let number = 0;
+  const get_number = () => {
+    const lines_number = content.match(/\r\n|\n/g);
+    if (lines_number != null) {
+      number = lines_number.length + 1;
+    }
+    set_rows(number);
+    console.log(number);
+  };
   const handleSubmit = (e) => {
     set_content(() => e.target.value);
+    get_number();
   };
-  console.log(content);
 
   const [time, set_time] = useState("");
 
@@ -29,6 +41,7 @@ const MainTweet = (props) => {
     const new_tweet_lists = [new_content, ...tweet_lists];
     set_tweet_lists(new_tweet_lists);
     set_content("");
+    set_rows(1);
     //
 
     //ツイートした時間
@@ -79,7 +92,15 @@ const MainTweet = (props) => {
 
   //テキストエリア
 
+  //データベース
+  //   debug.collection("tweet_list").doc("tweet").set({
+  //     content:{content},
+  //     name:{props.name},
+  //     ID:{props.ID},
+  //       time:
+  // })
   //
+
   return (
     <main className="main">
       <div className="main_translate">
@@ -107,6 +128,7 @@ const MainTweet = (props) => {
                   // value="usagisikakatan"
                   add={add}
                   id="tweet"
+                  rows={rows}
                 />
                 <div className={className}>
                   <button className="main_tweet_open_button">

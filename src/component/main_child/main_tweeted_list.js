@@ -12,10 +12,10 @@ const MainTweetedList = (props) => {
       <div className="main_tweeted_list_article_wrap">
         <div>
           <MainTweetTime name={props.name} ID={props.ID} time={props.time} />
-          <div>
+          <p className="main_tweeted_list_article_content">
             {/* ツイート内容ツイートしたところから内容を取得　表示*/}
             {props.content}
-          </div>
+          </p>
         </div>
         {/* いいねリツイートなどリスト */}
         <MainTweetedListFunctionList />
