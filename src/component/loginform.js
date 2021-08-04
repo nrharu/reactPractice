@@ -94,7 +94,7 @@ const Loginform = (props) => {
               onChange={handleChange_email}
               type="text"
               id="account_id"
-              maxLength="12"
+              // maxLength="12"
               className="login_form_input_space"
             />
           </div>
@@ -105,7 +105,7 @@ const Loginform = (props) => {
               onChange={handleChange_pass}
               type="text"
               id="account_id"
-              maxLength="12"
+              // maxLength="12"
               className="login_form_input_space"
             />
           </div>
