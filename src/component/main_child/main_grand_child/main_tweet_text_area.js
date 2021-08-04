@@ -29,8 +29,8 @@ const MainTweetTextArea = (props) => {
   return (
     <form className="main_tweet_textform" id={props.id} onSubmit={props.add}>
       <textarea
-        // className="main_tweet_textform_area"
-        className={props.class}
+        className="main_tweet_textform_area"
+        // className={props.class}
         // className={change_class}
         placeholder="What's happening？"
         maxLength="140"
@@ -38,7 +38,7 @@ const MainTweetTextArea = (props) => {
         value={props.value}
         cols="33"
         wrap="hard"
-        id="ta"
+        rows={props.rows}
         // onBlur={() => lines_get()}
       ></textarea>
     </form>
