@@ -14,10 +14,56 @@ const MainTweet = (props) => {
   // 投稿機能
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
+  const [change_class, set_change_class] = useState("main_tweet_textform_area");
+  let number = 0;
+  const get_number = () => {
+    const lines_number = content.match(/\r\n|\n/g);
+    if (lines_number != null) {
+      number = lines_number.length;
+    }
+    console.log(number);
+    if (number === 0) {
+      set_change_class("main_tweet_textform_area");
+    }
+    if (number === 1) {
+      set_change_class("main_tweet_textform_area_2line");
+    }
+    if (number === 2) {
+      set_change_class("main_tweet_textform_area_3line");
+    }
+    if (number === 3) {
+      set_change_class("main_tweet_textform_area_4line");
+    }
+    console.log(number);
+    console.log(content);
+  };
   const handleSubmit = (e) => {
     set_content(() => e.target.value);
+    //テキストエリアのサイズ自動変更
+    // const lines_get = () => {
+    // const lines_number = content.match(/\r\n|\n/g);
+    // if (lines_number != null) {
+    // const number = lines_number.length;
+    // }
+    // console.log(number);
+    // if (number === 0) {
+    //   set_change_class("main_tweet_textform_area");
+    // }
+    // if (number === 1) {
+    //   set_change_class("main_tweet_textform_area_2line");
+    // }
+    // if (number === 2) {
+    //   set_change_class("main_tweet_textform_area_3line");
+    // }
+    // if (number === 3) {
+    //   set_change_class("main_tweet_textform_area_4line");
+    // }
+    // console.log(number);
+    // };
+    get_number();
   };
-  console.log(content);
+
+  console.log(number);
 
   const [time, set_time] = useState("");
 
@@ -115,6 +161,7 @@ const MainTweet = (props) => {
                   value={content}
                   // value="usagisikakatan"
                   add={add}
+                  class={change_class}
                   id="tweet"
                 />
                 <div className={className}>
