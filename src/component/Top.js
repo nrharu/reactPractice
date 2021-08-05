@@ -5,6 +5,7 @@ import SidemenuRight from "./sidemenu_right.js";
 import Loginform from "./loginform.js";
 import SidemenuRightSearchboxIcon from "./sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
@@ -24,6 +25,7 @@ const Top = () => {
 
   return (
     <div className="body">
+      <Link to="/loginform">戻る</Link>
       {/* <Loginform child_name={setName} child_ID={setID} /> */}
       <div className="content">
         <div className="sidemenu_left_box_space">

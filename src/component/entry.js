@@ -1,7 +1,8 @@
-const Entry = (props) => {
-  const back_page = () => {
-    return props.back();
-  };
+import { useHistory } from "react-router-dom";
+const Entry = () => {
+  //   const back_page = () => {
+  //     return props.back();
+  //   };
   //登録機能
   // auth
   //   .createUserWithEmailAndPassword(change_email, change_pass)
@@ -14,6 +15,10 @@ const Entry = (props) => {
   //   const handleChange_pass = (e) => {
   //     change_pass = e.target.value;
   //   };
+  const history = useHistory();
+  const handle_link = (path) => {
+    history.push(path);
+  };
   return (
     <div>
       <div className="login_form_email">
@@ -39,7 +44,12 @@ const Entry = (props) => {
         />
       </div>
       <div>
-        <input type="submit" onClick={() => back_page()} />
+        <input
+          type="submit"
+          onClick={() => handle_link("/loginform")}
+          value="登録"
+        />
+        {/* <Link to="/loginform">登録</Link> */}
       </div>
     </div>
   );

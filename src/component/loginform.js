@@ -1,6 +1,7 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
 // import firebase, { db, auth } from "../firestore.js";
+import { useHistory } from "react-router-dom";
 
 const Loginform = (props) => {
   const [email, set_email] = useState("");
@@ -42,18 +43,9 @@ const Loginform = (props) => {
   //
 
   //login_formを閉じるボタン
-  // const [close, setClose] = useState("login_form_wrap");
-  // const change_class = () => {
-  //   setClose("login_form_close");
-  // };
-
-  // 登録_top画面の遷移
-  // const [render, set_render] = useState("");
-  const entry_page = () => {
-    return props.entry();
-  };
-  const top_page = () => {
-    return props.top();
+  const history = useHistory();
+  const handle_link = (path) => {
+    history.push(path);
   };
 
   return (
@@ -95,8 +87,9 @@ const Loginform = (props) => {
             value="ログイン"
             form="account_form"
             className="login_form_button"
-            onClick={() => top_page()}
+            onClick={() => handle_link("/Top")}
           />
+          {/* <Link to="/Top">ログイン</Link> */}
           {/* <input
             type="button"
             value="閉じる"
@@ -106,7 +99,12 @@ const Loginform = (props) => {
         </div>
       </div>
       <div>
-        <input type="button" value="未登録" onClick={() => entry_page()} />
+        <input
+          type="button"
+          value="未登録"
+          onClick={() => handle_link("/entry")}
+        />
+        {/* <Link to="/entry">未登録</Link> */}
       </div>
     </div>
   );
