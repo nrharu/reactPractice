@@ -3,73 +3,78 @@ import React, { useState } from "react";
 import firebase, { db, auth } from "../firestore.js";
 
 const Loginform = (props) => {
-  const [child_name, child_set_name] = useState("");
-  const [child_ID, child_set_ID] = useState("");
-  let change_ID = null;
-  let change_name = null;
-  let change_email = null;
-  let change_pass = null;
+  // const [child_name, child_set_name] = useState("");
+  // const [child_ID, child_set_ID] = useState("");
+  // let change_ID = null;
+  // let change_name = null;
+  // let change_email = null;
+  // let change_pass = null;
 
-  const handleChange_name = (e) => {
-    change_name = e.target.value;
-  };
-  const handleChange_ID = (e) => {
-    change_ID = e.target.value;
-  };
-  const handleChange_email = (e) => {
-    change_email = e.target.value;
-  };
-  const handleChange_pass = (e) => {
-    change_pass = e.target.value;
-  };
+  // const handleChange_name = (e) => {
+  //   change_name = e.target.value;
+  // };
+  // const handleChange_ID = (e) => {
+  //   change_ID = e.target.value;
+  // };
+  // const handleChange_email = (e) => {
+  //   change_email = e.target.value;
+  // };
+  // const handleChange_pass = (e) => {
+  //   change_pass = e.target.value;
+  // };
+  // // const change = () => {
+  // //   child_set_name(change_name);
+  // //   child_set_ID(change_ID);
+  // //   setClose("login_form_close");
+  // //   //データベース
+  // //   db.collection("users").doc("userA").update({
+  // //     name: { child_name },
+  // //     ID: { child_ID },
+  // //   });
+  // //   //
+  // // };
+
   // const change = () => {
   //   child_set_name(change_name);
   //   child_set_ID(change_ID);
   //   setClose("login_form_close");
-  //   //データベース
-  //   db.collection("users").doc("userA").update({
-  //     name: { child_name },
-  //     ID: { child_ID },
-  //   });
-  //   //
+  //   auth
+  //     .createUserWithEmailAndPassword(change_email, change_pass)
+  //     .then((cred) => {
+  //       console.log(cred);
+  //     });
   // };
 
-  const change = () => {
-    child_set_name(change_name);
-    child_set_ID(change_ID);
-    setClose("login_form_close");
-    auth
-      .createUserWithEmailAndPassword(change_email, change_pass)
-      .then((cred) => {
-        console.log(cred);
-      });
-  };
+  // //
+  // //親に渡す
+  // props.child_name(child_name);
+  // props.child_ID(child_ID);
+  // //
 
-  //
-  //親に渡す
-  props.child_name(child_name);
-  props.child_ID(child_ID);
-  //
-
-  //login_formを閉じるボタン
-  const [close, setClose] = useState("login_form_wrap");
-  const change_class = () => {
-    setClose("login_form_close");
-  };
+  // //login_formを閉じるボタン
+  // const [close, setClose] = useState("login_form_wrap");
+  // const change_class = () => {
+  //   setClose("login_form_close");
+  // };
 
   return (
-    <div className={close}>
+    <div
+    // className={close}
+    >
       <div className="login_form">
         <form
-          onSubmit={() => change()}
+          // onSubmit={() => change()}
           id="account_form"
           className="login_form_space"
         >
           <div className="login_form_name">
-            <p className="login_form_header">アカウント名{child_name}</p>
+            <p className="login_form_header">
+              アカウント名
+              {/* {child_name} */}
+            </p>
             <input
               // value={name}
-              onChange={handleChange_name}
+              // onChange={handleChange_name}
               type="text"
               id="account_name"
               maxLength="12"
@@ -77,10 +82,13 @@ const Loginform = (props) => {
             />
           </div>
           <div className="login_form_ID">
-            <p className="login_form_header">アカウントID{child_ID}</p>
+            <p className="login_form_header">
+              アカウントID
+              {/* {child_ID} */}
+            </p>
             <input
               // value={ID}
-              onChange={handleChange_ID}
+              // onChange={handleChange_ID}
               type="text"
               id="account_id"
               maxLength="12"
@@ -91,7 +99,7 @@ const Loginform = (props) => {
             <p className="login_form_header">メールアドレス</p>
             <input
               // value={ID}
-              onChange={handleChange_email}
+              // onChange={handleChange_email}
               type="text"
               id="account_email"
               // maxLength="12"
@@ -102,7 +110,7 @@ const Loginform = (props) => {
             <p className="login_form_header">パスワード</p>
             <input
               // value={ID}
-              onChange={handleChange_pass}
+              // onChange={handleChange_pass}
               type="text"
               id="account_pass"
               // maxLength="12"
@@ -124,7 +132,7 @@ const Loginform = (props) => {
           <input
             type="button"
             value="閉じる"
-            onClick={() => change_class()}
+            // onClick={() => change_class()}
             className="login_form_button"
           />
         </div>
