@@ -8,7 +8,7 @@ import { useState } from "react";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
-const HomePage = () => {
+const Top = () => {
   const [name, setName] = useState("");
   const [ID, setID] = useState("");
   // main_gearing_scroll.current.addEventListener("scroll", () => {
@@ -66,4 +66,4 @@ const HomePage = () => {
     </div>
   );
 };
-export default HomePage;
+export default Top;

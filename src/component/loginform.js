@@ -1,6 +1,6 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
-import firebase, { db, auth } from "../firestore.js";
+// import firebase, { db, auth } from "../firestore.js";
 
 const Loginform = (props) => {
   // const [child_name, child_set_name] = useState("");
@@ -57,13 +57,22 @@ const Loginform = (props) => {
   //   setClose("login_form_close");
   // };
 
+  //登録_top画面の遷移
+  // const [render, set_render] = useState("");
+  const entry_page = () => {
+    return props.entry();
+  };
+  const top_page = () => {
+    return props.top();
+  };
+
   return (
     <div
     // className={close}
     >
       <div className="login_form">
         <form
-          // onSubmit={() => change()}
+          onSubmit={() => top_page()}
           id="account_form"
           className="login_form_space"
         >
@@ -95,15 +104,11 @@ const Loginform = (props) => {
               className="login_form_input_space"
             />
           </div>
-          {/* <li>
-          <p>アカウントアイコン</p>
-          <img src="{my_icon}" alt="アカウントアイコン" />
-        </li> */}
         </form>
         <div className="login_form_button_list">
           <input
             type="submit"
-            value="確定"
+            value="ログイン"
             form="account_form"
             className="login_form_button"
           />
@@ -114,6 +119,9 @@ const Loginform = (props) => {
             className="login_form_button"
           />
         </div>
+      </div>
+      <div>
+        <input type="button" value="未登録" onClick={() => entry_page()} />
       </div>
     </div>
   );

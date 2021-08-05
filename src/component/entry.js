@@ -1,4 +1,7 @@
-const Entry = () => {
+const Entry = (props) => {
+  const back_page = () => {
+    return props.back();
+  };
   return (
     <div>
       <div className="login_form_email">
@@ -22,6 +25,9 @@ const Entry = () => {
           // maxLength="12"
           className="login_form_input_space"
         />
+      </div>
+      <div>
+        <input type="submit" onClick={() => back_page()} />
       </div>
     </div>
   );
