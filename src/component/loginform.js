@@ -1,26 +1,22 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
 import firebase, { db, auth } from "../firestore.js";
+import { useHistory } from "react-router-dom";
 
 const Loginform = (props) => {
-  const [child_name, child_set_name] = useState("");
-  const [child_ID, child_set_ID] = useState("");
-  let change_ID = null;
-  let change_name = null;
+  const [email, set_email] = useState("");
+  const [pass, set_pass] = useState("");
   let change_email = null;
   let change_pass = null;
+  // let top_page = null;
 
-  const handleChange_name = (e) => {
-    change_name = e.target.value;
-  };
-  const handleChange_ID = (e) => {
-    change_ID = e.target.value;
-  };
   const handleChange_email = (e) => {
     change_email = e.target.value;
+    set_email(change_email);
   };
   const handleChange_pass = (e) => {
     change_pass = e.target.value;
+    set_pass(change_pass);
   };
   // const change = () => {
   //   child_set_name(change_name);
@@ -34,31 +30,45 @@ const Loginform = (props) => {
   //   //
   // };
 
+  //ログイン
+  // const user = auth.currentUser
+  // const user_email=user.email
+  //   .then((usr) => {
+  //   const currentUser = auth.currentUser;
+  // });
+  // .catch((error) => {
+  //   const errorCode = error.code;
+  //   const errorMessage = error.errorMessage;
+  // });
+
+  //
   const change = () => {
-    child_set_name(change_name);
-    child_set_ID(change_ID);
-    setClose("login_form_close");
-    auth
-      .createUserWithEmailAndPassword(change_email, change_pass)
-      .then((cred) => {
-        console.log(cred);
-      });
+    auth.signInWithEmailAndPassword(change_email, change_pass);
+    // .then((response) => {
+    //   getAuth(response.user.uid);
+    // })
+    // .catch((error) => {
+    //   console.log("error");
+    //   handle_link("/Top");
+    // });
   };
-
   //
-  //親に渡す
-  props.child_name(child_name);
-  props.child_ID(child_ID);
-  //
+  //ページ遷移
+  const history = useHistory();
+  const handle_link = (path) => {
+    history.push(path);
+    //
 
-  //login_formを閉じるボタン
-  const [close, setClose] = useState("login_form_wrap");
-  const change_class = () => {
-    setClose("login_form_close");
+    //ユーザーの情報を取得
+    db.collection(change_email + change_pass)
+      .doc("user")
+      .get();
   };
 
   return (
-    <div className={close}>
+    <div
+    // className={close}
+    >
       <div className="login_form">
         <form
           onSubmit={() => change()}
@@ -66,68 +76,50 @@ const Loginform = (props) => {
           className="login_form_space"
         >
           <div className="login_form_name">
-            <p className="login_form_header">アカウント名{child_name}</p>
+            <p className="login_form_header">メールアドレス{email}</p>
             <input
               // value={name}
-              onChange={handleChange_name}
+              onChange={handleChange_email}
               type="text"
               id="account_name"
-              maxLength="12"
               className="login_form_input_space"
             />
           </div>
           <div className="login_form_ID">
-            <p className="login_form_header">アカウントID{child_ID}</p>
-            <input
-              // value={ID}
-              onChange={handleChange_ID}
-              type="text"
-              id="account_id"
-              maxLength="12"
-              className="login_form_input_space"
-            />
-          </div>
-          <div className="login_form_email">
-            <p className="login_form_header">メールアドレス</p>
-            <input
-              // value={ID}
-              onChange={handleChange_email}
-              type="text"
-              id="account_email"
-              // maxLength="12"
-              className="login_form_input_space"
-            />
-          </div>
-          <div className="login_form_pass">
-            <p className="login_form_header">パスワード</p>
+            <p className="login_form_header">パスワード{pass}</p>
             <input
               // value={ID}
               onChange={handleChange_pass}
               type="text"
-              id="account_pass"
-              // maxLength="12"
+              id="account_id"
               className="login_form_input_space"
             />
           </div>
-          {/* <li>
-          <p>アカウントアイコン</p>
-          <img src="{my_icon}" alt="アカウントアイコン" />
-        </li> */}
         </form>
         <div className="login_form_button_list">
           <input
             type="submit"
-            value="確定"
+            value="ログイン"
             form="account_form"
             className="login_form_button"
+            onClick={() => handle_link("/Top")}
           />
-          <input
+          {/* <Link to="/Top">ログイン</Link> */}
+          {/* <input
             type="button"
             value="閉じる"
-            onClick={() => change_class()}
+            // onClick={() => change_class()}
             className="login_form_button"
-          />
+          /> */}
         </div>
+      </div>
+      <div>
+        <input
+          type="button"
+          value="未登録"
+          onClick={() => handle_link("/entry")}
+        />
+        {/* <Link to="/entry">未登録</Link> */}
       </div>
     </div>
   );

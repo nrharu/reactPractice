@@ -1,69 +1,41 @@
-import SidemenuLeft from "./component/sidemenu_left.js";
-import Main from "./component/main.js";
-import SidemenuRight from "./component/sidemenu_right.js";
 import "./style/style.scss";
+import Top from "./component/Top.js";
 import Loginform from "./component/loginform.js";
-import SidemenuRightSearchboxIcon from "./component/sidemenu_right_child/sidemnu_right_searchbox_icon.js";
-import { useState } from "react";
-// import { useEffect } from "react";
-// import React, { useEffect } from "react";
+import React, { useState } from "react";
+import Entry from "./component/entry.js";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const App = () => {
-  const [name, setName] = useState("");
-  const [ID, setID] = useState("");
-  // main_gearing_scroll.current.addEventListener("scroll", () => {
-  //   sidemenu_right_gearing_scroll.current.scrollTop =
-  //     main_gearing_scroll.current.scrollTop;
-  // });
+// const App = () => {
+//   const [render, set_render] = useState(
+//     <Loginform top={() => change_top()} entry={() => change_entry()} />
+//   );
+//   const change_top = () => {
+//     set_render(<Top />);
+//   };
+//   const change_entry = () => {
+//     set_render(<Entry back={() => back_page()} />);
+//   };
+//   const back_page = () => {
+//     set_render(
+//       <Loginform top={() => change_top()} entry={() => change_entry()} />
+//     );
+//   };
+//   // set_render(change_render);
 
-  // const right_scroll = document.getByElementId("sidmenu_right_gearing_scroll");
-  // const main_scroll = document.getByElementById("main_gearing_scroll");
-  // main_scroll.addEventListener("scroll", () => {
-  //   right_scroll.scrollTop = main_scroll.scrollTop;
-  // });
+//   return <div>{render}</div>;
+// };
 
+const App = (props) => {
   return (
-    <div className="body">
-      <Loginform child_name={setName} child_ID={setID} />
-      <div className="content">
-        <div className="sidemenu_left_box_space">
-          <div className="sidemenu_left_wrap">
-            <SidemenuLeft child_name={name} child_ID={ID} />
-          </div>
-        </div>
-        {/*  */}
-        <div
-          className="main_wrap"
-          // onScroll={scroll_gearing()}
-          // ref={this.test2}
-        >
-          <Main child_name={name} child_ID={ID} />
-        </div>
-        <div
-          className="sidemenu_right_box_space"
-          // ref={sidemenu_right_gearing_scroll}
-          // ref={test}
-        >
-          {/*  */}
-          <div className="sidemenu_right_searchbox_sticky">
-            <div className="sidemenu_right_searchbox_wrap">
-              <SidemenuRightSearchboxIcon />
-              <input
-                type="search"
-                placeholder="キーワード検索"
-                className="sidemenu_right_searchbox"
-              ></input>
-            </div>
-          </div>
-          <div
-            className="sidemenu_right_wrap"
-            // ref={this.test}
-          >
-            <SidemenuRight />
-          </div>
-        </div>
+    <Router>
+      <div>
+        {/* <Switch> */}
+        <Route path="/loginform" component={Loginform} />
+        <Route path="/Top" component={Top} />
+        <Route path="/entry" component={Entry} />
+        {/* </Switch> */}
       </div>
-    </div>
+    </Router>
   );
 };
 export default App;
