@@ -2,6 +2,18 @@ const Entry = (props) => {
   const back_page = () => {
     return props.back();
   };
+  //登録機能
+  // auth
+  //   .createUserWithEmailAndPassword(change_email, change_pass)
+  //   .then((cred) => {
+  //     console.log(cred);
+  //   });
+  //   const handleChange_email = (e) => {
+  //     change_email = e.target.value;
+  //   };
+  //   const handleChange_pass = (e) => {
+  //     change_pass = e.target.value;
+  //   };
   return (
     <div>
       <div className="login_form_email">

@@ -3,67 +3,59 @@ import React, { useState } from "react";
 // import firebase, { db, auth } from "../firestore.js";
 
 const Loginform = (props) => {
-  // const [child_name, child_set_name] = useState("");
-  // const [child_ID, child_set_ID] = useState("");
-  // let change_ID = null;
-  // let change_name = null;
-  // let change_email = null;
-  // let change_pass = null;
+  const [email, set_email] = useState("");
+  const [pass, set_pass] = useState("");
+  let change_email = null;
+  let change_pass = null;
+  let top_page = null;
 
-  // const handleChange_name = (e) => {
-  //   change_name = e.target.value;
-  // };
-  // const handleChange_ID = (e) => {
-  //   change_ID = e.target.value;
-  // };
-  // const handleChange_email = (e) => {
-  //   change_email = e.target.value;
-  // };
-  // const handleChange_pass = (e) => {
-  //   change_pass = e.target.value;
-  // };
-  // // const change = () => {
-  // //   child_set_name(change_name);
-  // //   child_set_ID(change_ID);
-  // //   setClose("login_form_close");
-  // //   //データベース
-  // //   db.collection("users").doc("userA").update({
-  // //     name: { child_name },
-  // //     ID: { child_ID },
-  // //   });
-  // //   //
-  // // };
-
+  const handleChange_email = (e) => {
+    change_email = e.target.value;
+    set_email(change_email);
+  };
+  const handleChange_pass = (e) => {
+    change_pass = e.target.value;
+    set_pass(change_pass);
+  };
   // const change = () => {
   //   child_set_name(change_name);
   //   child_set_ID(change_ID);
   //   setClose("login_form_close");
-  //   auth
-  //     .createUserWithEmailAndPassword(change_email, change_pass)
-  //     .then((cred) => {
-  //       console.log(cred);
-  //     });
+  //   //データベース
+  //   db.collection("users").doc("userA").update({
+  //     name: { child_name },
+  //     ID: { child_ID },
+  //   });
+  //   //
   // };
 
-  // //
-  // //親に渡す
+  const change = () => {
+    set_email(change_email);
+    set_pass(change_pass);
+    // setClose("login_form_close");
+
+    //ページの遷移
+    top_page = () => {
+      return props.top();
+    };
+  };
+
+  //
+  //親に渡す
   // props.child_name(child_name);
   // props.child_ID(child_ID);
-  // //
+  //
 
-  // //login_formを閉じるボタン
+  //login_formを閉じるボタン
   // const [close, setClose] = useState("login_form_wrap");
   // const change_class = () => {
   //   setClose("login_form_close");
   // };
 
-  //登録_top画面の遷移
+  // 登録_top画面の遷移
   // const [render, set_render] = useState("");
   const entry_page = () => {
     return props.entry();
-  };
-  const top_page = () => {
-    return props.top();
   };
 
   return (
@@ -72,18 +64,15 @@ const Loginform = (props) => {
     >
       <div className="login_form">
         <form
-          onSubmit={() => top_page()}
+          onSubmit={() => change()}
           id="account_form"
           className="login_form_space"
         >
           <div className="login_form_name">
-            <p className="login_form_header">
-              アカウント名
-              {/* {child_name} */}
-            </p>
+            <p className="login_form_header">メールアドレス{email}</p>
             <input
               // value={name}
-              // onChange={handleChange_name}
+              onChange={handleChange_email}
               type="text"
               id="account_name"
               maxLength="12"
@@ -91,13 +80,10 @@ const Loginform = (props) => {
             />
           </div>
           <div className="login_form_ID">
-            <p className="login_form_header">
-              アカウントID
-              {/* {child_ID} */}
-            </p>
+            <p className="login_form_header">パスワード{pass}</p>
             <input
               // value={ID}
-              // onChange={handleChange_ID}
+              onChange={handleChange_pass}
               type="text"
               id="account_id"
               maxLength="12"
@@ -112,12 +98,12 @@ const Loginform = (props) => {
             form="account_form"
             className="login_form_button"
           />
-          <input
+          {/* <input
             type="button"
             value="閉じる"
             // onClick={() => change_class()}
             className="login_form_button"
-          />
+          /> */}
         </div>
       </div>
       <div>
