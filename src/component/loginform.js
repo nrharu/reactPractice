@@ -7,7 +7,7 @@ const Loginform = (props) => {
   const [pass, set_pass] = useState("");
   let change_email = null;
   let change_pass = null;
-  let top_page = null;
+  // let top_page = null;
 
   const handleChange_email = (e) => {
     change_email = e.target.value;
@@ -33,11 +33,6 @@ const Loginform = (props) => {
     set_email(change_email);
     set_pass(change_pass);
     // setClose("login_form_close");
-
-    //ページの遷移
-    top_page = () => {
-      return props.top();
-    };
   };
 
   //
@@ -56,6 +51,9 @@ const Loginform = (props) => {
   // const [render, set_render] = useState("");
   const entry_page = () => {
     return props.entry();
+  };
+  const top_page = () => {
+    return props.top();
   };
 
   return (
@@ -97,6 +95,7 @@ const Loginform = (props) => {
             value="ログイン"
             form="account_form"
             className="login_form_button"
+            onClick={() => top_page()}
           />
           {/* <input
             type="button"
