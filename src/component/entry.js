@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
-import firebase, { auth } from "../firestore.js";
+import firebase, { db, auth } from "../firestore.js";
 const Entry = () => {
   let change_email = null;
   let change_pass = null;
-  //登録機能
 
+  //登録機能
   const handleChange_email = (e) => {
     change_email = e.target.value;
   };
@@ -19,7 +19,23 @@ const Entry = () => {
       .then((cred) => {
         console.log(cred);
       });
+    //ドキュメントの作成
+    //   if () {
+    //       db.Collection(change_email + change_pass)
+    //           .doc("user")
+    //           .set({
+    //               name: "",
+    //               ID: "",
+    //           });
+    //   }
   };
+  //
+
+  //   //ドキュメントの作成
+  //     db.Collection(chsnge_email + change_pass).doc(user).set({
+  //         name: "",
+  //         ID: "",
+  //   })
   return (
     <div>
       <div className="login_form_email">

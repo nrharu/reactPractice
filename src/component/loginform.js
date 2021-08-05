@@ -43,21 +43,26 @@ const Loginform = (props) => {
 
   //
   const change = () => {
-    auth
-      .signInWithEmailAndPassword(change_email, change_pass)
-      .catch((error) => {
-        handle_link("/Top");
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
-
-    // setClose("login_form_close");
+    auth.signInWithEmailAndPassword(change_email, change_pass);
+    // .then((response) => {
+    //   getAuth(response.user.uid);
+    // })
+    // .catch((error) => {
+    //   console.log("error");
+    //   handle_link("/Top");
+    // });
   };
   //
   //ページ遷移
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
+    //
+
+    //ユーザーの情報を取得
+    db.collection(change_email + change_pass)
+      .doc("user")
+      .get();
   };
 
   return (
@@ -97,7 +102,7 @@ const Loginform = (props) => {
             value="ログイン"
             form="account_form"
             className="login_form_button"
-            // onClick={() => handle_link("/Top")}
+            onClick={() => handle_link("/Top")}
           />
           {/* <Link to="/Top">ログイン</Link> */}
           {/* <input
