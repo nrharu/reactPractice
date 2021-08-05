@@ -1,6 +1,6 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
-// import firebase, { db, auth } from "../firestore.js";
+import firebase, { db, auth } from "../firestore.js";
 import { useHistory } from "react-router-dom";
 
 const Loginform = (props) => {
@@ -30,19 +30,31 @@ const Loginform = (props) => {
   //   //
   // };
 
+  //ログイン
+  // const user = auth.currentUser
+  // const user_email=user.email
+  //   .then((usr) => {
+  //   const currentUser = auth.currentUser;
+  // });
+  // .catch((error) => {
+  //   const errorCode = error.code;
+  //   const errorMessage = error.errorMessage;
+  // });
+
+  //
   const change = () => {
-    set_email(change_email);
-    set_pass(change_pass);
+    auth
+      .signInWithEmailAndPassword(change_email, change_pass)
+      .catch((error) => {
+        handle_link("/Top");
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+
     // setClose("login_form_close");
   };
-
   //
-  //親に渡す
-  // props.child_name(child_name);
-  // props.child_ID(child_ID);
-  //
-
-  //login_formを閉じるボタン
+  //ページ遷移
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
@@ -65,7 +77,6 @@ const Loginform = (props) => {
               onChange={handleChange_email}
               type="text"
               id="account_name"
-              maxLength="12"
               className="login_form_input_space"
             />
           </div>
@@ -76,7 +87,6 @@ const Loginform = (props) => {
               onChange={handleChange_pass}
               type="text"
               id="account_id"
-              maxLength="12"
               className="login_form_input_space"
             />
           </div>
@@ -87,7 +97,7 @@ const Loginform = (props) => {
             value="ログイン"
             form="account_form"
             className="login_form_button"
-            onClick={() => handle_link("/Top")}
+            // onClick={() => handle_link("/Top")}
           />
           {/* <Link to="/Top">ログイン</Link> */}
           {/* <input

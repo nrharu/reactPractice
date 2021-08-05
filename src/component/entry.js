@@ -1,23 +1,24 @@
 import { useHistory } from "react-router-dom";
+import firebase, { auth } from "../firestore.js";
 const Entry = () => {
-  //   const back_page = () => {
-  //     return props.back();
-  //   };
+  let change_email = null;
+  let change_pass = null;
   //登録機能
-  // auth
-  //   .createUserWithEmailAndPassword(change_email, change_pass)
-  //   .then((cred) => {
-  //     console.log(cred);
-  //   });
-  //   const handleChange_email = (e) => {
-  //     change_email = e.target.value;
-  //   };
-  //   const handleChange_pass = (e) => {
-  //     change_pass = e.target.value;
-  //   };
+
+  const handleChange_email = (e) => {
+    change_email = e.target.value;
+  };
+  const handleChange_pass = (e) => {
+    change_pass = e.target.value;
+  };
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
+    auth
+      .createUserWithEmailAndPassword(change_email, change_pass)
+      .then((cred) => {
+        console.log(cred);
+      });
   };
   return (
     <div>
@@ -25,7 +26,7 @@ const Entry = () => {
         <p className="login_form_header">メールアドレス</p>
         <input
           // value={ID}
-          // onChange={handleChange_email}
+          onChange={handleChange_email}
           type="text"
           id="account_email"
           // maxLength="12"
@@ -36,7 +37,7 @@ const Entry = () => {
         <p className="login_form_header">パスワード</p>
         <input
           // value={ID}
-          // onChange={handleChange_pass}
+          onChange={handleChange_pass}
           type="text"
           id="account_pass"
           // maxLength="12"
