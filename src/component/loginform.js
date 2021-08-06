@@ -43,27 +43,36 @@ const Loginform = (props) => {
 
   //
   const change = () => {
-    auth.signInWithEmailAndPassword(change_email, change_pass);
-    // .then((response) => {
-    //   getAuth(response.user.uid);
-    // })
-    // .catch((error) => {
-    //   console.log("error");
-    //   handle_link("/Top");
-    // });
+    auth
+      .signInWithEmailAndPassword(change_email, change_pass)
+      .then(() => {
+        handle_link("/Top");
+      })
+      .catch(() => {
+        console.log("error");
+      });
   };
   //
   //ページ遷移
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
-    //
-
-    //ユーザーの情報を取得
-    db.collection(change_email + change_pass)
-      .doc("user")
-      .get();
   };
+  //
+  // const signout = () => {
+  //   auth.signOut();
+  // };
+  // .then(() => { })
+  // .catch(() => { })
+
+  //ユーザーの情報を取得
+  // const user = auth.currentUser
+  // if (user !== null) {
+  //   const displayname=user.displayName
+  // }
+  //   db.collection(change_email + change_pass)
+  //     .doc("user")
+  //     .get();
 
   return (
     <div
@@ -102,7 +111,7 @@ const Loginform = (props) => {
             value="ログイン"
             form="account_form"
             className="login_form_button"
-            onClick={() => handle_link("/Top")}
+            // onClick={() => handle_link("/Top")}
           />
           {/* <Link to="/Top">ログイン</Link> */}
           {/* <input
@@ -121,6 +130,11 @@ const Loginform = (props) => {
         />
         {/* <Link to="/entry">未登録</Link> */}
       </div>
+      <input
+        type="button"
+        value="ログアウト"
+        // onClick={() => signout()}
+      />
     </div>
   );
 };
