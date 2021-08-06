@@ -26,8 +26,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // };
 
 const App = () => {
-  const props = <Loginform />;
-
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
+  <Loginform child_name={set_name} child_ID={set_ID} />;
+  <Top name={name} ID={ID} />;
   return (
     <Router>
       <div>

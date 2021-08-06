@@ -36,9 +36,16 @@ const Loginform = (props) => {
     const user_uid = await user.uid;
     const result = await db.collection(user_uid).doc("user").get();
     console.log(result);
-
+    const name = result.get("name");
+    const ID = result.get("ID");
     handle_link("/Top");
+    props.child_name(name);
+    props.child_ID(ID);
   };
+  //
+
+  //
+
   //確認
   const check = () => {
     const user = auth.currentUser;
@@ -62,11 +69,16 @@ const Loginform = (props) => {
 
   //テスト
 
-  const test = async () => {
+  let data = "";
+  const test1 = async () => {
     const result = await db.collection("users").doc("test").get();
-    const data = result.data();
+    data = result.data();
     console.log(data);
+    // console.log(test);
+    const usagi = result.get("test");
+    console.log(usagi);
   };
+
   console.log(auth);
   return (
     <div
@@ -125,8 +137,9 @@ const Loginform = (props) => {
         {/* <Link to="/entry">未登録</Link> */}
       </div>
       <input type="button" value="ログアウト" onClick={() => logout()} />
-      <input type="button" value="テスト" onClick={() => test()} />
+      <input type="button" value="テスト" onClick={() => test1()} />
       <input type="button" value="確認" onClick={() => check()} />
+      <p>？{data}</p>
     </div>
   );
 };
