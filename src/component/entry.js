@@ -9,6 +9,7 @@ const Entry = () => {
   const [ID, set_ID] = useState("");
 
   //登録機能
+  //テキストの取得
   const handleChange_email = (e) => {
     const change_email = e.target.value;
     set_email(change_email);
@@ -29,6 +30,7 @@ const Entry = () => {
   const handle_link = (path) => {
     history.push(path);
   };
+  //
   const submit = () => {
     auth
       .createUserWithEmailAndPassword(email, pass)
@@ -49,12 +51,6 @@ const Entry = () => {
   };
 
   //
-
-  //   //ドキュメントの作成
-  //     db.Collection(chsnge_email + change_pass).doc(user).set({
-  //         name: "",
-  //         ID: "",
-  //   })
   return (
     <div>
       <div className="login_form_email">

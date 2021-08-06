@@ -18,41 +18,16 @@ const Loginform = (props) => {
     const change_pass = e.target.value;
     set_pass(change_pass);
   };
-  // const change = () => {
-  //   child_set_name(change_name);
-  //   child_set_ID(change_ID);
-  //   setClose("login_form_close");
-  //   //データベース
-  //   db.collection("users").doc("userA").update({
-  //     name: { child_name },
-  //     ID: { child_ID },
-  //   });
-  //   //
-  // };
+  //
 
   //ログイン
-  // const user = auth.currentUser
-  // const user_email=user.email
-  //   .then((usr) => {
-  //   const currentUser = auth.currentUser;
-  // });
-  // .catch((error) => {
-  //   const errorCode = error.code;
-  //   const errorMessage = error.errorMessage;
-  // });
-
-  //
-  // const user = auth.getInstance().getCurrentUser();
-  // console.log(user);
-  // if (user != null) {
-  // User is signed in
-  // } else {
-  // No user is signed in
-  // }
   const submit = () => {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
+        db.collection(email + ":" + pass)
+          .doc("user")
+          .get();
         handle_link("/Top");
       })
       .catch((error) => {
@@ -63,7 +38,6 @@ const Loginform = (props) => {
         // } else {
         //   alert(errorMessage);
         // }
-        console.log(error);
         console.log("エラー");
       });
   };
@@ -103,20 +77,15 @@ const Loginform = (props) => {
   //     .doc("user")
   //     .get();
 
+  //テスト
   const test = () => {
-    // new Promise()
-    //   .then(() => {
-    //     handle_link("/Top");
-    //   })
-    //   .catch(() => {
-    //     console.log("error");
-    //   });
-    var sample = new Promise((resolve, reject) => {
-      resolve();
-    });
-    sample.then(() => {
-      handle_link("/Top");
-    });
+    const get = db
+      .collection("test")
+      .doc("test")
+      .get()
+      .then(() => {
+        console.log(get);
+      });
   };
   return (
     <div
