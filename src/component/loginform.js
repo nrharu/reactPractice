@@ -30,7 +30,7 @@ const Loginform = (props) => {
           .get();
         handle_link("/Top");
       })
-      .catch((error) => {
+      .catch(() => {
         // var errorCode = error.code;
         // var errorMessage = error.message;
         // if (errorCode === "auth/wrong-password") {
@@ -41,7 +41,8 @@ const Loginform = (props) => {
         console.log("エラー");
       });
   };
-
+  const user = auth.currentUser;
+  console.log(user);
   //
   //ページ遷移
   const history = useHistory();
@@ -86,6 +87,7 @@ const Loginform = (props) => {
       .then(() => {
         console.log(get);
       });
+    const login_user = auth.currnetUser();
   };
   return (
     <div

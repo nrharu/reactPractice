@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
-const Top = () => {
-  const [name, setName] = useState("");
-  const [ID, setID] = useState("");
+const Top = (props) => {
+  // const [name, setName] = useState("");
+  // const [ID, setID] = useState("");
   // main_gearing_scroll.current.addEventListener("scroll", () => {
   //   sidemenu_right_gearing_scroll.current.scrollTop =
   //     main_gearing_scroll.current.scrollTop;
@@ -30,7 +30,7 @@ const Top = () => {
       <div className="content">
         <div className="sidemenu_left_box_space">
           <div className="sidemenu_left_wrap">
-            <SidemenuLeft child_name={name} child_ID={ID} />
+            <SidemenuLeft child_name={props.name} child_ID={props.ID} />
           </div>
         </div>
         {/*  */}
@@ -39,7 +39,7 @@ const Top = () => {
           // onScroll={scroll_gearing()}
           // ref={this.test2}
         >
-          <Main child_name={name} child_ID={ID} />
+          <Main child_name={props.name} child_ID={props.ID} />
         </div>
         <div
           className="sidemenu_right_box_space"

@@ -25,15 +25,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //   return <div>{render}</div>;
 // };
 
-const App = (props) => {
+const App = () => {
+  const props = <Loginform />;
+
   return (
     <Router>
       <div>
-        {/* <Switch> */}
-        <Route path="/loginform" component={Loginform} />
-        <Route path="/Top" component={Top} />
-        <Route path="/entry" component={Entry} />
-        {/* </Switch> */}
+        <Switch>
+          <Route path="/loginform" component={Loginform} />
+          <Route path="/Top" component={Top} />
+          <Route path="/entry" component={Entry} />
+        </Switch>
       </div>
     </Router>
   );
