@@ -1,38 +1,50 @@
 import { useHistory } from "react-router-dom";
 import firebase, { db, auth } from "../firestore.js";
+import { useState } from "react";
+
 const Entry = () => {
-  let change_email = null;
-  let change_pass = null;
-  let change_name = null;
-  let change_ID = null;
+  const [email, set_email] = useState("");
+  const [pass, set_pass] = useState("");
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
 
   //登録機能
   const handleChange_email = (e) => {
-    change_email = e.target.value;
+    const change_email = e.target.value;
+    set_email(change_email);
   };
   const handleChange_pass = (e) => {
-    change_pass = e.target.value;
+    const change_pass = e.target.value;
+    set_pass(change_pass);
   };
   const handleChange_name = (e) => {
-    change_name = e.target.value;
+    const change_name = e.target.value;
+    set_name(change_name);
   };
   const handleChange_ID = (e) => {
-    change_ID = e.target.value;
+    const change_ID = e.target.value;
+    set_ID(change_ID);
   };
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
+  };
+  const submit = () => {
     auth
-      .createUserWithEmailAndPassword(change_email, change_pass)
+      .createUserWithEmailAndPassword(email, pass)
       .then((cred) => {
         console.log(cred);
+        handle_link("/loginform");
         //ドキュメントの作成 アカウント名とIDの更新
-        db.collection(change_email + ":" + change_pass)
+        db.collection(email + ":" + pass)
           .doc("user")
           .set({
-            name: change_name,
-            ID: change_ID,
+            name: name,
+            ID: ID,
           });
+      })
+      .catch((error) => {
+        console.log("エラー");
       });
   };
 
@@ -90,11 +102,7 @@ const Entry = () => {
         />
       </div>
       <div>
-        <input
-          type="submit"
-          onClick={() => handle_link("/loginform")}
-          value="登録"
-        />
+        <input type="submit" onClick={() => submit()} value="登録" />
         {/* <Link to="/loginform">登録</Link> */}
       </div>
     </div>

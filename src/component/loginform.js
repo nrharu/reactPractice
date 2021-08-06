@@ -6,16 +6,16 @@ import { useHistory } from "react-router-dom";
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
-  let change_email = null;
-  let change_pass = null;
+  // let change_email = null;
+  // let change_pass = null;
   // let top_page = null;
 
   const handleChange_email = (e) => {
-    change_email = e.target.value;
+    const change_email = e.target.value;
     set_email(change_email);
   };
   const handleChange_pass = (e) => {
-    change_pass = e.target.value;
+    const change_pass = e.target.value;
     set_pass(change_pass);
   };
   // const change = () => {
@@ -42,16 +42,32 @@ const Loginform = (props) => {
   // });
 
   //
-  const change = () => {
+  // const user = auth.getInstance().getCurrentUser();
+  // console.log(user);
+  // if (user != null) {
+  // User is signed in
+  // } else {
+  // No user is signed in
+  // }
+  const submit = () => {
     auth
-      .signInWithEmailAndPassword(change_email, change_pass)
+      .signInWithEmailAndPassword(email, pass)
       .then(() => {
         handle_link("/Top");
       })
-      .catch(() => {
-        console.log("error");
+      .catch((error) => {
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // if (errorCode === "auth/wrong-password") {
+        //   alert("Wrong password.");
+        // } else {
+        //   alert(errorMessage);
+        // }
+        console.log(error);
+        console.log("エラー");
       });
   };
+
   //
   //ページ遷移
   const history = useHistory();
@@ -59,6 +75,19 @@ const Loginform = (props) => {
     history.push(path);
   };
   //
+
+  //ログアウト
+  const logout = () => {
+    auth
+      .signOut()
+      .then(() => {
+        console.log("ログアウト");
+      })
+      .catch((error) => {
+        console.log("エラー");
+      });
+  };
+
   // const signout = () => {
   //   auth.signOut();
   // };
@@ -74,13 +103,28 @@ const Loginform = (props) => {
   //     .doc("user")
   //     .get();
 
+  const test = () => {
+    // new Promise()
+    //   .then(() => {
+    //     handle_link("/Top");
+    //   })
+    //   .catch(() => {
+    //     console.log("error");
+    //   });
+    var sample = new Promise((resolve, reject) => {
+      resolve();
+    });
+    sample.then(() => {
+      handle_link("/Top");
+    });
+  };
   return (
     <div
     // className={close}
     >
       <div className="login_form">
         <form
-          onSubmit={() => change()}
+          onSubmit={() => submit()}
           id="account_form"
           className="login_form_space"
         >
@@ -130,11 +174,8 @@ const Loginform = (props) => {
         />
         {/* <Link to="/entry">未登録</Link> */}
       </div>
-      <input
-        type="button"
-        value="ログアウト"
-        // onClick={() => signout()}
-      />
+      <input type="button" value="ログアウト" onClick={() => logout()} />
+      <input type="button" value="テスト" onClick={() => test()} />
     </div>
   );
 };
