@@ -31,23 +31,18 @@ const Entry = () => {
     history.push(path);
   };
   //
-  const submit = () => {
-    auth
-      .createUserWithEmailAndPassword(email, pass)
-      .then((cred) => {
-        console.log(cred);
-        handle_link("/loginform");
-        //ドキュメントの作成 アカウント名とIDの更新
-        const user = auth.currentUser;
-        const user_uid = user.uid;
-        db.collection(user_uid).doc("user").set({
-          name: name,
-          ID: ID,
-        });
-      })
-      .catch((error) => {
-        console.log("エラー");
-      });
+  const submit = async () => {
+    auth.createUserWithEmailAndPassword(email, pass).catch((error) => {
+      console.log("エラー");
+    });
+    await handle_link("/loginform");
+    //ドキュメントの作成 アカウント名とIDの更新
+    const user = await auth.currentUser;
+    const user_uid = await user.uid;
+    db.collection(user_uid).doc("user").set({
+      name: name,
+      ID: ID,
+    });
   };
 
   //

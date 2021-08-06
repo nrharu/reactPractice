@@ -21,25 +21,23 @@ const Loginform = (props) => {
   //
 
   //ログイン
-  const submit = () => {
-    auth
-      .signInWithEmailAndPassword(email, pass)
-      .then(() => {
-        const user = auth.currentUser;
-        const user_uid = user.uid;
-        db.collection(user_uid).doc("user").get();
-        handle_link("/Top");
-      })
-      .catch(() => {
-        // var errorCode = error.code;
-        // var errorMessage = error.message;
-        // if (errorCode === "auth/wrong-password") {
-        //   alert("Wrong password.");
-        // } else {
-        //   alert(errorMessage);
-        // }
-        console.log("エラー");
-      });
+  const submit = async () => {
+    auth.signInWithEmailAndPassword(email, pass).catch(() => {
+      // var errorCode = error.code;
+      // var errorMessage = error.message;
+      // if (errorCode === "auth/wrong-password") {
+      //   alert("Wrong password.");
+      // } else {
+      //   alert(errorMessage);
+      // }
+      console.log("エラー");
+    });
+    const user = await auth.currentUser;
+    const user_uid = await user.uid;
+    const result = await db.collection(user_uid).doc("user").get();
+    console.log(result);
+
+    handle_link("/Top");
   };
   //確認
   const check = () => {
@@ -55,43 +53,21 @@ const Loginform = (props) => {
   //
 
   //ログアウト
-  const logout = () => {
-    auth
-      .signOut()
-      .then(() => {
-        console.log("ログアウト");
-      })
-      .catch((error) => {
-        console.log("エラー");
-      });
+  const logout = async () => {
+    auth.signOut().catch((error) => {
+      console.log("エラー");
+    });
+    await console.log("ログアウト");
   };
-
-  // const signout = () => {
-  //   auth.signOut();
-  // };
-  // .then(() => { })
-  // .catch(() => { })
-
-  //ユーザーの情報を取得
-  // const user = auth.currentUser
-  // if (user !== null) {
-  //   const displayname=user.displayName
-  // }
-  //   db.collection(change_email + change_pass)
-  //     .doc("user")
-  //     .get();
 
   //テスト
-  const test = () => {
-    const get = db
-      .collection("test")
-      .doc("test")
-      .get()
-      .then(() => {
-        console.log(get);
-      });
-    const login_user = auth.currnetUser();
+
+  const test = async () => {
+    const result = await db.collection("users").doc("test").get();
+    const data = result.data();
+    console.log(data);
   };
+  console.log(auth);
   return (
     <div
     // className={close}
