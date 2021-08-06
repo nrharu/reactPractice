@@ -47,54 +47,61 @@ const Entry = () => {
 
   //
   return (
-    <div>
-      <div className="login_form_email">
-        <p className="login_form_header">メールアドレス</p>
-        <input
-          // value={ID}
-          onChange={handleChange_email}
-          type="text"
-          id="account_email"
-          // maxLength="12"
-          className="login_form_input_space"
-        />
-      </div>
-      <div className="login_form_pass">
-        <p className="login_form_header">パスワード</p>
-        <input
-          // value={ID}
-          onChange={handleChange_pass}
-          type="text"
-          id="account_pass"
-          // maxLength="12"
-          className="login_form_input_space"
-        />
-      </div>
-      <div className="login_form_pass">
-        <p className="login_form_header">アカウント名</p>
-        <input
-          // value={ID}
-          onChange={handleChange_name}
-          type="text"
-          id="account_pass"
-          // maxLength="12"
-          className="login_form_input_space"
-        />
-      </div>
-      <div className="login_form_pass">
-        <p className="login_form_header">アカウントID</p>
-        <input
-          // value={ID}
-          onChange={handleChange_ID}
-          type="text"
-          id="account_pass"
-          // maxLength="12"
-          className="login_form_input_space"
-        />
-      </div>
-      <div>
-        <input type="submit" onClick={() => submit()} value="登録" />
-        {/* <Link to="/loginform">登録</Link> */}
+    <div className="entry_wrap">
+      <div className="entry">
+        <div className="login_form_email">
+          <p className="login_form_header">メールアドレス</p>
+          <input
+            // value={ID}
+            onChange={handleChange_email}
+            type="text"
+            id="account_email"
+            // maxLength="12"
+            className="login_form_input_space"
+          />
+        </div>
+        <div className="login_form_pass">
+          <p className="login_form_header">パスワード</p>
+          <input
+            // value={ID}
+            onChange={handleChange_pass}
+            type="text"
+            id="account_pass"
+            // maxLength="12"
+            className="login_form_input_space"
+          />
+        </div>
+        <div className="login_form_pass">
+          <p className="login_form_header">アカウント名</p>
+          <input
+            // value={ID}
+            onChange={handleChange_name}
+            type="text"
+            id="account_pass"
+            // maxLength="12"
+            className="login_form_input_space"
+          />
+        </div>
+        <div className="login_form_pass">
+          <p className="login_form_header">アカウントID</p>
+          <input
+            // value={ID}
+            onChange={handleChange_ID}
+            type="text"
+            id="account_pass"
+            // maxLength="12"
+            className="login_form_input_space"
+          />
+        </div>
+        <div className="entry_button_wrap">
+          <input
+            type="submit"
+            onClick={() => submit()}
+            value="登録"
+            className="entry_button"
+          />
+          {/* <Link to="/loginform">登録</Link> */}
+        </div>
       </div>
     </div>
   );

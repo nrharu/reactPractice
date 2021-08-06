@@ -81,9 +81,7 @@ const Loginform = (props) => {
 
   console.log(auth);
   return (
-    <div
-    // className={close}
-    >
+    <div className="login_form_wrap">
       <div className="login_form">
         <form
           // onSubmit={() => submit()}
@@ -119,27 +117,20 @@ const Loginform = (props) => {
             className="login_form_button"
             onClick={() => submit()}
           />
-          {/* <Link to="/Top">ログイン</Link> */}
-          {/* <input
+          <input
             type="button"
-            value="閉じる"
-            // onClick={() => change_class()}
+            value="未登録"
             className="login_form_button"
-          /> */}
+            onClick={() => handle_link("/entry")}
+          />
         </div>
       </div>
-      <div>
-        <input
-          type="button"
-          value="未登録"
-          onClick={() => handle_link("/entry")}
-        />
-        {/* <Link to="/entry">未登録</Link> */}
+
+      <div className="test_button_list">
+        <input type="button" value="ログアウト" onClick={() => logout()} />
+        <input type="button" value="テスト" onClick={() => test1()} />
+        <input type="button" value="確認" onClick={() => check()} />
       </div>
-      <input type="button" value="ログアウト" onClick={() => logout()} />
-      <input type="button" value="テスト" onClick={() => test1()} />
-      <input type="button" value="確認" onClick={() => check()} />
-      <p>？{data}</p>
     </div>
   );
 };

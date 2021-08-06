@@ -32,7 +32,7 @@ const App = () => {
   <Top name={name} ID={ID} />;
   return (
     <Router>
-      <div>
+      <div className="display">
         <Switch>
           <Route path="/loginform" component={Loginform} />
           <Route path="/Top" component={Top} />
