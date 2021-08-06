@@ -6,72 +6,85 @@ import { useHistory } from "react-router-dom";
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
-  let change_email = null;
-  let change_pass = null;
+  // let change_email = null;
+  // let change_pass = null;
   // let top_page = null;
 
   const handleChange_email = (e) => {
-    change_email = e.target.value;
+    const change_email = e.target.value;
     set_email(change_email);
   };
   const handleChange_pass = (e) => {
-    change_pass = e.target.value;
+    const change_pass = e.target.value;
     set_pass(change_pass);
   };
-  // const change = () => {
-  //   child_set_name(change_name);
-  //   child_set_ID(change_ID);
-  //   setClose("login_form_close");
-  //   //データベース
-  //   db.collection("users").doc("userA").update({
-  //     name: { child_name },
-  //     ID: { child_ID },
-  //   });
-  //   //
-  // };
+  //
 
   //ログイン
-  // const user = auth.currentUser
-  // const user_email=user.email
-  //   .then((usr) => {
-  //   const currentUser = auth.currentUser;
-  // });
-  // .catch((error) => {
-  //   const errorCode = error.code;
-  //   const errorMessage = error.errorMessage;
-  // });
+  const submit = async () => {
+    auth.signInWithEmailAndPassword(email, pass).catch(() => {
+      // var errorCode = error.code;
+      // var errorMessage = error.message;
+      // if (errorCode === "auth/wrong-password") {
+      //   alert("Wrong password.");
+      // } else {
+      //   alert(errorMessage);
+      // }
+      console.log("エラー");
+    });
+    const user = await auth.currentUser;
+    const user_uid = await user.uid;
+    const result = await db.collection(user_uid).doc("user").get();
+    console.log(result);
+    const name = result.get("name");
+    const ID = result.get("ID");
+    handle_link("/Top");
+    props.child_name(name);
+    props.child_ID(ID);
+  };
+  //
 
   //
-  const change = () => {
-    auth.signInWithEmailAndPassword(change_email, change_pass);
-    // .then((response) => {
-    //   getAuth(response.user.uid);
-    // })
-    // .catch((error) => {
-    //   console.log("error");
-    //   handle_link("/Top");
-    // });
+
+  //確認
+  const check = () => {
+    const user = auth.currentUser;
+    console.log(user);
   };
   //
   //ページ遷移
   const history = useHistory();
   const handle_link = (path) => {
     history.push(path);
-    //
+  };
+  //
 
-    //ユーザーの情報を取得
-    db.collection(change_email + change_pass)
-      .doc("user")
-      .get();
+  //ログアウト
+  const logout = async () => {
+    auth.signOut().catch((error) => {
+      console.log("エラー");
+    });
+    await console.log("ログアウト");
   };
 
+  //テスト
+
+  let data = "";
+  const test1 = async () => {
+    const result = await db.collection("users").doc("test").get();
+    data = result.data();
+    console.log(data);
+    // console.log(test);
+    const usagi = result.get("test");
+    console.log(usagi);
+  };
+
+  console.log(auth);
   return (
-    <div
-    // className={close}
-    >
+    <div className="login_form_wrap">
       <div className="login_form">
         <form
-          onSubmit={() => change()}
+          // onSubmit={() => submit()}
           id="account_form"
           className="login_form_space"
         >
@@ -100,26 +113,23 @@ const Loginform = (props) => {
           <input
             type="submit"
             value="ログイン"
-            form="account_form"
+            // form="account_form"
             className="login_form_button"
-            onClick={() => handle_link("/Top")}
+            onClick={() => submit()}
           />
-          {/* <Link to="/Top">ログイン</Link> */}
-          {/* <input
+          <input
             type="button"
-            value="閉じる"
-            // onClick={() => change_class()}
+            value="未登録"
             className="login_form_button"
-          /> */}
+            onClick={() => handle_link("/entry")}
+          />
         </div>
       </div>
-      <div>
-        <input
-          type="button"
-          value="未登録"
-          onClick={() => handle_link("/entry")}
-        />
-        {/* <Link to="/entry">未登録</Link> */}
+
+      <div className="test_button_list">
+        <input type="button" value="ログアウト" onClick={() => logout()} />
+        <input type="button" value="テスト" onClick={() => test1()} />
+        <input type="button" value="確認" onClick={() => check()} />
       </div>
     </div>
   );
