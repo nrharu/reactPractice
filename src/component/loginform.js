@@ -25,9 +25,9 @@ const Loginform = (props) => {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
-        db.collection(email + ":" + pass)
-          .doc("user")
-          .get();
+        const user = auth.currentUser;
+        const user_uid = user.uid;
+        db.collection(user_uid).doc("user").get();
         handle_link("/Top");
       })
       .catch(() => {
@@ -41,8 +41,11 @@ const Loginform = (props) => {
         console.log("エラー");
       });
   };
-  const user = auth.currentUser;
-  console.log(user);
+  //確認
+  const check = () => {
+    const user = auth.currentUser;
+    console.log(user);
+  };
   //
   //ページ遷移
   const history = useHistory();
@@ -95,7 +98,7 @@ const Loginform = (props) => {
     >
       <div className="login_form">
         <form
-          onSubmit={() => submit()}
+          // onSubmit={() => submit()}
           id="account_form"
           className="login_form_space"
         >
@@ -124,9 +127,9 @@ const Loginform = (props) => {
           <input
             type="submit"
             value="ログイン"
-            form="account_form"
+            // form="account_form"
             className="login_form_button"
-            // onClick={() => handle_link("/Top")}
+            onClick={() => submit()}
           />
           {/* <Link to="/Top">ログイン</Link> */}
           {/* <input
@@ -147,6 +150,7 @@ const Loginform = (props) => {
       </div>
       <input type="button" value="ログアウト" onClick={() => logout()} />
       <input type="button" value="テスト" onClick={() => test()} />
+      <input type="button" value="確認" onClick={() => check()} />
     </div>
   );
 };

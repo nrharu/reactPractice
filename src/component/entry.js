@@ -38,7 +38,6 @@ const Entry = () => {
         console.log(cred);
         handle_link("/loginform");
         //ドキュメントの作成 アカウント名とIDの更新
-        // db.collection(email + ":" + pass)
         const user = auth.currentUser;
         const user_uid = user.uid;
         db.collection(user_uid).doc("user").set({
