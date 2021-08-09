@@ -6,6 +6,9 @@ import { useHistory } from "react-router-dom";
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
+  let name = null;
+  let ID = null;
+  let result = null;
   // let change_email = null;
   // let change_pass = null;
   // let top_page = null;
@@ -23,24 +26,26 @@ const Loginform = (props) => {
   //ログイン
   const submit = async () => {
     auth.signInWithEmailAndPassword(email, pass).catch(() => {
-      // var errorCode = error.code;
-      // var errorMessage = error.message;
-      // if (errorCode === "auth/wrong-password") {
-      //   alert("Wrong password.");
-      // } else {
-      //   alert(errorMessage);
-      // }
       console.log("エラー");
     });
+    //ユーザーのデータの取得
     const user = await auth.currentUser;
     const user_uid = await user.uid;
-    const result = await db.collection(user_uid).doc("user").get();
+    result = await db.collection(user_uid).doc("user").get();
     console.log(result);
-    const name = result.get("name");
-    const ID = result.get("ID");
+    name = result.get("name");
+    ID = result.get("ID");
+    // console.log(name);
+    // console.log(ID);
+    //画面遷移
     handle_link("/Top");
+    //親に値を渡す
     props.child_name(name);
     props.child_ID(ID);
+
+    // {
+    //   props.child_ID(ID);
+    // }
   };
   //
 
@@ -50,6 +55,9 @@ const Loginform = (props) => {
   const check = () => {
     const user = auth.currentUser;
     console.log(user);
+    console.log(name);
+    console.log(ID);
+    console.log(result);
   };
   //
   //ページ遷移
@@ -79,7 +87,7 @@ const Loginform = (props) => {
     console.log(usagi);
   };
 
-  console.log(auth);
+  // console.log(auth);
   return (
     <div className="login_form_wrap">
       <div className="login_form">
