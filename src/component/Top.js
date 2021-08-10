@@ -26,7 +26,6 @@ const Top = (props) => {
   const render = useParams();
   return (
     <div className="body">
-      {render}
       <Link to="/loginform">戻る</Link>
       {/* <Loginform child_name={setName} child_ID={setID} /> */}
       <div className="content">

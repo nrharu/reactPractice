@@ -39,8 +39,8 @@ const Loginform = (props) => {
       //親に値を渡す
       // props.child_ID(get_ID);
       // props.child_name(get_name);
-      props.child_ID(get_ID);
-      props.child_name(get_name);
+      props.change_ID(get_ID);
+      props.change_name(get_name);
     };
     // await get_data()
     //画面遷移

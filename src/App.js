@@ -26,13 +26,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // };
 
 const App = () => {
-  const [name, set_name] = useState("usagi");
-  const [ID, set_ID] = useState("usagi");
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
   // <Loginform child_name={set_name} child_ID={set_ID} />;
-  <Top name={name} ID={ID} />;
+  // <Top name={name} ID={ID} />;
   const check = () => {
-    set_name("usagi");
-    set_ID("usagi");
+    // set_name("usagi");
+    // set_ID("usagi");
     console.log(ID);
     console.log(name);
   };
@@ -46,10 +46,10 @@ const App = () => {
       <div className="display">
         <Switch>
           <Route path="/loginform">
-            <Loginform child_name={set_name} child_ID={set_ID} />
+            <Loginform change_name={set_name} change_ID={set_ID} />
           </Route>
           <Route path="/Top">
-            <Top />
+            <Top name={name} ID={ID} />
           </Route>
           <Route path="/entry">
             <Entry />
