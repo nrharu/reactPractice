@@ -1,7 +1,7 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
 import firebase, { db, auth } from "../firestore.js";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 
 const Loginform = (props) => {
   const [email, set_email] = useState("");
@@ -28,37 +28,38 @@ const Loginform = (props) => {
     auth.signInWithEmailAndPassword(email, pass).catch(() => {
       console.log("エラー");
     });
-    //画面遷移
-    handle_link("/Top");
     //ユーザーのデータの取得
     const get_data = async () => {
-      const user = auth.currentUser;
+      const user = await auth.currentUser;
       const user_uid = await user.uid;
       result = await db.collection(user_uid).doc("user").get();
       console.log(result);
-      get_name = result.get("name");
-      get_ID = result.get("ID");
+      get_name = await result.get("name");
+      get_ID = await result.get("ID");
+      //親に値を渡す
+      // props.child_ID(get_ID);
+      // props.child_name(get_name);
+      props.child_ID(get_ID);
+      props.child_name(get_name);
     };
+    // await get_data()
+    //画面遷移
+    await handle_link("/Top");
   };
   //
-  //親に値を渡す
-  // props.child_name(name);
-  // props.child_ID(ID);
-  // props.child_name(name);
-  const usagi = props.child_ID;
+
   //
 
   //確認
   const check = async () => {
-    const user = auth.currentUser;
-    // const user = await auth.currentUser;
-    // const user_uid = await user.uid;
-    // result = await db.collection(user_uid).doc("user").get();
-    // name = result.get("name");
-    // ID = result.get("ID");
-    console.log(user);
-    console.log(get_name);
-    console.log(get_ID);
+    const user_check = await auth.currentUser;
+    const user_uid_check = await user_check.uid;
+    const result = await db.collection(user_uid_check).doc("user").get();
+    const get_name_check = result.get("name");
+    const get_ID_check = result.get("ID");
+    console.log(user_check);
+    console.log(get_name_check);
+    console.log(get_ID_check);
     console.log(result);
   };
   //

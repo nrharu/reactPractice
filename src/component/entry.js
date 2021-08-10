@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import firebase, { db, auth } from "../firestore.js";
 import { useState } from "react";
 
