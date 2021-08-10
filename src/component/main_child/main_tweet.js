@@ -25,9 +25,11 @@ const MainTweet = (props) => {
     set_rows(number);
     console.log(number);
   };
-  const handleSubmit = (e) => {
+  //テキストの入力内容の取得
+  const handleSubmit = async (e) => {
     set_content(() => e.target.value);
     get_number();
+    await console.log(content);
   };
 
   const [time, set_time] = useState("");
@@ -79,7 +81,7 @@ const MainTweet = (props) => {
       console.log(indicate_time);
       set_time(indicate_time);
     };
-
+    return false;
     // setInterval(tweet_time, 1000);
   };
   //
@@ -126,7 +128,7 @@ const MainTweet = (props) => {
                   handle={handleSubmit}
                   value={content}
                   // value="usagisikakatan"
-                  add={add}
+                  // add={add}
                   id="tweet"
                   rows={rows}
                 />
@@ -169,8 +171,9 @@ const MainTweet = (props) => {
                 <input
                   type="submit"
                   value="Tweet"
-                  form="tweet"
+                  // form="tweet"
                   className="main_tweet_submit_button"
+                  onClick={() => add()}
                 />
               </div>
             </div>

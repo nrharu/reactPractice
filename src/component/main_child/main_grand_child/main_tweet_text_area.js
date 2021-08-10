@@ -27,7 +27,11 @@ const MainTweetTextArea = (props) => {
   // let number = lines_get();
 
   return (
-    <form className="main_tweet_textform" id={props.id} onSubmit={props.add}>
+    <form
+      className="main_tweet_textform"
+      id={props.id}
+      // onSubmit={() => props.add}
+    >
       <textarea
         className="main_tweet_textform_area"
         // className={props.class}

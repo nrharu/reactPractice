@@ -22,39 +22,30 @@ const Loginform = (props) => {
     set_pass(change_pass);
   };
   //
+  const get_data = async () => {
+    const user = await auth.currentUser;
+    const user_uid = await user.uid;
+    result = await db.collection(user_uid).doc("user").get();
+    get_name = await result.get("name");
+    get_ID = await result.get("ID");
 
+    //親に値を渡す
+    // await props.change_top(user)
+    await props.change_ID(get_ID);
+    await props.change_name(get_name);
+  };
   //ログイン
   const submit = async () => {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
         handle_link("/Top");
-        const get_data = async () => {
-          const user = await auth.currentUser;
-          const user_uid = await user.uid;
-          result = await db.collection(user_uid).doc("user").get();
-          get_name = await result.get("name");
-          get_ID = await result.get("ID");
-          //親に値を渡す
-          await props.change_ID(get_ID);
-          await props.change_name(get_name);
-        };
+        get_data();
       })
       .catch(() => {
         console.log("エラー");
       });
     //ユーザーのデータの取得
-    // const get_data = async () => {
-    //   const user = await auth.currentUser;
-    //   const user_uid = await user.uid;
-    //   result = await db.collection(user_uid).doc("user").get();
-    //   get_name = await result.get("name");
-    //   get_ID = await result.get("ID");
-    //   //親に値を渡す
-    //   await props.change_ID(get_ID);
-    //   await props.change_name(get_name);
-    // };
-    // await get_data();
   };
   // await get_data()
   //画面遷移

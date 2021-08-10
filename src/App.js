@@ -29,31 +29,26 @@ const App = () => {
   const [name, set_name] = useState("");
   const [ID, set_ID] = useState("");
   // <Loginform child_name={set_name} child_ID={set_ID} />;
-  // <Top name={name} ID={ID} />;
-  const check = () => {
-    // set_name("usagi");
-    // set_ID("usagi");
-    console.log(ID);
-    console.log(name);
-  };
-  // const change_name = (name_state) => {
-  //   set_name(name_state);
-  // };
-  // const change_ID = (ID_state) => {
-  //   set_ID(ID_state);
-  // };
+  // const [top_list, set_top_list] = useState([]);
+  // const [top, set_top] = useState(<Top name={name} ID={ID} />);
+  // // const top = <Top name={name} ID={ID} />
+  // const new_top = { top };
+  // const new_top_list = [new_top, ...top_list];
+  // set_top_list(new_top_list);
+  const path = `/Top/${ID}`;
   return (
     <Router>
-      <input
+      {/* <input
         type="button"
         onClick={() => check()}
         value="propsチェック"
-      ></input>
+      ></input> */}
       <div className="display">
         <Switch>
           <Route path="/loginform">
             <Loginform change_name={set_name} change_ID={set_ID} />
           </Route>
+          {/* <Route path={path}> */}
           <Route path="/Top">
             <Top name={name} ID={ID} />
           </Route>
