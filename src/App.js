@@ -36,6 +36,12 @@ const App = () => {
     console.log(ID);
     console.log(name);
   };
+  // const change_name = (name_state) => {
+  //   set_name(name_state);
+  // };
+  // const change_ID = (ID_state) => {
+  //   set_ID(ID_state);
+  // };
   return (
     <Router>
       <input

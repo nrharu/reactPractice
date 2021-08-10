@@ -25,9 +25,14 @@ const Loginform = (props) => {
 
   //ログイン
   const submit = async () => {
-    auth.signInWithEmailAndPassword(email, pass).catch(() => {
-      console.log("エラー");
-    });
+    auth
+      .signInWithEmailAndPassword(email, pass)
+      .then(() => {
+        handle_link("/Top");
+      })
+      .catch(() => {
+        console.log("エラー");
+      });
     //ユーザーのデータの取得
     const get_data = async () => {
       const user = await auth.currentUser;
@@ -37,15 +42,13 @@ const Loginform = (props) => {
       get_name = await result.get("name");
       get_ID = await result.get("ID");
       //親に値を渡す
-      // props.child_ID(get_ID);
-      // props.child_name(get_name);
-      props.change_ID(get_ID);
-      props.change_name(get_name);
+      await props.change_ID(get_ID);
+      await props.change_name(get_name);
     };
-    // await get_data()
-    //画面遷移
-    await handle_link("/Top");
   };
+  // await get_data()
+  //画面遷移
+  // };
   //
 
   //
@@ -57,10 +60,16 @@ const Loginform = (props) => {
     const result = await db.collection(user_uid_check).doc("user").get();
     const get_name_check = result.get("name");
     const get_ID_check = result.get("ID");
+    // props.change_ID(get_ID);
+    // props.change_name(get_name);
+    props.change_name(get_name);
+    props.change_ID(get_ID);
     console.log(user_check);
     console.log(get_name_check);
     console.log(get_ID_check);
-    console.log(result);
+    // console.log(result);
+    console.log(props.change_name);
+    console.log(props.change_ID);
   };
   //
   //ページ遷移
@@ -93,6 +102,7 @@ const Loginform = (props) => {
   // console.log(auth);
   return (
     <div className="login_form_wrap">
+      {/* <p>{props.change_name(get_name)}</p> */}
       <div className="login_form">
         <form
           // onSubmit={() => submit()}

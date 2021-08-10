@@ -23,9 +23,18 @@ const Top = (props) => {
   // main_scroll.addEventListener("scroll", () => {
   //   right_scroll.scrollTop = main_scroll.scrollTop;
   // });
+  const check = () => {
+    console.log(props.ID);
+    console.log(props.name);
+  };
   const render = useParams();
   return (
     <div className="body">
+      <input
+        type="button"
+        onClick={() => check()}
+        value="propsチェック TOP"
+      ></input>
       <Link to="/loginform">戻る</Link>
       {/* <Loginform child_name={setName} child_ID={setID} /> */}
       <div className="content">
