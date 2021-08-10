@@ -28,6 +28,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 const App = () => {
   const [name, set_name] = useState("");
   const [ID, set_ID] = useState("");
+  const [uid, set_uid] = useState("");
   // <Loginform child_name={set_name} child_ID={set_ID} />;
   // const [top_list, set_top_list] = useState([]);
   // const [top, set_top] = useState(<Top name={name} ID={ID} />);
@@ -46,11 +47,15 @@ const App = () => {
       <div className="display">
         <Switch>
           <Route path="/loginform">
-            <Loginform change_name={set_name} change_ID={set_ID} />
+            <Loginform
+              change_name={set_name}
+              change_ID={set_ID}
+              get_uid={set_uid}
+            />
           </Route>
           {/* <Route path={path}> */}
           <Route path="/Top">
-            <Top name={name} ID={ID} />
+            <Top name={name} ID={ID} user_uid={uid} />
           </Route>
           <Route path="/entry">
             <Entry />

@@ -32,7 +32,11 @@ const Main = (props) => {
           </div>
         </header>
       </div>
-      <MainTweet name={props.child_name} ID={props.child_ID} />
+      <MainTweet
+        name={props.child_name}
+        ID={props.child_ID}
+        user_uid={props.user_uid}
+      />
     </div>
   );
 };

@@ -39,7 +39,11 @@ const Top = (props) => {
           // onScroll={scroll_gearing()}
           // ref={this.test2}
         >
-          <Main child_name={props.name} child_ID={props.ID} />
+          <Main
+            child_name={props.name}
+            child_ID={props.ID}
+            user_uid={props.user_uid}
+          />
         </div>
         <div
           className="sidemenu_right_box_space"

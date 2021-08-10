@@ -33,6 +33,7 @@ const Loginform = (props) => {
     // await props.change_top(user)
     await props.change_ID(get_ID);
     await props.change_name(get_name);
+    await props.get_uid(user_uid);
   };
   //ログイン
   const submit = async () => {

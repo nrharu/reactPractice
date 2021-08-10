@@ -8,7 +8,7 @@ import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState, useEffect } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 import MainTweetTextArea from "./main_grand_child/main_tweet_text_area.js";
-import firebase from "firebase";
+import firebase, { db } from "../../firestore.js";
 
 const MainTweet = (props) => {
   // 投稿機能
@@ -33,8 +33,6 @@ const MainTweet = (props) => {
   };
 
   const [time, set_time] = useState("");
-
-  // let i = 0;
   const [time_list, set_time_list] = useState([]);
 
   const add = () => {
@@ -81,8 +79,11 @@ const MainTweet = (props) => {
       console.log(indicate_time);
       set_time(indicate_time);
     };
+    db.collection(props.user_uid).doc("user").set({
+      tweet_list: new_tweet_lists,
+    });
     return false;
-    // setInterval(tweet_time, 1000);
+    setInterval(tweet_time, 1000);
   };
   //
 
@@ -93,15 +94,6 @@ const MainTweet = (props) => {
   //
 
   //テキストエリア
-
-  //データベース
-  //   debug.collection("tweet_list").doc("tweet").set({
-  //     content:{content},
-  //     name:{props.name},
-  //     ID:{props.ID},
-  //       time:
-  // })
-  //
 
   return (
     <main className="main">
@@ -114,16 +106,6 @@ const MainTweet = (props) => {
             </div>
             <div className="main_tweet_content" onClick={classNameChange}>
               <div className="main_tweet_textform_wrap">
-                {/* <form className="main_tweet_textform" id="tweet" onSubmit={add}>
-                  <textarea
-                    className="main_tweet_textform_area"
-                    placeholder="What's happening？"
-                    maxLength="140"
-                    onChange={handleSubmit}
-                    value={content}
-                    cols="33"
-                  ></textarea> */}
-                {/* </form> */}
                 <MainTweetTextArea
                   handle={handleSubmit}
                   value={content}
