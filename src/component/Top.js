@@ -6,7 +6,7 @@ import Loginform from "./loginform.js";
 import SidemenuRightSearchboxIcon from "./sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
@@ -23,18 +23,8 @@ const Top = (props) => {
   // main_scroll.addEventListener("scroll", () => {
   //   right_scroll.scrollTop = main_scroll.scrollTop;
   // });
-  const check = () => {
-    console.log(props.ID);
-    console.log(props.name);
-  };
-  const render = useParams();
   return (
     <div className="body">
-      <input
-        type="button"
-        onClick={() => check()}
-        value="propsチェック TOP"
-      ></input>
       <Link to="/loginform">戻る</Link>
       {/* <Loginform child_name={setName} child_ID={setID} /> */}
       <div className="content">
