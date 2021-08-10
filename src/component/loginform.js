@@ -6,8 +6,8 @@ import { useHistory } from "react-router-dom";
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
-  let name = null;
-  let ID = null;
+  let get_name = null;
+  let get_ID = null;
   let result = null;
   // let change_email = null;
   // let change_pass = null;
@@ -28,35 +28,37 @@ const Loginform = (props) => {
     auth.signInWithEmailAndPassword(email, pass).catch(() => {
       console.log("エラー");
     });
-    //ユーザーのデータの取得
-    const user = await auth.currentUser;
-    const user_uid = await user.uid;
-    result = await db.collection(user_uid).doc("user").get();
-    console.log(result);
-    name = result.get("name");
-    ID = result.get("ID");
-    // console.log(name);
-    // console.log(ID);
     //画面遷移
     handle_link("/Top");
-    //親に値を渡す
-    props.child_name(name);
-    props.child_ID(ID);
-
-    // {
-    //   props.child_ID(ID);
-    // }
+    //ユーザーのデータの取得
+    const get_data = async () => {
+      const user = auth.currentUser;
+      const user_uid = await user.uid;
+      result = await db.collection(user_uid).doc("user").get();
+      console.log(result);
+      get_name = result.get("name");
+      get_ID = result.get("ID");
+    };
   };
   //
-
+  //親に値を渡す
+  // props.child_name(name);
+  // props.child_ID(ID);
+  // props.child_name(name);
+  const usagi = props.child_ID;
   //
 
   //確認
-  const check = () => {
+  const check = async () => {
     const user = auth.currentUser;
+    // const user = await auth.currentUser;
+    // const user_uid = await user.uid;
+    // result = await db.collection(user_uid).doc("user").get();
+    // name = result.get("name");
+    // ID = result.get("ID");
     console.log(user);
-    console.log(name);
-    console.log(ID);
+    console.log(get_name);
+    console.log(get_ID);
     console.log(result);
   };
   //

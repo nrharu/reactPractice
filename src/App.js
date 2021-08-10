@@ -30,6 +30,9 @@ const App = () => {
   const [ID, set_ID] = useState("");
   <Loginform child_name={set_name} child_ID={set_ID} />;
   <Top name={name} ID={ID} />;
+  console.log(ID);
+  console.log(name);
+
   return (
     <Router>
       <div className="display">
