@@ -9,17 +9,23 @@ import React, { useState } from "react";
 const SidemenuLeft = (props) => {
   const [name, set_name] = useState("");
   const [ID, set_ID] = useState("");
-  // const user = auth.currentUser;
-  // if (user) {
-  //   const user_uid = user.user_uid;
-  //   const get_user = db.collection(user_uid).doc("user").get();
-  //   const get_name = get_user.get("name");
-  //   const get_ID = get_user.get("ID");
-  //   set_name(get_name);
-  //   set_ID(get_ID);
-  // } else {
-  //   console.log("エラー");
-  // }
+  // const get_name = await get_user.get("name");
+  // const get_ID = await get_user.get("ID");
+
+  window.addEventListener("load", async () => {
+    const user = await auth.currentUser;
+    const user_uid = await user.uid;
+    const get_user = await db.collection(user_uid).doc("user").get();
+    // const values = await Promise.all([
+    //   get_name(),get_ID()
+    // ])
+    const get_name = await get_user.get("name");
+    const get_ID = await get_user.get("ID");
+    set_name(get_name);
+    set_ID(get_ID);
+    console.log(name);
+    console.log(ID);
+  });
   return (
     <section className="sidemenu_left">
       <div className="sidmenu_left_navigation_wrap">

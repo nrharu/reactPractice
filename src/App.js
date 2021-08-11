@@ -43,11 +43,7 @@ const App = () => {
   };
   return (
     <Router>
-      <input
-        type="button"
-        onClick={() => check()}
-        value="propsチェック"
-      ></input>
+      <input type="button" onClick={() => check()} value="props"></input>
       <div className="display">
         <Switch>
           <Route path="/loginform">
