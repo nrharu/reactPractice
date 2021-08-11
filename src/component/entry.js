@@ -32,17 +32,25 @@ const Entry = () => {
   };
   //
   const submit = async () => {
-    auth.createUserWithEmailAndPassword(email, pass).catch((error) => {
-      console.log("エラー");
-    });
-    await handle_link("/loginform");
-    //ドキュメントの作成 アカウント名とIDの更新
-    const user = await auth.currentUser;
-    const user_uid = await user.uid;
-    db.collection(user_uid).doc("user").set({
-      name: name,
-      ID: ID,
-    });
+    // auth.signOut().catch((error) => {
+    //   console.log("エラー");
+    // });
+    // await console.log("ログアウト");
+    auth
+      .createUserWithEmailAndPassword(email, pass)
+      .then(() => {
+        handle_link("/loginform");
+        //ドキュメントの作成 アカウント名とIDの更新
+        const user = auth.currentUser;
+        const user_uid = user.uid;
+        db.collection(user_uid).doc("user").set({
+          name: name,
+          ID: ID,
+        });
+      })
+      .catch((error) => {
+        console.log("エラー");
+      });
   };
 
   //
@@ -77,7 +85,7 @@ const Entry = () => {
             // value={ID}
             onChange={handleChange_name}
             type="text"
-            id="account_pass"
+            id="account_name"
             // maxLength="12"
             className="login_form_input_space"
           />
@@ -88,7 +96,7 @@ const Entry = () => {
             // value={ID}
             onChange={handleChange_ID}
             type="text"
-            id="account_pass"
+            id="account_ID"
             // maxLength="12"
             className="login_form_input_space"
           />

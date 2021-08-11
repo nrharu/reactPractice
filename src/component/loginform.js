@@ -62,8 +62,6 @@ const Loginform = (props) => {
     const result = await db.collection(user_uid_check).doc("user").get();
     const get_name_check = result.get("name");
     const get_ID_check = result.get("ID");
-    // props.change_ID(get_ID);
-    // props.change_name(get_name);
     // props.change_name(get_name);
     // props.change_ID(get_ID);
     console.log(user_check);

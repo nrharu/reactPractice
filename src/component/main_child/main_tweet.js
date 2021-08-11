@@ -79,7 +79,8 @@ const MainTweet = (props) => {
       console.log(indicate_time);
       set_time(indicate_time);
     };
-    db.collection(props.user_uid).doc("user").set({
+    // ツイートしたものをデータベースに保存
+    db.collection(props.user_uid).doc("user").update({
       tweet_list: new_tweet_lists,
     });
     return false;

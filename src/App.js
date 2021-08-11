@@ -36,14 +36,18 @@ const App = () => {
   // const new_top = { top };
   // const new_top_list = [new_top, ...top_list];
   // set_top_list(new_top_list);
-  const path = `/Top/${ID}`;
+  // const path = `/Top/${ID}`;
+  const check = () => {
+    console.log(name);
+    console.log(ID);
+  };
   return (
     <Router>
-      {/* <input
+      <input
         type="button"
         onClick={() => check()}
         value="propsチェック"
-      ></input> */}
+      ></input>
       <div className="display">
         <Switch>
           <Route path="/loginform">
