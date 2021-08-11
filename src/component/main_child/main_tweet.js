@@ -15,6 +15,8 @@ const MainTweet = (props) => {
   const [content, set_content] = useState("");
   const [tweet_lists, set_tweet_lists] = useState([]);
   const [rows, set_rows] = useState(1);
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
   //テキストエリアのサイズ調整
   let number = 0;
   const get_number = () => {
@@ -80,15 +82,47 @@ const MainTweet = (props) => {
       // set_time(indicate_time);
     };
     // ツイートしたものをデータベースに保存
-    db.collection(props.user_uid).doc("user").update({
-      tweet_list: new_tweet_lists,
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        const uid = user.uid;
+        db.collection(uid).doc("user").update({
+          tweet_list: new_tweet_lists,
+        });
+      }
     });
     // props.tweet_list
     // return false;
     // setInterval(tweet_time, 1000);
   };
   //
-
+  //アカウントの名前とIDの取得
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      const uid = user.uid;
+      const get_user = await db.collection(uid).doc("user").get();
+      // const get_field = (doc) => {
+      //   get_user.get(doc);
+      // };
+      // const values = await Promise.all([get_field("name"), get_field("ID")]);
+      const get_name = await get_user.get("name");
+      const get_ID = await get_user.get("ID");
+      const get_tweet_list = await get_user.get("tweet_list");
+      set_name(get_name);
+      set_ID(get_ID);
+      set_tweet_lists(get_tweet_list);
+      // set_name(values[0]);
+      // set_ID(values[1]);
+      // console.log(get_name);
+      // console.log(get_ID);
+      // console.log(name);
+      // console.log(ID);
+      // console.log(uid);
+    } else {
+      set_name("");
+      set_ID("");
+      // set_tweet_lists("");
+    }
+  });
   //クラス変更
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
   const classNameChange = () =>
@@ -171,8 +205,8 @@ const MainTweet = (props) => {
               content={tweet.content}
               // time={time_list[i++]}
               time={time}
-              name={props.name}
-              ID={props.ID}
+              name={name}
+              ID={ID}
             />
           ))}
         </ul>
