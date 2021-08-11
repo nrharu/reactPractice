@@ -6,6 +6,7 @@ import { useHistory, useParams, Link } from "react-router-dom";
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
+
   let get_name = null;
   let get_ID = null;
   let result = null;
@@ -22,18 +23,22 @@ const Loginform = (props) => {
     set_pass(change_pass);
   };
   //
-  const get_data = async () => {
-    const user = await auth.currentUser;
-    const user_uid = await user.uid;
-    result = await db.collection(user_uid).doc("user").get();
-    get_name = await result.get("name");
-    get_ID = await result.get("ID");
 
-    //親に値を渡す
-    // await props.change_top(user)
-    await props.change_ID(get_ID);
-    await props.change_name(get_name);
-    await props.get_uid(user_uid);
+  const get_data = async () => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const get_uid = user.uid;
+        const get_user = await db.collection(get_uid).doc("user").get();
+        get_name = await get_user.get("name");
+        get_ID = await get_user.get("ID");
+        const get_tweet_list = await get_user.get("tweet_list");
+        //親に値を渡す
+        props.change_ID(get_ID);
+        props.change_name(get_name);
+        props.uid(get_uid);
+        props.tweet_list(get_tweet_list);
+      }
+    });
   };
   //ログイン
   const submit = async () => {
@@ -48,26 +53,11 @@ const Loginform = (props) => {
       });
     //ユーザーのデータの取得
   };
-  // await get_data()
-  //画面遷移
-  // };
-  //
-
-  //
 
   //確認
   const check = async () => {
-    const user_check = await auth.currentUser;
-    const user_uid_check = await user_check.uid;
-    const result = await db.collection(user_uid_check).doc("user").get();
-    const get_name_check = result.get("name");
-    const get_ID_check = result.get("ID");
-    // props.change_name(get_name);
-    // props.change_ID(get_ID);
-    console.log(user_check);
-    console.log(get_name_check);
-    console.log(get_ID_check);
-    // console.log(result);
+    console.log(get_name);
+    console.log(get_ID);
     console.log(props.change_name);
     console.log(props.change_ID);
   };

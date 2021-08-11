@@ -43,6 +43,7 @@ const Top = (props) => {
             child_name={props.name}
             child_ID={props.ID}
             user_uid={props.user_uid}
+            tweet_list={props.tweet_list}
           />
         </div>
         <div
