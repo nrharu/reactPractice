@@ -10,29 +10,30 @@ const SidemenuLeft = (props) => {
   const [name, set_name] = useState("");
   const [ID, set_ID] = useState("");
 
-  // window.addEventListener("load", () => {
   auth.onAuthStateChanged(async (user) => {
     if (user) {
       const uid = user.uid;
       const get_user = await db.collection(uid).doc("user").get();
-      // const values = await Promise.all([
-      //   get_name(),get_ID()
-      // ])
+      // const get_field = (doc) => {
+      //   get_user.get(doc);
+      // };
+      // const values = await Promise.all([get_field("name"), get_field("ID")]);
       const get_name = await get_user.get("name");
       const get_ID = await get_user.get("ID");
-      await set_name(get_name);
-      await set_ID(get_ID);
+      set_name(get_name);
+      set_ID(get_ID);
       // set_name(values[0]);
       // set_ID(values[1]);
-      console.log(get_name);
-      console.log(get_ID);
-      console.log(name);
-      console.log(ID);
-      console.log(uid);
+      // console.log(get_name);
+      // console.log(get_ID);
+      // console.log(name);
+      // console.log(ID);
+      // console.log(uid);
     } else {
-      console.log("エラー");
+      set_name("");
+      set_ID("");
     }
-    // });
+
     // const user_uid = auth.currentUser.uid;
     // const get_user = await db.collection(user_uid).doc("user").get();
     // // const values = await Promise.all([
