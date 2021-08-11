@@ -8,13 +8,15 @@ import MainTweetedList from "./main_tweeted_list.js";
 import React, { useState, useEffect } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 import MainTweetTextArea from "./main_grand_child/main_tweet_text_area.js";
-import firebase from "firebase";
+import firebase, { db, auth } from "../../firestore.js";
 
 const MainTweet = (props) => {
-  // 投稿機能
+  //state
   const [content, set_content] = useState("");
-  const [tweet_lists, set_tweet_lists] = useState([]);
+  const [tweet_lists, set_tweet_lists] = useState([props.tweet_list]);
   const [rows, set_rows] = useState(1);
+  const [name, set_name] = useState("");
+  const [ID, set_ID] = useState("");
   //テキストエリアのサイズ調整
   let number = 0;
   const get_number = () => {
@@ -25,14 +27,14 @@ const MainTweet = (props) => {
     set_rows(number);
     console.log(number);
   };
-  const handleSubmit = (e) => {
+  //テキストの入力内容の取得
+  const handleSubmit = async (e) => {
     set_content(() => e.target.value);
     get_number();
+    await console.log(content);
   };
 
   const [time, set_time] = useState("");
-
-  // let i = 0;
   const [time_list, set_time_list] = useState([]);
 
   const add = () => {
@@ -76,10 +78,14 @@ const MainTweet = (props) => {
       } else {
         indicate_time = now_date;
       }
-      console.log(indicate_time);
-      set_time(indicate_time);
+      // console.log(indicate_time);
+      // set_time(indicate_time);
     };
-
+    // ツイートしたものをデータベースに保存
+    db.collection(props.user_uid).doc("user").update({
+      tweet_list: new_tweet_lists,
+    });
+    // return false;
     // setInterval(tweet_time, 1000);
   };
   //
@@ -92,15 +98,6 @@ const MainTweet = (props) => {
 
   //テキストエリア
 
-  //データベース
-  //   debug.collection("tweet_list").doc("tweet").set({
-  //     content:{content},
-  //     name:{props.name},
-  //     ID:{props.ID},
-  //       time:
-  // })
-  //
-
   return (
     <main className="main">
       <div className="main_translate">
@@ -112,21 +109,9 @@ const MainTweet = (props) => {
             </div>
             <div className="main_tweet_content" onClick={classNameChange}>
               <div className="main_tweet_textform_wrap">
-                {/* <form className="main_tweet_textform" id="tweet" onSubmit={add}>
-                  <textarea
-                    className="main_tweet_textform_area"
-                    placeholder="What's happening？"
-                    maxLength="140"
-                    onChange={handleSubmit}
-                    value={content}
-                    cols="33"
-                  ></textarea> */}
-                {/* </form> */}
                 <MainTweetTextArea
                   handle={handleSubmit}
                   value={content}
-                  // value="usagisikakatan"
-                  add={add}
                   id="tweet"
                   rows={rows}
                 />
@@ -169,8 +154,9 @@ const MainTweet = (props) => {
                 <input
                   type="submit"
                   value="Tweet"
-                  form="tweet"
+                  // form="tweet"
                   className="main_tweet_submit_button"
+                  onClick={() => add()}
                 />
               </div>
             </div>

@@ -1,13 +1,14 @@
 // import { setUncaughtExceptionCaptureCallback } from "node:process";
 import React, { useState } from "react";
 import firebase, { db, auth } from "../firestore.js";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 
 const Loginform = (props) => {
   const [email, set_email] = useState("");
   const [pass, set_pass] = useState("");
-  let name = null;
-  let ID = null;
+
+  let get_name = null;
+  let get_ID = null;
   let result = null;
   // let change_email = null;
   // let change_pass = null;
@@ -23,41 +24,42 @@ const Loginform = (props) => {
   };
   //
 
+  const get_data = async () => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const get_uid = user.uid;
+        const get_user = await db.collection(get_uid).doc("user").get();
+        get_name = await get_user.get("name");
+        get_ID = await get_user.get("ID");
+        const get_tweet_list = await get_user.get("tweet_list");
+        //親に値を渡す
+        props.change_ID(get_ID);
+        props.change_name(get_name);
+        props.uid(get_uid);
+        props.tweet_list(get_tweet_list);
+      }
+    });
+  };
   //ログイン
   const submit = async () => {
-    auth.signInWithEmailAndPassword(email, pass).catch(() => {
-      console.log("エラー");
-    });
+    auth
+      .signInWithEmailAndPassword(email, pass)
+      .then(() => {
+        handle_link("/Top");
+        get_data();
+      })
+      .catch(() => {
+        console.log("エラー");
+      });
     //ユーザーのデータの取得
-    const user = await auth.currentUser;
-    const user_uid = await user.uid;
-    result = await db.collection(user_uid).doc("user").get();
-    console.log(result);
-    name = result.get("name");
-    ID = result.get("ID");
-    // console.log(name);
-    // console.log(ID);
-    //画面遷移
-    handle_link("/Top");
-    //親に値を渡す
-    props.child_name(name);
-    props.child_ID(ID);
-
-    // {
-    //   props.child_ID(ID);
-    // }
   };
-  //
-
-  //
 
   //確認
-  const check = () => {
-    const user = auth.currentUser;
-    console.log(user);
-    console.log(name);
-    console.log(ID);
-    console.log(result);
+  const check = async () => {
+    console.log(get_name);
+    console.log(get_ID);
+    console.log(props.change_name);
+    console.log(props.change_ID);
   };
   //
   //ページ遷移
@@ -90,6 +92,7 @@ const Loginform = (props) => {
   // console.log(auth);
   return (
     <div className="login_form_wrap">
+      {/* <p>{props.change_name(get_name)}</p> */}
       <div className="login_form">
         <form
           // onSubmit={() => submit()}

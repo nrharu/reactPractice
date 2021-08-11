@@ -6,6 +6,7 @@ import Loginform from "./loginform.js";
 import SidemenuRightSearchboxIcon from "./sidemenu_right_child/sidemnu_right_searchbox_icon.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import { useEffect } from "react";
 // import React, { useEffect } from "react";
 
@@ -22,7 +23,6 @@ const Top = (props) => {
   // main_scroll.addEventListener("scroll", () => {
   //   right_scroll.scrollTop = main_scroll.scrollTop;
   // });
-
   return (
     <div className="body">
       <Link to="/loginform">戻る</Link>
@@ -39,7 +39,12 @@ const Top = (props) => {
           // onScroll={scroll_gearing()}
           // ref={this.test2}
         >
-          <Main child_name={props.name} child_ID={props.ID} />
+          <Main
+            child_name={props.name}
+            child_ID={props.ID}
+            user_uid={props.user_uid}
+            tweet_list={props.tweet_list}
+          />
         </div>
         <div
           className="sidemenu_right_box_space"
