@@ -57,7 +57,7 @@ const MainTweet = (props) => {
     //
 
     // ツイートしたものをデータベースに保存
-    // let get_tweet_list = null;
+    let get_tweet_list = null;
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         const uid = user.uid;
@@ -68,7 +68,7 @@ const MainTweet = (props) => {
         const get_user = await login_user.get();
 
         const get_tweet_list = get_user.get("tweet_list");
-        set_tweet_lists(get_tweet_list);
+        // set_tweet_lists(get_tweet_list);
         // console.log(get_tweet_list);
         // console.log(get_user);
       } else {
@@ -84,10 +84,10 @@ const MainTweet = (props) => {
       const get_user = await db.collection(uid).doc("user").get();
       const get_name = await get_user.get("name");
       const get_ID = await get_user.get("ID");
-      const get_tweet_list = await get_user.get("tweet_list");
+      const get_tweet_list1 = await get_user.get("tweet_list");
       set_name(get_name);
       set_ID(get_ID);
-      // set_tweet_lists(get_tweet_list);
+      set_tweet_lists(get_tweet_list1);
     } else {
       set_name("");
       set_ID("");
