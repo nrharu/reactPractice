@@ -38,10 +38,22 @@ const MainTweet = (props) => {
   const [time_list, set_time_list] = useState([]);
 
   const add = () => {
+    // ツイートしたものをデータベースに保存
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const uid = user.uid;
+        const login_user = await db.collection(uid).doc("user");
+        await login_user.update({
+          tweet_list: new_tweet_lists,
+        });
+      } else {
+        console.log("エラー");
+      }
+    });
     //投稿機能
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
-    set_tweet_lists(new_tweet_lists);
+    // set_tweet_lists(new_tweet_lists);
     set_content("");
     set_rows(1);
     //
@@ -56,26 +68,10 @@ const MainTweet = (props) => {
 
     //
 
-    // ツイートしたものをデータベースに保存
-    let get_tweet_list = null;
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        const uid = user.uid;
-        const login_user = db.collection(uid).doc("user");
-        login_user.update({
-          tweet_list: new_tweet_lists,
-        });
-        const get_user = await login_user.get();
-
-        const get_tweet_list = get_user.get("tweet_list");
-        // set_tweet_lists(get_tweet_list);
-        // console.log(get_tweet_list);
-        // console.log(get_user);
-      } else {
-        console.log("エラー");
-      }
-    });
+    console.log(content);
+    console.log(new_tweet_lists);
   };
+  //addのしっぽ
   //
   //アカウントの名前とIDとtweet_listの取得
   auth.onAuthStateChanged(async (user) => {
@@ -83,8 +79,8 @@ const MainTweet = (props) => {
       const uid = user.uid;
       const get_user = await db.collection(uid).doc("user").get();
       const get_name = await get_user.get("name");
-      const get_ID = await get_user.get("ID");
-      const get_tweet_list1 = await get_user.get("tweet_list");
+      const get_ID = get_user.get("ID");
+      const get_tweet_list1 = get_user.get("tweet_list");
       set_name(get_name);
       set_ID(get_ID);
       set_tweet_lists(get_tweet_list1);
