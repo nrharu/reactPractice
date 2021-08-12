@@ -5,7 +5,7 @@ import MainTweetIconMedia from "./main_grand_child_icon/main_tweet_icon_media.js
 import MainTweetIconReservation from "./main_grand_child_icon/main_tweet_icon_reservation.js";
 import MainTweetOpenButtonIcon from "./main_grand_child_icon/main_tweet_open_button_icon.js";
 import MainTweetedList from "./main_tweeted_list.js";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MyAccountIcon from "../../img/my_account_icon.js";
 import MainTweetTextArea from "./main_grand_child/main_tweet_text_area.js";
 import firebase, { db, auth } from "../../firestore.js";
@@ -13,10 +13,8 @@ import firebase, { db, auth } from "../../firestore.js";
 const MainTweet = (props) => {
   //state
   const [content, set_content] = useState("");
-  const [tweet_lists, set_tweet_lists] = useState([props.tweet_list]);
+  const [tweet_lists, set_tweet_lists] = useState([]);
   const [rows, set_rows] = useState(1);
-  const [name, set_name] = useState("");
-  const [ID, set_ID] = useState("");
   //テキストエリアのサイズ調整
   let number = 0;
   const get_number = () => {
@@ -85,6 +83,7 @@ const MainTweet = (props) => {
     db.collection(props.user_uid).doc("user").update({
       tweet_list: new_tweet_lists,
     });
+    // props.tweet_list
     // return false;
     // setInterval(tweet_time, 1000);
   };
