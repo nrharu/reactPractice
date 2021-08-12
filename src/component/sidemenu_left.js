@@ -24,6 +24,7 @@ const SidemenuLeft = (props) => {
       set_ID(get_ID);
       // set_name(values[0]);
       // set_ID(values[1]);
+      // console.log(get_user);
       // console.log(get_name);
       // console.log(get_ID);
       // console.log(name);
@@ -34,6 +35,8 @@ const SidemenuLeft = (props) => {
       set_ID("");
     }
   });
+  // console.log(name);
+  // console.log(ID);
 
   return (
     <section className="sidemenu_left">

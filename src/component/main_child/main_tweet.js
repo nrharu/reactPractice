@@ -25,13 +25,13 @@ const MainTweet = (props) => {
       number = lines_number.length + 1;
     }
     set_rows(number);
-    console.log(number);
+    // console.log(number);
   };
   //テキストの入力内容の取得
   const handleSubmit = async (e) => {
     set_content(() => e.target.value);
     get_number();
-    await console.log(content);
+    // await console.log(content);
   };
 
   const [time, set_time] = useState("");
@@ -41,7 +41,7 @@ const MainTweet = (props) => {
     //投稿機能
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
-    // set_tweet_lists(new_tweet_lists);
+    set_tweet_lists(new_tweet_lists);
     set_content("");
     set_rows(1);
     //
@@ -86,15 +86,20 @@ const MainTweet = (props) => {
     //
 
     // ツイートしたものをデータベースに保存
+    // let get_tweet_list = null;
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         const uid = user.uid;
-        db.collection(uid).doc("user").set({
+        const login_user = await db.collection(uid).doc("user");
+        login_user.update({
           tweet_list: new_tweet_lists,
         });
-        const get = await db.collection(uid).doc("user").get();
-        const get_tweet_list = await get.get("tweet_list");
-        set_tweet_lists(get_tweet_list);
+        const get_user = await login_user.get();
+
+        const get_tweet_list = await get_user.get("tweet_list");
+        await set_tweet_lists(get_tweet_list);
+        console.log(get_tweet_list);
+        console.log(get_user);
       }
     });
     // setInterval(tweet_time, 1000);
@@ -123,6 +128,8 @@ const MainTweet = (props) => {
       // set_tweet_lists("");
     }
   });
+  //
+
   //
 
   //
@@ -213,6 +220,7 @@ const MainTweet = (props) => {
               ID={ID}
             />
           ))}
+          {/* {tweet_lists} */}
         </ul>
       </div>
     </main>
