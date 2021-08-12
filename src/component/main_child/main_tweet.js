@@ -47,41 +47,12 @@ const MainTweet = (props) => {
     //
 
     //ツイートした時間
-    // const new_time = { time };
-    // const new_time_list = [new_time, ...time_list];
-    // set_time_list(new_time_list);
-    //
-    let get_time = Date.now();
-    let indicate_time = null;
-    let now_date = null;
-    let tweet_time = () => {
-      const tweet_date = new Date();
-      let unit_time = "秒";
-      let now_time = (Date.now() - get_time) / 1000;
-      const month = tweet_date.getMonth() + 1;
-      const day = tweet_date.getDate();
-      if (unit_time === "秒" && now_time >= 60) {
-        now_time = (Date.now() - get_time) / 60000;
-        unit_time = "分";
-      }
-      if (unit_time === "分" && now_time >= 60) {
-        now_time = (Date.now() - get_time) / 3600000;
-        unit_time = "時間";
-      }
-      if (unit_time === "時間" && now_time >= 24) {
-        now_date = month + "月" + day + "日";
-        now_time = null;
-      }
-      const integer_time = Math.floor(now_time);
-      if (now_time != null) {
-        indicate_time = integer_time + unit_time;
-      } else {
-        indicate_time = now_date;
-      }
-      // console.log(indicate_time);
-      // set_time(indicate_time);
-    };
-    //
+    const new_time = { time };
+    const new_time_list = [new_time, ...time_list];
+    set_time_list(new_time_list);
+    console.log(Date.now());
+    const get_time = Date.now();
+    set_time(get_time);
 
     //
 
@@ -90,19 +61,20 @@ const MainTweet = (props) => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         const uid = user.uid;
-        const login_user = await db.collection(uid).doc("user");
+        const login_user = db.collection(uid).doc("user");
         login_user.update({
           tweet_list: new_tweet_lists,
         });
         const get_user = await login_user.get();
 
-        const get_tweet_list = await get_user.get("tweet_list");
-        await set_tweet_lists(get_tweet_list);
-        console.log(get_tweet_list);
-        console.log(get_user);
+        const get_tweet_list = get_user.get("tweet_list");
+        set_tweet_lists(get_tweet_list);
+        // console.log(get_tweet_list);
+        // console.log(get_user);
+      } else {
+        console.log("エラー");
       }
     });
-    // setInterval(tweet_time, 1000);
   };
   //
   //アカウントの名前とIDとtweet_listの取得
@@ -110,21 +82,16 @@ const MainTweet = (props) => {
     if (user) {
       const uid = user.uid;
       const get_user = await db.collection(uid).doc("user").get();
-      // const get_field = (doc) => {
-      //   get_user.get(doc);
-      // };
-      // const values = await Promise.all([get_field("name"), get_field("ID")]);
       const get_name = await get_user.get("name");
       const get_ID = await get_user.get("ID");
       const get_tweet_list = await get_user.get("tweet_list");
       set_name(get_name);
       set_ID(get_ID);
-      set_tweet_lists(get_tweet_list);
-      // set_name(values[0]);
-      // set_ID(values[1]);
+      // set_tweet_lists(get_tweet_list);
     } else {
       set_name("");
       set_ID("");
+      console.log("エラー");
       // set_tweet_lists("");
     }
   });
@@ -214,7 +181,6 @@ const MainTweet = (props) => {
           {tweet_lists.map((tweet) => (
             <MainTweetedList
               content={tweet.content}
-              // time={time_list[i++]}
               time={time}
               name={name}
               ID={ID}
