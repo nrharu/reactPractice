@@ -41,15 +41,15 @@ const MainTweet = (props) => {
     //投稿機能
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
-    set_tweet_lists(new_tweet_lists);
+    // set_tweet_lists(new_tweet_lists);
     set_content("");
     set_rows(1);
     //
 
     //ツイートした時間
-    const new_time = { time };
-    const new_time_list = [new_time, ...time_list];
-    set_time_list(new_time_list);
+    // const new_time = { time };
+    // const new_time_list = [new_time, ...time_list];
+    // set_time_list(new_time_list);
     //
     let get_time = Date.now();
     let indicate_time = null;
@@ -81,21 +81,26 @@ const MainTweet = (props) => {
       // console.log(indicate_time);
       // set_time(indicate_time);
     };
+    //
+
+    //
+
     // ツイートしたものをデータベースに保存
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(async (user) => {
       if (user) {
         const uid = user.uid;
-        db.collection(uid).doc("user").update({
+        db.collection(uid).doc("user").set({
           tweet_list: new_tweet_lists,
         });
+        const get = await db.collection(uid).doc("user").get();
+        const get_tweet_list = await get.get("tweet_list");
+        set_tweet_lists(get_tweet_list);
       }
     });
-    // props.tweet_list
-    // return false;
     // setInterval(tweet_time, 1000);
   };
   //
-  //アカウントの名前とIDの取得
+  //アカウントの名前とIDとtweet_listの取得
   auth.onAuthStateChanged(async (user) => {
     if (user) {
       const uid = user.uid;
@@ -112,17 +117,16 @@ const MainTweet = (props) => {
       set_tweet_lists(get_tweet_list);
       // set_name(values[0]);
       // set_ID(values[1]);
-      // console.log(get_name);
-      // console.log(get_ID);
-      // console.log(name);
-      // console.log(ID);
-      // console.log(uid);
     } else {
       set_name("");
       set_ID("");
       // set_tweet_lists("");
     }
   });
+  //
+
+  //
+
   //クラス変更
   const [className, setClassName] = useState("main_tweet_open_button_wrap");
   const classNameChange = () =>

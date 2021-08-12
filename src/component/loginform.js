@@ -24,29 +24,29 @@ const Loginform = (props) => {
   };
   //
 
-  const get_data = async () => {
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        const get_uid = user.uid;
-        const get_user = await db.collection(get_uid).doc("user").get();
-        get_name = await get_user.get("name");
-        get_ID = await get_user.get("ID");
-        const get_tweet_list = await get_user.get("tweet_list");
-        //親に値を渡す
-        props.change_ID(get_ID);
-        props.change_name(get_name);
-        props.uid(get_uid);
-        props.tweet_list(get_tweet_list);
-      }
-    });
-  };
+  // const get_data = async () => {
+  //   auth.onAuthStateChanged(async (user) => {
+  //     if (user) {
+  //       const get_uid = user.uid;
+  //       const get_user = await db.collection(get_uid).doc("user").get();
+  //       get_name = await get_user.get("name");
+  //       get_ID = await get_user.get("ID");
+  //       const get_tweet_list = await get_user.get("tweet_list");
+  //       //親に値を渡す
+  //       // props.change_ID(get_ID);
+  //       // props.change_name(get_name);
+  //       // props.uid(get_uid);
+  //       // props.tweet_list(get_tweet_list);
+  //     }
+  //   });
+  // };
   //ログイン
   const submit = async () => {
     auth
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
         handle_link("/Top");
-        get_data();
+        // get_data();
       })
       .catch(() => {
         console.log("エラー");
