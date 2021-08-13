@@ -34,7 +34,7 @@ const MainTweet = (props) => {
     // await console.log(content);
   };
 
-  const [time, set_time] = useState("");
+  const [time, set_time] = useState(0);
   const [time_list, set_time_list] = useState([]);
 
   const add = () => {
@@ -43,7 +43,7 @@ const MainTweet = (props) => {
       if (user) {
         const uid = user.uid;
         const login_user = await db.collection(uid).doc("user");
-        await login_user.update({
+        login_user.update({
           tweet_list: new_tweet_lists,
         });
       } else {
@@ -53,23 +53,23 @@ const MainTweet = (props) => {
     //投稿機能
     const new_content = { content };
     const new_tweet_lists = [new_content, ...tweet_lists];
-    // set_tweet_lists(new_tweet_lists);
+    set_tweet_lists(new_tweet_lists);
     set_content("");
     set_rows(1);
     //
 
     //ツイートした時間
+    const get_time = Date.now();
+    set_time(get_time);
     const new_time = { time };
     const new_time_list = [new_time, ...time_list];
     set_time_list(new_time_list);
-    console.log(Date.now());
-    const get_time = Date.now();
-    set_time(get_time);
-
+    console.log(time);
+    console.log(time_list);
     //
-
+    console.log(get_time);
     console.log(content);
-    console.log(new_tweet_lists);
+    // console.log(new_tweet_lists);
   };
   //addのしっぽ
   //
@@ -177,7 +177,7 @@ const MainTweet = (props) => {
           {tweet_lists.map((tweet) => (
             <MainTweetedList
               content={tweet.content}
-              time={time}
+              time={tweet.time}
               name={name}
               ID={ID}
             />
